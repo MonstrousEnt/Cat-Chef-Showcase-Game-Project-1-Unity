@@ -33,6 +33,8 @@ public class PlayerController2D : MonoBehaviour
             isJumping = false;
             Jump();
         }
+
+        Flip();
     }
 
     private void Inputs()
@@ -65,4 +67,9 @@ public class PlayerController2D : MonoBehaviour
     //double jump
 
     //flip
+    private void Flip()
+    {
+        if (!Mathf.Approximately(0, _moveHorizontal))
+            transform.rotation = _moveHorizontal > 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+    }
 }
