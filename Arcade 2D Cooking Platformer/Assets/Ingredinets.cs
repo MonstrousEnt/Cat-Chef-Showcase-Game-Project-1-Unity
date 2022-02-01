@@ -8,14 +8,17 @@ public class Ingredinets : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        int tempFoundIngredinetsNum = 1;
+        if (collision.tag == "Player")
+        {
+            int tempFoundIngredinetsNum = 1;
 
-        GameManager.instance.SetFoundIngredinetsNum(GameManager.instance.GetFoundIngredinetsNum() + tempFoundIngredinetsNum);
-        Debug.Log("found one!");
+            GameManager.instance.SetFoundIngredinetsNum(GameManager.instance.GetFoundIngredinetsNum() + tempFoundIngredinetsNum);
+            Debug.Log("found one!");
 
-        //Set UI
-        levelObjectiveCakeIngredientsUI.SetText(GameManager.instance.GetFoundIngredinetsNum());
+            //Set UI
+            levelObjectiveCakeIngredientsUI.SetText(GameManager.instance.GetFoundIngredinetsNum());
 
-        gameObject.SetActive(false);
+            gameObject.SetActive(false);
+        }
     }
 }
