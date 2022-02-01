@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Ingredinets : MonoBehaviour
 {
-    [SerializeField] int FoundInhrdedinets = 0;
+    [SerializeField] private LevelObjectiveCakeIngredientsUI levelObjectiveCakeIngredientsUI;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        FoundInhrdedinets += 1;
+        int tempFoundIngredinetsNum = 1;
+
+        GameManager.instance.SetFoundIngredinetsNum(GameManager.instance.GetFoundIngredinetsNum() + tempFoundIngredinetsNum);
         Debug.Log("found one!");
 
         //Set UI
-
+        levelObjectiveCakeIngredientsUI.SetText(GameManager.instance.GetFoundIngredinetsNum());
 
         gameObject.SetActive(false);
     }
