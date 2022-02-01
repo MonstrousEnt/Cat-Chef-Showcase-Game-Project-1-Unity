@@ -28,10 +28,9 @@ public class PlayerController2D : MonoBehaviour
 
         //Jump
         //Check if jump is occurring in Update()
-        if (isJumping)
+        if (isJumping && Mathf.Abs(_rigidbody2D.velocity.y) < 0.001f)
         {
-             isJumping = false;
-
+            isJumping = false;
             Jump();
         }
     }
@@ -41,7 +40,7 @@ public class PlayerController2D : MonoBehaviour
         //Move the player left and right
         _moveHorizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody2D.velocity.y) < 0.001f)
+        if (Input.GetButtonDown("Jump"))
         {
             isJumping = true;
         }
@@ -62,4 +61,8 @@ public class PlayerController2D : MonoBehaviour
         _rigidbody2D.AddForce(Vector2.up * _jumpHeight * 2, ForceMode2D.Impulse);
 
     }
+
+    //double jump
+
+    //flip
 }
