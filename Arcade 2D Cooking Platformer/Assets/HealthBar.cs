@@ -25,7 +25,7 @@ public class HealthBar : MonoBehaviour
     private void Update()
     {
         //Take Damage Temp
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             //The player take the damage from the monsters.
             health -= damage;
@@ -40,7 +40,7 @@ public class HealthBar : MonoBehaviour
         }
 
         //Power Up Health Temp
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             //The player take the damage from the monsters.
             health += damage;
@@ -56,7 +56,7 @@ public class HealthBar : MonoBehaviour
 
 
         //Reset Health Temp
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Y))
         {
             //Set the player health back to max health
             health = maxHealth;
