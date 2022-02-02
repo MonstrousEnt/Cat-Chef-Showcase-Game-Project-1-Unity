@@ -14,7 +14,7 @@
         	- [x] jump
         	- [x] double jump
         	- [x] attack 	
-        	- [] clean up
+        	- [ ] clean up
 - [ ] Points System
 - [ ] Collectable, conis
 - [ ] Power ups
