@@ -45,7 +45,7 @@
 - [ ] Universal Code
 	- [ ]  Pop Ups
 	- [ ]  Power Ups
-- Optimization
+- [ ] Optimization
 	- [ ] Game Manager Methods	
 
 	
