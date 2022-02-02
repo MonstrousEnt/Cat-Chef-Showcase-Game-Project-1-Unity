@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool _playerHasDie = false;
 
     [SerializeField] private GameOverUI gameOverUI;
+    [SerializeField] private WinScreenUI WinScreenUI;
 
     public int GetMaxIngredients() {return _maxIngredients;}
     public int GetFoundIngredinetsNum() { return _foundIngredinetsNum; }
@@ -59,7 +60,7 @@ public class GameManager : MonoBehaviour
         if (_foundIngredinetsNum == _maxIngredients && _atCakeOver)
         {
             //Level Completed
-            
+            WinScreenUI.activeMenu(true);
         }
 
    
