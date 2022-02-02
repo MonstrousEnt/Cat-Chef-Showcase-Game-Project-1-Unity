@@ -1,7 +1,7 @@
 
 # Unity 2D Mini Games Ideas
 
-### Pluzzle Acade Platfrom
+### Arade 2D Platfrom
 - [ ] Find clue to sovle the puzzle or found keys
 	- [ ] Desgin 
 	- [x] Coding
