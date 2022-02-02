@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool _atCakeOver = false;
     [SerializeField] private bool _playerHasDie = false;
 
+    [SerializeField] private GameOverUI gameOverUI;
+
     public int GetMaxIngredients() {return _maxIngredients;}
     public int GetFoundIngredinetsNum() { return _foundIngredinetsNum; }
     public void SetFoundIngredinetsNum( int foundIngredinetsNum) { this._foundIngredinetsNum = foundIngredinetsNum; }
@@ -57,10 +59,7 @@ public class GameManager : MonoBehaviour
         if (_foundIngredinetsNum == _maxIngredients && _atCakeOver)
         {
             //Level Completed
-            //you win
-            Debug.Log("You Win!");
-            //play again
-            //quit
+            
         }
 
    
@@ -68,11 +67,7 @@ public class GameManager : MonoBehaviour
         if (_playerHasDie)
         {
             //Game Over
-            //You lose 
-            //try again
-            //quit
+            gameOverUI.activeMenu(true);
         }
-        
-        
     }
 }
