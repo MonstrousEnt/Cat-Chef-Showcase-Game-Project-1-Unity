@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
 
    
         //Die = lose
-        if (playerHasDie)
+        if (_playerHasDie)
         {
             //Game Over
             //You lose 
