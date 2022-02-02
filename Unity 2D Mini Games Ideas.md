@@ -3,16 +3,34 @@
 
 ### Pluzzle Acade Platfrom
 - find clue to sovle the puzzle or found keys
-- monsters
+      - [ ] Desgin
+      - [x] Code
+- [ ] monsters
 - Main Player swordman
 	- [x] UI health
-- points System
-- collectable, conis
-- power ups
+        - [x] Player Base
+        - [ ] Player controls
+- [ ] points System
+- [ ] collectable, conis
+- [ ] power ups
+       - [ ] Desgin
+       - [x] Code
 - start screen
+   - [ ] Desgin
+   - [x] UI
+   - [x] Code
 - game over screen
+   - [ ] Desgin
+   - [ ] UI
+   - [x] Code
 - you win
-- tie Map
+   - [ ] Desgin
+   - [ ] UI
+   - [x] Code
+- [ ] Level Desgin
+- [ ] Game Manger
+
+
 	
 	
 
