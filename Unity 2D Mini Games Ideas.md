@@ -2,7 +2,7 @@
 # Unity 2D Mini Games Ideas
 
 ### Pluzzle Acade Platfrom
-- [ ] find clue to sovle the puzzle or found keys
+- [ ] Find clue to sovle the puzzle or found keys
 	- [ ] Desgin 
 	- [x] Coding
 - [ ] Monsters
