@@ -10,11 +10,11 @@
 	- [x] UI health
         - [x] Player Base
         - [ ] Player controls
-        	- [x] move
-        	- [x] jump
-        	- [x] double jump
-        	- [x] attack 	
-        	- [ ] clean up
+        	- [x] Move
+        	- [x] Jump
+        	- [x] Double jump
+        	- [x] Attack 	
+        	- [ ] Clean up
 - [ ] Points System
 - [ ] Collectable, conis
 - [ ] Power ups
