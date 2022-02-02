@@ -42,7 +42,11 @@
 - [ ] Level Loader
 	- [x] Coding
 	- [ ] Animations
-
+- [ ] Universal Code
+	- [ ]  Pop Ups
+	- [ ]  Power Ups
+- Optimization
+	- [ ] Game Manager Methods	
 
 	
 	
