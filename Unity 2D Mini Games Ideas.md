@@ -6,6 +6,9 @@
 	- [ ] Desgin 
 	- [x] Coding
 - [ ] Monsters
+	- [ ] Desgin
+	- [ ] Move AI
+	- [ ] Attack AI 	
 - [ ] Main Player 
 	- [x] UI health
         - [x] Player Base
@@ -15,8 +18,8 @@
         	- [x] Double jump
         	- [ ] Attack 	
         	- [ ] Clean up
-- [ ] Points System
 - [ ] Collectable, conis
+- [ ] Points System
 - [ ] Power ups
 	- [ ] Desgin
 	- [x] Code
@@ -26,15 +29,18 @@
    - [x] Code
 - [ ] Game over screen
    - [ ] Desgin
-   - [ ] UI
+   - [x] UI
    - [x] Code
 - [ ] You win Screen
    - [ ] Desgin
-   - [ ] UI
+   - [x] UI
    - [x] Code
 - [ ] Level Desgin
 	- [ ] 	[Level Requiremnets](https://github.com/DangerousDaniel/Arcade2DCookingPlatformer/blob/Benjamin/levelDesignReq.md)
 - [ ] Game Manger
+- [ ] Level Loader
+	- [x] Coding
+	- [ ] Animations
 
 
 	
