@@ -9,63 +9,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Slider slider; 
     [SerializeField] private Text healthText;
 
-    [SerializeField] int health = 0;
-    [SerializeField] int maxHealth;
-    [SerializeField] int damage;
-
-    private void Start()
-    {
-        //set the health to max health of the player
-        health = maxHealth;
-
-        //Display it in the UI. 
-        SetMaxHealth(maxHealth);
-    }
-
-    private void Update()
-    {
-        //Take Damage Temp
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            //The player take the damage from the monsters.
-            health -= damage;
-
-            if (health <= 0)
-            {
-                health = 0;
-            }
-
-            //Display it in the UI.
-            SetHealth(health);
-        }
-
-        //Power Up Health Temp
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            //The player take the damage from the monsters.
-            health += damage;
-
-            if(health >= maxHealth)
-            {
-                health = maxHealth;
-            }
-
-            //Display it in the UI.
-            SetHealth(health);
-        }
-
-
-        //Reset Health Temp
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            //Set the player health back to max health
-            health = maxHealth;
-
-            //Display it in the UI.
-            SetHealth(health);
-        }
-    }
-
+    
     /// <summary>
     /// Set the max health for UI base on player's health.
     /// </summary>
