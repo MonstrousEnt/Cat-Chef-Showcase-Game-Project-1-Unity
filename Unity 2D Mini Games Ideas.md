@@ -13,7 +13,7 @@
         	- [x] Move
         	- [x] Jump
         	- [x] Double jump
-        	- [x] Attack 	
+        	- [ ] Attack 	
         	- [ ] Clean up
 - [ ] Points System
 - [ ] Collectable, conis
