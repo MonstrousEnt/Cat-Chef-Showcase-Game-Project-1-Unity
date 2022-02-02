@@ -7,7 +7,8 @@
 	- [x] Coding
 - [ ] Monsters
 	- [ ] Desgin
-	- [ ] Move AI
+	- [x] Move AI
+	- [ ] Flip AI
 	- [ ] Attack AI 	
 - [ ] Main Player 
 	- [x] UI health
