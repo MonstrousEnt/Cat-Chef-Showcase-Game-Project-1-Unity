@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
         {
             //Level Completed
             //you win
+            Debug.Log("You Win!");
             //play again
             //quit
         }
