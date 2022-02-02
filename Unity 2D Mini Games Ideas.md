@@ -6,6 +6,9 @@
 	- [ ] Desgin 
 	- [x] Coding
 - [ ] Monsters
+	- [ ] Desgin
+	- [ ] Move AI
+	- [ ] Attack AI 	
 - [ ] Main Player 
 	- [x] UI health
         - [x] Player Base
