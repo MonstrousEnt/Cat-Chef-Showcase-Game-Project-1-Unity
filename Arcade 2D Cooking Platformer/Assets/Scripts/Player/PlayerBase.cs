@@ -44,7 +44,7 @@ public class PlayerBase : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
-    private void TakeDmage(int damage)
+    public void TakeDmage(int damage)
     {
 		//The player take the damage from the monsters.
 		health -= damage;
@@ -59,7 +59,7 @@ public class PlayerBase : MonoBehaviour
 		}
 	}
 
-    private void Die()
+    public void Die()
     {
         GameManager.instance.SetPlayerHasDie(true);
         gameObject.SetActive(false);
