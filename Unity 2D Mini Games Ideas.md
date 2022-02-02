@@ -18,8 +18,8 @@
 - [ ] Points System
 - [ ] Collectable, conis
 - [ ] Power ups
-       - [ ] Desgin
-       - [x] Code
+	- [ ] Desgin
+	- [x] Code
 - [ ] Start screen
    - [ ] Desgin
    - [x] UI
