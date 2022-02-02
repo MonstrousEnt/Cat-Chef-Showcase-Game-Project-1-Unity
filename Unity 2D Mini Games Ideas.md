@@ -5,7 +5,7 @@
 - [ ] find clue to sovle the puzzle or found keys
 	- [ ] Desgin 
 	- [x] Coding
-- [ ] monsters
+- [ ] Monsters
 - [ ] Main Player 
 	- [x] UI health
         - [x] Player Base
@@ -15,9 +15,9 @@
         	- [x] double jump
         	- [x] attack 	
         	- [] clean up
-- [ ] points System
-- [ ] collectable, conis
-- [ ] power ups
+- [ ] Points System
+- [ ] Collectable, conis
+- [ ] Power ups
        - [ ] Desgin
        - [x] Code
 - [ ] Start screen
