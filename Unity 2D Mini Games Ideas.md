@@ -9,7 +9,7 @@
 	- [ ] Desgin
 	- [x] Move AI
 	- [ ] Flip AI
-	- [ ] Attack AI 	
+	- [x] Attack AI 	
 - [ ] Main Player 
 	- [x] UI health
         - [x] Player Base
