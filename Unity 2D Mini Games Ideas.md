@@ -4,7 +4,7 @@
 ### Pluzzle Acade Platfrom
 - [ ] find clue to sovle the puzzle or found keys
 	- [ ] Desgin 
-	- [ ] Coding
+	- [x] Coding
 - [ ] monsters
 - [ ] Main Player 
 	- [x] UI health
