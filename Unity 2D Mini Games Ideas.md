@@ -42,6 +42,7 @@
 - [ ] Level Loader
 	- [x] Coding
 	- [ ] Animations
+- [x] Audio Manager
 - [ ] Universal Code
 	- [ ]  Pop Ups
 	- [ ]  Power Ups
