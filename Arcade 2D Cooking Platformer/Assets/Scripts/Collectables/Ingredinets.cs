@@ -13,6 +13,7 @@ public class Ingredinets : MonoBehaviour
             int tempFoundIngredinetsNum = 1;
 
             GameManager.instance.SetFoundIngredinetsNum(GameManager.instance.GetFoundIngredinetsNum() + tempFoundIngredinetsNum);
+            GameManager.instance.SetTolatPoints(GameManager.instance.GetTolatPoints() + GameManager.instance.GetIngredientPointNum());
             Debug.Log("found one!");
 
             //Set UI

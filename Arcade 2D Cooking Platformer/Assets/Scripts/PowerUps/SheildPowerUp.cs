@@ -16,6 +16,8 @@ public class SheildPowerUp : MonoBehaviour
 
             //add to player
 
+            GameManager.instance.SetTolatPoints(GameManager.instance.GetTolatPoints() + GameManager.instance.GetSheildPowerUpPointNum());
+
             //destroy the object
             gameObject.SetActive(false);
         }

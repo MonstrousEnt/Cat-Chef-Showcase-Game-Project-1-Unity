@@ -11,9 +11,9 @@ public class Conis : MonoBehaviour
         if (collision.tag == "Player")
         {
             int tempCoinNum = 1;
-            int tempCoinPointNum = GameManager.instance.GetCoinNum();
 
             GameManager.instance.SetCoinNum(GameManager.instance.GetCoinNum() + tempCoinNum);
+            GameManager.instance.SetTolatPoints(GameManager.instance.GetTolatPoints() + GameManager.instance.GetCoinNum());
 
             collectablesUI.SetText(GameManager.instance.GetCoinNum());
 

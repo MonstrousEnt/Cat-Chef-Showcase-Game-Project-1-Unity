@@ -17,6 +17,8 @@ public class HealthPowerUp : MonoBehaviour
 
             //add boost
 
+            GameManager.instance.SetTolatPoints(GameManager.instance.GetTolatPoints() + GameManager.instance.GetHealthPowerUpPointNum());
+
             //destroy the object
             gameObject.SetActive(false);
         }

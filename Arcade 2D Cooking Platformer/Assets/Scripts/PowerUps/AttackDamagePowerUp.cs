@@ -16,6 +16,8 @@ public class AttackDamagePowerUp : MonoBehaviour
 
             //add boost
 
+            GameManager.instance.SetTolatPoints(GameManager.instance.GetTolatPoints() + GameManager.instance.GetAttackDamagePowerUpPointNum());
+
             //destroy the object
             gameObject.SetActive(false);
         }
