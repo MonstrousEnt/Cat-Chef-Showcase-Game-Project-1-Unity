@@ -25,7 +25,7 @@
 		- [x] Code 
 - [ ] Points System
 	- [ ] UI
-	- [ ] Code
+	- [x] Code
 - [ ] Power ups
 	- [ ] Desgin
 	- [x] Code
@@ -52,6 +52,7 @@
 	- [ ]  Pop Ups
 	- [ ]  Power Ups
 	- [ ]  Collectables
+	- [ ]  Points System
 - [ ] Optimization
 	- [ ] Game Manager Methods	
 
