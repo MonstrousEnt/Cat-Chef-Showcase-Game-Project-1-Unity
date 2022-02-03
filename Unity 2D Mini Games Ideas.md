@@ -55,6 +55,9 @@
 - [ ] Checkpoint
 	- [ ] Desgin
 	- [ ] Prefab Version
+- [ ] Pause Menu
+	- [ ] UI
+	- [ ] Code
 - [ ] Universal Code
 	- [ ]  Pop Ups
 	- [ ]  Power Ups
