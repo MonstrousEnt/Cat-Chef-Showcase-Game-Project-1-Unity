@@ -11403,7 +11403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 1276383712}
-  _parralaxEffect: 0.81
+  _parralaxEffect: 0
 --- !u!212 &121232430
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11578,7 +11578,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258722887}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.77, y: 4.02, z: 14}
+  m_LocalPosition: {x: -0.77, y: 4.49, z: 14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 121232428}
@@ -11599,7 +11599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 1276383712}
-  _parralaxEffect: 0.81
+  _parralaxEffect: 0
 --- !u!212 &258722890
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12250,7 +12250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237511375}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.77000046, y: 0.14999998, z: 14}
+  m_LocalPosition: {x: -0.77000046, y: 1.1, z: 14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 170771319}
@@ -42584,7 +42584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 1276383712}
-  _parralaxEffect: 0.81
+  _parralaxEffect: 0
 --- !u!212 &1741896760
 SpriteRenderer:
   m_ObjectHideFlags: 0
