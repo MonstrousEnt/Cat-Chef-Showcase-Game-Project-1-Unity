@@ -21,6 +21,7 @@
         	- [ ] Clean up
 - [ ] Collectable
 	- [ ] conis
+		- [x] Desgin
 		- [ ] UI
 		- [x] Code 
 - [ ] Points System
@@ -48,6 +49,12 @@
 	- [x] Coding
 	- [ ] Animations
 - [x] Audio Manager
+- [ ] Lives System
+	- [ ] UI
+	- [ ] 3 lives then game over
+- [ ] Checkpoint
+	- [ ] Desgin
+	- [ ] Prefab Version
 - [ ] Universal Code
 	- [ ]  Pop Ups
 	- [ ]  Power Ups
