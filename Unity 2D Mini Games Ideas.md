@@ -19,8 +19,13 @@
         	- [x] Double jump
         	- [ ] Attack 	
         	- [ ] Clean up
-- [ ] Collectable, conis
+- [ ] Collectable
+	- [ ] conis
+		- [ ] UI
+		- [x] Code 
 - [ ] Points System
+	- [ ] UI
+	- [ ] Code
 - [ ] Power ups
 	- [ ] Desgin
 	- [x] Code
@@ -46,6 +51,7 @@
 - [ ] Universal Code
 	- [ ]  Pop Ups
 	- [ ]  Power Ups
+	- [ ]  Collectables
 - [ ] Optimization
 	- [ ] Game Manager Methods	
 
