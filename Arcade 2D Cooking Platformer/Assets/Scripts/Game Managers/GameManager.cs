@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _coinPointNum = 10;
     [SerializeField] private int _monsterPointNum = 20;
     [SerializeField] private int _ingredientPointNum = 30;
+    [SerializeField] private int _healthPowerUpPointNum = 40;
+    [SerializeField] private int _attackDamagePowerUpPointNum = 50;
+    [SerializeField] private int _sheildPowerUpPointNum = 60;
+    [SerializeField] private int _tolatPoints = 0;
 
     [SerializeField] private LevelObjectiveCakeIngredientsUI levelObjectiveCakeIngredientsUI;
 
@@ -29,15 +33,20 @@ public class GameManager : MonoBehaviour
     public int GetMaxIngredients() {return _maxIngredients;}
     public int GetFoundIngredinetsNum() { return _foundIngredinetsNum; }
     public void SetFoundIngredinetsNum( int foundIngredinetsNum) { this._foundIngredinetsNum = foundIngredinetsNum; }
+
     public int GetMaxCoins () { return _coinMax; }
     public void SetCoinNum(int coinNum) { this._coinNum = coinNum;}
     public int GetCoinNum() { return _coinNum; }
+
     public int GetIngredientPointNum() { return _ingredientPointNum; }
-    public void SetIngredientPointNum(int ingredientPointNum) { this._ingredientPointNum = ingredientPointNum; }
     public int GetCoinPointNum() { return _coinPointNum; }
-    public void SetCoinPointNum(int coinPointNum) { this._coinPointNum = coinPointNum; }
     public int GetMonsterPointNum() { return _monsterPointNum; }
-    public void SetMonsterPointNum(int monsterPointNum) { this._monsterPointNum = monsterPointNum; }
+    public int GetHealthPowerUpPointNum() { return _healthPowerUpPointNum; }
+    public int GetAttackDamagePowerUpPointNum() { return _attackDamagePowerUpPointNum; }
+    public int GetSheildPowerUpPointNum() { return _sheildPowerUpPointNum; }
+    public int GetTolatPoints() { return _tolatPoints; }
+    public void SetTolatPoints(int tolatPoints) { this._tolatPoints = tolatPoints; }
+
     public void SetAtCakeOver(bool flag) { this._atCakeOver = flag; }
     public void SetPlayerHasDie(bool flag) { this._playerHasDie = flag; }
 
