@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int _coinNum;
     [SerializeField] private int _coinMax;
+    
+    [SerializeField] private int _coinPointNum = 10;
+    [SerializeField] private int _monsterPointNum = 20;
+    [SerializeField] private int _ingredientPointNum = 30;
 
     [SerializeField] private LevelObjectiveCakeIngredientsUI levelObjectiveCakeIngredientsUI;
 
@@ -28,6 +32,12 @@ public class GameManager : MonoBehaviour
     public int GetMaxCoins () { return _coinMax; }
     public void SetCoinNum(int coinNum) { this._coinNum = coinNum;}
     public int GetCoinNum() { return _coinNum; }
+    public int GetIngredientPointNum() { return _ingredientPointNum; }
+    public void SetIngredientPointNum(int ingredientPointNum) { this._ingredientPointNum = ingredientPointNum; }
+    public int GetCoinPointNum() { return _coinPointNum; }
+    public void SetCoinPointNum(int coinPointNum) { this._coinPointNum = coinPointNum; }
+    public int GetMonsterPointNum() { return _monsterPointNum; }
+    public void SetMonsterPointNum(int monsterPointNum) { this._monsterPointNum = monsterPointNum; }
     public void SetAtCakeOver(bool flag) { this._atCakeOver = flag; }
     public void SetPlayerHasDie(bool flag) { this._playerHasDie = flag; }
 
