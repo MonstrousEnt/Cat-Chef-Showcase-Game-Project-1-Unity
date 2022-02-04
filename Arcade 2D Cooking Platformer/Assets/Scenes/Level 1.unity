@@ -12629,6 +12629,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1977100830}
     m_Modifications:
+    - target: {fileID: 566644269, guid: 70d863a9943bba949b22d6e31f7e66f8, type: 3}
+      propertyPath: collectablesUI
+      value: 
+      objectReference: {fileID: 5470487900917728912}
     - target: {fileID: 1633900865732519672, guid: 70d863a9943bba949b22d6e31f7e66f8, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -12846,6 +12850,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1977100830}
     m_Modifications:
+    - target: {fileID: 566644269, guid: 70d863a9943bba949b22d6e31f7e66f8, type: 3}
+      propertyPath: collectablesUI
+      value: 
+      objectReference: {fileID: 5470487900917728912}
     - target: {fileID: 1633900865732519672, guid: 70d863a9943bba949b22d6e31f7e66f8, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -42843,6 +42851,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1977100830}
     m_Modifications:
+    - target: {fileID: 566644269, guid: 70d863a9943bba949b22d6e31f7e66f8, type: 3}
+      propertyPath: collectablesUI
+      value: 
+      objectReference: {fileID: 5470487900917728912}
     - target: {fileID: 1633900865732519672, guid: 70d863a9943bba949b22d6e31f7e66f8, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -43199,6 +43211,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1977100830}
     m_Modifications:
+    - target: {fileID: 566644269, guid: 70d863a9943bba949b22d6e31f7e66f8, type: 3}
+      propertyPath: collectablesUI
+      value: 
+      objectReference: {fileID: 5470487900917728912}
     - target: {fileID: 1633900865732519672, guid: 70d863a9943bba949b22d6e31f7e66f8, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -43399,6 +43415,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1977100830}
     m_Modifications:
+    - target: {fileID: 566644269, guid: 70d863a9943bba949b22d6e31f7e66f8, type: 3}
+      propertyPath: collectablesUI
+      value: 
+      objectReference: {fileID: 5470487900917728912}
     - target: {fileID: 1633900865732519672, guid: 70d863a9943bba949b22d6e31f7e66f8, type: 3}
       propertyPath: m_RootOrder
       value: 0
