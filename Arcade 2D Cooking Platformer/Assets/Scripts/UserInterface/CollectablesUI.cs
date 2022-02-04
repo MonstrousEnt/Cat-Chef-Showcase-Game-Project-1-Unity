@@ -9,6 +9,6 @@ public class CollectablesUI : MonoBehaviour
 
    public void SetText(int coinNum)
    {
-        coinText.text = "Coins: " + coinNum.ToString() + "/" + GameManager.instance.GetMaxCoins().ToString();
+        coinText.text = coinNum.ToString() + "/" + GameManager.instance.GetMaxCoins().ToString();
     }
 }
