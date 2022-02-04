@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
     {
         levelObjectiveCakeIngredientsUI.SetText(_foundIngredinetsNum);
         collectablesUI.SetText(_coinNum);
+        AudioManager.instance.playAudio("Level Music");
     }
 
     private void Update()
