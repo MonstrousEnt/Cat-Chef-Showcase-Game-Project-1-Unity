@@ -16,6 +16,8 @@ public class Ingredinets : MonoBehaviour
             GameManager.instance.SetFoundIngredinetsNum(GameManager.instance.GetFoundIngredinetsNum() + tempFoundIngredinetsNum);
             GameManager.instance.SetTolatPoints(GameManager.instance.GetTolatPoints() + GameManager.instance.GetIngredientPointNum());
             Debug.Log("found one!");
+            //play the sound
+            FindObjectOfType<AudioManager>().playAudio("getitem");
 
             //Set UI
             levelObjectiveCakeIngredientsUI.ActiveImage(imageGameObject, true);
