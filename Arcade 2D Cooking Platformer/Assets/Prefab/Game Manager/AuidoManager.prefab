@@ -45,8 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sounds:
   - name: Level Music
-    clip: {fileID: 8300000, guid: 0eab07a57c278dd44b7467a5a869bc53, type: 3}
-    volume: 0.3
+    clip: {fileID: 8300000, guid: 84c5671c92e976940b792f7dc560e190, type: 3}
+    volume: 0.2
     pitch: 1
     loop: 1
     playOnAwake: 1

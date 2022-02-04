@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ingredinets : MonoBehaviour
 {
     [SerializeField] private LevelObjectiveCakeIngredientsUI levelObjectiveCakeIngredientsUI;
+    [SerializeField] private GameObject imageGameObject;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,7 +18,7 @@ public class Ingredinets : MonoBehaviour
             Debug.Log("found one!");
 
             //Set UI
-            levelObjectiveCakeIngredientsUI.SetText(GameManager.instance.GetFoundIngredinetsNum());
+            levelObjectiveCakeIngredientsUI.ActiveImage(imageGameObject, true);
 
             gameObject.SetActive(false);
         }
