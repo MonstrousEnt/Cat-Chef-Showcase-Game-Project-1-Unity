@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _healthPowerUpPointNum = 40;
     [SerializeField] private int _tolatPoints = 0;
 
-    [SerializeField] private LevelObjectiveCakeIngredientsUI levelObjectiveCakeIngredientsUI;
     [SerializeField] private CollectablesUI collectablesUI;
 
     [SerializeField] private bool _atCakeOver = false;
@@ -75,7 +74,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        levelObjectiveCakeIngredientsUI.SetText(_foundIngredinetsNum);
         collectablesUI.SetText(_coinNum);
         AudioManager.instance.playAudio("Level Music");
     }

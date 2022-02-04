@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelObjectiveCakeIngredientsUI: {fileID: 0}
+  imageGameObject: {fileID: 0}
 --- !u!61 &2239707914703028747
 BoxCollider2D:
   m_ObjectHideFlags: 0
