@@ -16,8 +16,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _monsterPointNum = 20;
     [SerializeField] private int _ingredientPointNum = 30;
     [SerializeField] private int _healthPowerUpPointNum = 40;
-    [SerializeField] private int _attackDamagePowerUpPointNum = 50;
-    [SerializeField] private int _sheildPowerUpPointNum = 60;
     [SerializeField] private int _tolatPoints = 0;
 
     [SerializeField] private LevelObjectiveCakeIngredientsUI levelObjectiveCakeIngredientsUI;
@@ -42,8 +40,6 @@ public class GameManager : MonoBehaviour
     public int GetCoinPointNum() { return _coinPointNum; }
     public int GetMonsterPointNum() { return _monsterPointNum; }
     public int GetHealthPowerUpPointNum() { return _healthPowerUpPointNum; }
-    public int GetAttackDamagePowerUpPointNum() { return _attackDamagePowerUpPointNum; }
-    public int GetSheildPowerUpPointNum() { return _sheildPowerUpPointNum; }
     public int GetTolatPoints() { return _tolatPoints; }
     public void SetTolatPoints(int tolatPoints) { this._tolatPoints = tolatPoints; }
 
