@@ -58,6 +58,10 @@
 - [ ] Pause Menu
 	- [ ] UI
 	- [ ] Code
+- [ ] How to play
+	- [ ] UI Desgin
+	- [ ] Dialagoue Manager
+	- [ ] Added the dialgue to the Sigin 
 - [ ] Universal Code
 	- [ ]  Pop Ups
 	- [ ]  Power Ups
