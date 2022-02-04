@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         levelObjectiveCakeIngredientsUI.SetText(_foundIngredinetsNum);
+        AudioManager.instance.playAudio("Level Music");
     }
 
     private void Update()

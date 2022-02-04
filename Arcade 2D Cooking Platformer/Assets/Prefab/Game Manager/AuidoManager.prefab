@@ -43,4 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e678ae6ea12ee4894fcef92c1c9558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sounds: []
+  _sounds:
+  - name: Level Music
+    clip: {fileID: 8300000, guid: 0eab07a57c278dd44b7467a5a869bc53, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    playOnAwake: 1
+    source: {fileID: 0}
