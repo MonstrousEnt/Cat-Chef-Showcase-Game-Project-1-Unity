@@ -3,13 +3,13 @@
 
 ### Arade 2D Platfrom
 - [ ] Find clue to sovle the puzzle or found keys
-	- [ ] Desgin 
+	- [x] Desgin 
 	- [x] Coding
 - [ ] Monsters
-	- [ ] Desgin
+	- [x] Desgin
 	- [x] Move AI
 	- [ ] Flip AI
-	- [x] Attack AI 	
+	- [ ] Attack AI 	
 - [ ] Main Player 
 	- [x] UI health
         - [x] Player Base
@@ -20,9 +20,9 @@
         	- [ ] Attack 	
         	- [ ] Clean up
 - [ ] Collectable
-	- [ ] conis
+	- [x] conis
 		- [x] Desgin
-		- [ ] UI
+		- [x] UI
 		- [x] Code 
 - [ ] Points System
 	- [ ] UI
