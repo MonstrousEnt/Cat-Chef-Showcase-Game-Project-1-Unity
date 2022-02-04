@@ -2566,7 +2566,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 16
-      m_TileSpriteIndex: 16
+      m_TileSpriteIndex: 17
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2647,10 +2647,10 @@ Tilemap:
     m_Data: {fileID: -6052480492697669282, guid: 635ddce833ce1c14985a25b847720b90, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 2536818836099589549, guid: 4ff9e90cf593a33419fa3f5bb47a0e57, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 2536818836099589549, guid: 4ff9e90cf593a33419fa3f5bb47a0e57, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: -7669778115939115928, guid: 635ddce833ce1c14985a25b847720b90, type: 3}
   - m_RefCount: 1
@@ -13090,6 +13090,14 @@ PrefabInstance:
     - target: {fileID: 2423732365864756193, guid: 6eb57734273e84c429f2afd0e870d391, type: 3}
       propertyPath: m_Name
       value: AuidoManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558327428883592310, guid: 6eb57734273e84c429f2afd0e870d391, type: 3}
+      propertyPath: _sounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 84c5671c92e976940b792f7dc560e190, type: 3}
+    - target: {fileID: 5558327428883592310, guid: 6eb57734273e84c429f2afd0e870d391, type: 3}
+      propertyPath: _sounds.Array.data[0].volume
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6174119758979085968, guid: 6eb57734273e84c429f2afd0e870d391, type: 3}
       propertyPath: m_RootOrder
