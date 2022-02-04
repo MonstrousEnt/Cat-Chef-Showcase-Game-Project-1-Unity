@@ -9,6 +9,6 @@ public class LevelObjectiveCakeIngredientsUI : MonoBehaviour
 
    public void SetText(int foundIngredients)
    {
-        FoundCakeIngredientsText.text = "Found Cake Ingredients: " + foundIngredients.ToString()+ "/" + GameManager.instance.GetMaxIngredients().ToString();
+        FoundCakeIngredientsText.text = foundIngredients.ToString()+ "/" + GameManager.instance.GetMaxIngredients().ToString();
    }
 }
