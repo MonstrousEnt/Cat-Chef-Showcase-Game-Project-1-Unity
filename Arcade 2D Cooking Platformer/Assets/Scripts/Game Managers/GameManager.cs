@@ -103,5 +103,9 @@ public class GameManager : MonoBehaviour
             PlayerBase.instance.TakeDmage(PlayerBase.instance.GetFullHeartDamage());
             PlayerBase.instance.TakeDmage(PlayerBase.instance.GetFullHeartDamage());
         }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PlayerBase.instance.HealthPowerUp();
+        }
     }
 }
