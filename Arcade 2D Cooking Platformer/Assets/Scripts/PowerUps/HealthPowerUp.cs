@@ -11,7 +11,7 @@ public class HealthPowerUp : MonoBehaviour
             Debug.Log("I have 10 more health!");
 
             //Added the power up to the player
-            PlayerBase.instance.SetHealthPowerUp();
+            PlayerBase.instance.HealthPowerUp();
 
             GameManager.instance.SetTolatPoints(GameManager.instance.GetTolatPoints() + GameManager.instance.GetHealthPowerUpPointNum());
 

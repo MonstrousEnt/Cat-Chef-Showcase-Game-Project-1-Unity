@@ -8,12 +8,15 @@ public class PlayerBase : MonoBehaviour
     public static PlayerBase instance; //A static reference of the class
 
     [SerializeField] private int health = 0;
-    [SerializeField] private int healthIconNum = 1;
+    [SerializeField] private int fullHeartDamage = 10;
+    [SerializeField] private int halftHeartDamge = 5;
     [SerializeField] private int maxHealth;
+    [SerializeField] private int maxHealthPowerUp = 100;
 
     [SerializeField] private HealthBar healthBar;
 
-    public int GetHealthIconNum() { return healthIconNum; }
+    public int GetFullHeartDamage() { return fullHeartDamage; }
+    public int GetHalftHeartDamge() { return halftHeartDamge; }
 
     private void Awake()
     {
@@ -45,20 +48,27 @@ public class PlayerBase : MonoBehaviour
         health = maxHealth;
 
         //Display it in the UI
-        healthBar.UpdateHealthBar(health);
+        healthBar.UpdateHealthBar(health, maxHealthPowerUp);
     }
 
-    public void SetHealthPowerUp()
+    public void HealthPowerUp()
     {
-        //Power up health
-        health = health + healthIconNum;
+        if (health == maxHealthPowerUp)
+        {
+            return;
+        }
+        else
+        {
+            //Power up health
+            health = health + GetFullHeartDamage();
 
-        //Update hearts
-        int tempNumOfHearts = healthBar.GetNumOfHearts() + 1;
-        healthBar.SetNumOfHearts(tempNumOfHearts);
+            //Update hearts
+            int tempNumOfHearts = healthBar.GetNumOfHearts() + 1;
+            healthBar.SetNumOfHearts(tempNumOfHearts);
 
-        //Display it in the UI
-        healthBar.UpdateHealthBar(health);
+            //Display it in the UI
+            healthBar.UpdateHealthBar(health, maxHealthPowerUp);
+        }
     }
 
 
@@ -69,11 +79,15 @@ public class PlayerBase : MonoBehaviour
 		//The player take the damage from the monsters.
 		health -= damage;
 
-        //Display it in the UI
-        healthBar.UpdateHealthBar(health);
+        //Update hearts
+        int tempNumOfHearts = healthBar.GetNumOfHearts() - 1;
+        healthBar.SetNumOfHearts(tempNumOfHearts);
 
-		//If the player dies
-		if (health <= 0)
+        //Display it in the UI
+        healthBar.UpdateHealthBar(health, maxHealthPowerUp);
+
+        //If the player dies
+        if (health <= 0)
 		{
 			Die();
 		}

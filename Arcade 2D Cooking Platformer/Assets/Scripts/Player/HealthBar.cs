@@ -9,38 +9,104 @@ public class HealthBar : MonoBehaviour
 {
     //Class Variables 
     [SerializeField] private int numOfHearts;
-    [SerializeField] private List<Image> hearts;
-    [SerializeField] private Sprite fullHeart;
-    [SerializeField] private Sprite emptyHeart;
+    [SerializeField] private int MaxNumOfHearts;
+
+    [SerializeField] private List<Image> heartImages;
+
+    [SerializeField] private Sprite fullHeartSprite;
+    //[SerializeField] private Sprite halfHeartSprite;
+    [SerializeField] private Sprite emptyHeartSprite;
+    
 
     //Getters and Setters
     public int GetNumOfHearts() { return numOfHearts; }
     public void SetNumOfHearts(int numOfHearts) { this.numOfHearts = numOfHearts; }
 
-   public void UpdateHealthBar(int health)
-   {
-        //Go through all the hearts
-        for (int i = 0; i < hearts.Count; i++)
+    public void UpdateHealthBar(int health, int maxHealthPowerUp)
+    {
+        if (health == maxHealthPowerUp)
         {
-            //Empty or full hearts
-            if (i < health)
-            {
-                hearts[i].sprite = fullHeart;
-            }
-            else
-            {
-                hearts[i].sprite = emptyHeart;
-            }
+            maxHearts();
+        }
+        else
+        {
+            List<int> threeDightsNum = new List<int>();
 
-            //Enable hearts
-            if (i < numOfHearts)
+            threeDightsNum = separateDigits(health);
+
+            if (numOfHearts < 0)
             {
-                hearts[i].enabled = true;
+                return;
+
             }
             else
             {
-                hearts[i].enabled = false;
+                fullHearts(threeDightsNum);
+
+                //haftHeats(threeDightsNum);
+
+                emptyHearts(threeDightsNum);
             }
         }
-   }
+    }
+
+    private List<int> separateDigits(int number)
+    {
+        int hundreds;
+        int tens;
+        int ones;
+
+        hundreds = (number / 100) % 10;
+        tens = (number / 10) % 10;
+        ones = number % 10;
+
+        List<int> threeDightsNum = new List<int>();
+
+        threeDightsNum.Add(hundreds);
+        threeDightsNum.Add(tens);
+        threeDightsNum.Add(ones);
+
+
+        return threeDightsNum;
+    }
+
+    private void maxHearts()
+    {
+        for (int i = 0; i < MaxNumOfHearts; i++)
+        {
+            heartImages[i].sprite = fullHeartSprite;
+            heartImages[i].enabled = true;
+        }
+    }
+
+    private void fullHearts(List <int> threeDightsNum)
+    {
+        for (int i = 0; i < numOfHearts; i++)
+        {
+            heartImages[i].enabled = true;
+        }
+
+        for (int i = 0; i < threeDightsNum[1]; i++)
+        {
+            heartImages[i].sprite = fullHeartSprite;
+        }
+    }
+
+    //private void haftHeats(List<int> threeDightsNum)
+    //{
+    //    if (threeDightsNum[2] == 5)
+    //    {
+    //        int index = threeDightsNum[2] + 1;
+    //        heartImages[index].sprite = halfHeartSprite;
+    //    }
+    //}
+
+    private void emptyHearts(List<int> threeDightsNum)
+    {
+
+        for (int i = threeDightsNum[1]; i < MaxNumOfHearts; i++)
+        {
+            heartImages[i].sprite = emptyHeartSprite;
+        }
+    }
 }
