@@ -22,12 +22,6 @@ public class HealthBar : MonoBehaviour
         //Go through all the hearts
         for (int i = 0; i < hearts.Count; i++)
         {
-            //Check to see if health is greater than hearts (Error checker)
-            if (health > numOfHearts)
-            {
-                health = numOfHearts;
-            }
-
             //Empty or full hearts
             if (i < health)
             {
