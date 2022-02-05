@@ -5,38 +5,48 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    //Class Variables 
-    [SerializeField] private Slider slider; 
-    [SerializeField] private Text healthText;
+    [SerializeField] private List <GameObject> healthIconGameObjects;
+    [SerializeField] private List<GameObject> healthIconGameObjectsFill;
+    [SerializeField] private int healthIconMax;
 
-    
-    /// <summary>
-    /// Set the max health for UI base on player's health.
-    /// </summary>
-    /// <param name="maxHealth"></param>
-    public void SetMaxHealth(int maxHealth)
+    public int GetHealthIconMax() { return healthIconMax; }
+
+    private void SetHealthIcon(int index, bool flag, int health)
     {
-        //Set the max value of the slider to the player's max health.
-        slider.maxValue = maxHealth;
-
-        //Set the current value of the slider to player's max health.
-        slider.value = maxHealth;
-
-        //Set the player's max health in UI text element.
-        healthText.text = maxHealth.ToString();
+        if (healthIconMax <= health)
+        {
+            //Enable fill icon
+            healthIconGameObjects[index].SetActive(flag);
+        }
     }
 
-    /// <summary>
-    /// Set the health for the UI based on the player's health.
-    /// </summary>
-    /// <param name="health"></param>
-    public void SetHealth(int health)
+    public int SetHealthPowerUp(int health)
     {
-        //Set the current value of the slider to the player's health.
-        slider.value = health;
+        health = health + PlayerBase.instance.GetHealthIconNum();
+        healthIconMax = healthIconMax + 1;
+        Debug.Log(healthIconMax);
+        SetHealthIcon(healthIconMax - 1, true, health);
+        return health;
+    }
 
-        //Set the current value of player's health in UI text element.
-        healthText.text = health.ToString();
+    public void TakeHealthIcon(int health, int index)
+    {
+        healthIconMax = healthIconMax - 1;
+        Debug.Log(healthIconMax);
+
+        if (healthIconMax <= health)
+        {
+            healthIconGameObjectsFill[healthIconMax].SetActive(false);
+        }
+       
+    }
+
+    public void SetCurrentHealthIcon(int healthIconMax, bool flag, int health)
+    {
+        for (int i = 0; i < healthIconMax; i++)
+        {
+            SetHealthIcon(i, flag, health);
+        }
     }
 }
 
