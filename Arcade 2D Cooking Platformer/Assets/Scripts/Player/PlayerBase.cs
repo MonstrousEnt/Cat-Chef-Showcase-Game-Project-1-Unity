@@ -48,7 +48,7 @@ public class PlayerBase : MonoBehaviour
         health = maxHealth;
 
         //Display it in the UI
-        healthBar.UpdateHealthBar(health, maxHealthPowerUp);
+        healthBar.UpdateHealthBar(health);
     }
 
     public void HealthPowerUp()
@@ -67,7 +67,7 @@ public class PlayerBase : MonoBehaviour
             healthBar.SetNumOfHearts(tempNumOfHearts);
 
             //Display it in the UI
-            healthBar.UpdateHealthBar(health, maxHealthPowerUp);
+            healthBar.UpdateHealthBar(health);
         }
     }
 
@@ -84,7 +84,7 @@ public class PlayerBase : MonoBehaviour
         healthBar.SetNumOfHearts(tempNumOfHearts);
 
         //Display it in the UI
-        healthBar.UpdateHealthBar(health, maxHealthPowerUp);
+        healthBar.UpdateHealthBar(health);
 
         //If the player dies
         if (health <= 0)
