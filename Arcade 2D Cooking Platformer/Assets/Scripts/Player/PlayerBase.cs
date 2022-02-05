@@ -8,14 +8,12 @@ public class PlayerBase : MonoBehaviour
     public static PlayerBase instance; //A static reference of the class
 
     [SerializeField] private int health = 0;
-    [SerializeField] private int healthIconNum = 10;
+    [SerializeField] private int healthIconNum = 1;
     [SerializeField] private int maxHealth;
 
     [SerializeField] private HealthBar healthBar;
 
     public int GetHealthIconNum() { return healthIconNum; }
-
-
 
     private void Awake()
     {
@@ -46,12 +44,21 @@ public class PlayerBase : MonoBehaviour
         //set the health to max health of the player
         health = maxHealth;
 
-        healthBar.SetCurrentHealthIcon(healthBar.GetHealthIconMax(), true, health);
+        //Display it in the UI
+        healthBar.UpdateHealthBar(health);
     }
 
     public void SetHealthPowerUp()
     {
-       health =  healthBar.SetHealthPowerUp(health);
+        //Power up health
+        health = health + healthIconNum;
+
+        //Update hearts
+        int tempNumOfHearts = healthBar.GetNumOfHearts() + 1;
+        healthBar.SetNumOfHearts(tempNumOfHearts);
+
+        //Display it in the UI
+        healthBar.UpdateHealthBar(health);
     }
 
 
@@ -62,8 +69,12 @@ public class PlayerBase : MonoBehaviour
 		//The player take the damage from the monsters.
 		health -= damage;
 
-        //Display it in the UI.
-        healthBar.TakeHealthIcon(health, healthBar.GetHealthIconMax());
+        //Update hearts
+        int tempNumOfHearts = healthBar.GetNumOfHearts() - 1;
+        healthBar.SetNumOfHearts(tempNumOfHearts);
+
+        //Display it in the UI
+        healthBar.UpdateHealthBar(health);
 
 		//If the player dies
 		if (health <= 0)
