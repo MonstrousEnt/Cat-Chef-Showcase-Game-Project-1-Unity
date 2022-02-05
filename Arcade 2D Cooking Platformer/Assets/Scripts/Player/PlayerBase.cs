@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerBase : MonoBehaviour
 {
     public static PlayerBase instance; //A static reference of the class
 
-    [SerializeField] int health = 0;
-    [SerializeField] int maxHealth;
+    [SerializeField] private int health = 0;
+    [SerializeField] private int healthIconNum = 1;
+    [SerializeField] private int maxHealth;
 
     [SerializeField] private HealthBar healthBar;
+
+    public int GetHealthIconNum() { return healthIconNum; }
 
     private void Awake()
     {
@@ -40,17 +44,33 @@ public class PlayerBase : MonoBehaviour
         //set the health to max health of the player
         health = maxHealth;
 
-        //Display it in the UI. 
-        healthBar.SetMaxHealth(maxHealth);
+        //Display it in the UI
+        healthBar.UpdateHealthBar(health);
     }
+
+    public void SetHealthPowerUp()
+    {
+        //Power up health
+        health = health + healthIconNum;
+
+        //Update hearts
+        int tempNumOfHearts = healthBar.GetNumOfHearts() + 1;
+        healthBar.SetNumOfHearts(tempNumOfHearts);
+
+        //Display it in the UI
+        healthBar.UpdateHealthBar(health);
+    }
+
+
+
 
     public void TakeDmage(int damage)
     {
 		//The player take the damage from the monsters.
 		health -= damage;
 
-		//Display it in the UI.
-		healthBar.SetHealth(health);
+        //Display it in the UI
+        healthBar.UpdateHealthBar(health);
 
 		//If the player dies
 		if (health <= 0)

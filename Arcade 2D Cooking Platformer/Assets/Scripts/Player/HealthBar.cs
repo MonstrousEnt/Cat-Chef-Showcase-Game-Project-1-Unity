@@ -3,41 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Reference: https://youtu.be/3uyolYVsiWc
+
 public class HealthBar : MonoBehaviour
 {
     //Class Variables 
-    [SerializeField] private Slider slider; 
-    [SerializeField] private Text healthText;
+    [SerializeField] private int numOfHearts;
+    [SerializeField] private List<Image> hearts;
+    [SerializeField] private Sprite fullHeart;
+    [SerializeField] private Sprite emptyHeart;
 
-    
-    /// <summary>
-    /// Set the max health for UI base on player's health.
-    /// </summary>
-    /// <param name="maxHealth"></param>
-    public void SetMaxHealth(int maxHealth)
-    {
-        //Set the max value of the slider to the player's max health.
-        slider.maxValue = maxHealth;
+    //Getters and Setters
+    public int GetNumOfHearts() { return numOfHearts; }
+    public void SetNumOfHearts(int numOfHearts) { this.numOfHearts = numOfHearts; }
 
-        //Set the current value of the slider to player's max health.
-        slider.value = maxHealth;
+   public void UpdateHealthBar(int health)
+   {
+        //Go through all the hearts
+        for (int i = 0; i < hearts.Count; i++)
+        {
+            //Empty or full hearts
+            if (i < health)
+            {
+                hearts[i].sprite = fullHeart;
+            }
+            else
+            {
+                hearts[i].sprite = emptyHeart;
+            }
 
-        //Set the player's max health in UI text element.
-        healthText.text = maxHealth.ToString();
-    }
-
-    /// <summary>
-    /// Set the health for the UI based on the player's health.
-    /// </summary>
-    /// <param name="health"></param>
-    public void SetHealth(int health)
-    {
-        //Set the current value of the slider to the player's health.
-        slider.value = health;
-
-        //Set the current value of player's health in UI text element.
-        healthText.text = health.ToString();
-    }
+            //Enable hearts
+            if (i < numOfHearts)
+            {
+                hearts[i].enabled = true;
+            }
+            else
+            {
+                hearts[i].enabled = false;
+            }
+        }
+   }
 }
-
-

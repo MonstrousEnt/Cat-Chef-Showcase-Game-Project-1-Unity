@@ -93,5 +93,15 @@ public class GameManager : MonoBehaviour
             //Game Over
             gameOverUI.activeMenu(true);
         }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            PlayerBase.instance.TakeDmage(PlayerBase.instance.GetHealthIconNum());
+        }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            PlayerBase.instance.TakeDmage(PlayerBase.instance.GetHealthIconNum());
+            PlayerBase.instance.TakeDmage(PlayerBase.instance.GetHealthIconNum());
+        }
     }
 }
