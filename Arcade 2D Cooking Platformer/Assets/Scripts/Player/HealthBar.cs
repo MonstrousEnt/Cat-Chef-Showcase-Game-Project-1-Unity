@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//Reference: https://youtu.be/3uyolYVsiWc
-
 public class HealthBar : MonoBehaviour
 {
     //Class Variables 
