@@ -22,6 +22,17 @@ public class PlayerController2D : MonoBehaviour
     public float checkRadius;
     public LayerMask whatIsGround;
 
+    //wall jumping
+    bool isTouchingFront;
+    public Transform frontCheck;
+    bool wallSliding;
+    public float wallSlidingSpeed;
+
+    bool wallJumping;
+    public float xWallForce;
+    public float yWallForce;
+    public float wallJumpTime;
+
 
 
     private void Awake() 
@@ -64,6 +75,8 @@ public class PlayerController2D : MonoBehaviour
 
         _animator.SetFloat("verticalvelocity", Mathf.Abs(_rigidbody2D.velocity.y));
 
+       
+
     }
 
     private void FixedUpdate()
@@ -91,6 +104,43 @@ public class PlayerController2D : MonoBehaviour
         _rigidbody2D.velocity = new Vector2(_moveHorizontal * _moveSpeed, _rigidbody2D.velocity.y);
 
         _animator.SetFloat("movespeed", Mathf.Abs(_moveHorizontal));
+
+        //wall jump check
+        isTouchingFront = Physics2D.OverlapCircle(frontCheck.position, checkRadius, whatIsGround);
+
+        if (isTouchingFront && !isGrounded && _moveHorizontal != 0)
+        {
+            Debug.Log("wall sliding");
+            _animator.SetBool("isClinging", true);
+            wallSliding = true;
+
+        }
+        else
+        {
+            wallSliding = false;
+        }
+
+        if (wallSliding)
+        {
+            _animator.SetBool("isClinging", false);
+            _extraJumps = extraJumpsAmount;
+            //velocity for y is set between wall sliding speed and max value 
+            _rigidbody2D.velocity = new Vector2(0, 0);
+        }
+
+        if (Input.GetButtonDown("Jump") && wallSliding)
+        {
+
+            wallJumping = true;
+            Invoke("SetWallJumpingFalse", wallJumpTime);
+        }
+        if (wallJumping)
+        {
+            _animator.SetBool("isClinging", false);
+            _extraJumps = extraJumpsAmount;
+            _rigidbody2D.velocity = new Vector2(xWallForce * -_moveHorizontal, yWallForce);
+        }
+
     }
 
     private void Jump()
@@ -107,5 +157,10 @@ public class PlayerController2D : MonoBehaviour
     {
         if (!Mathf.Approximately(0, _moveHorizontal))
             transform.rotation = _moveHorizontal > 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+    }
+
+    private void SetWallJumpingFalse()
+    {
+        wallJumping = false;
     }
 }
