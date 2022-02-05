@@ -10654,7 +10654,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c2db2b32f3959d04eb4d167ba7ebc22d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3a741706eaa8d764785744721c7ace71, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -42466,6 +42466,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 115280081}
     m_Modifications:
+    - target: {fileID: 1606419477356122042, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3a741706eaa8d764785744721c7ace71, type: 3}
+    - target: {fileID: 1606419477446737816, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3a741706eaa8d764785744721c7ace71, type: 3}
+    - target: {fileID: 1606419477803489456, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3a741706eaa8d764785744721c7ace71, type: 3}
     - target: {fileID: 2759581767203561836, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
       propertyPath: hearts.Array.data[3]
       value: 

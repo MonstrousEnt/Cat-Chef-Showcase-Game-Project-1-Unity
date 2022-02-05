@@ -69,10 +69,6 @@ public class PlayerBase : MonoBehaviour
 		//The player take the damage from the monsters.
 		health -= damage;
 
-        //Update hearts
-        int tempNumOfHearts = healthBar.GetNumOfHearts() - 1;
-        healthBar.SetNumOfHearts(tempNumOfHearts);
-
         //Display it in the UI
         healthBar.UpdateHealthBar(health);
 
