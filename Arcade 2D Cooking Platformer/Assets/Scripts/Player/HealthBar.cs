@@ -92,7 +92,7 @@ public class HealthBar : MonoBehaviour
 
     //private void haftHeats(List<int> threeDightsNum)
     //{
-    //    if (threeDightsNum[2] == 5)
+    //    if (threeDightsNum[2] == PlayerBase.instance.GetHalftHeartNum())
     //    {
     //        int index = threeDightsNum[2] + 1;
     //        heartImages[index].sprite = halfHeartSprite;
