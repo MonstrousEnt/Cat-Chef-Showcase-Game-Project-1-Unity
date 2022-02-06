@@ -20,24 +20,29 @@ public class HealthBar : MonoBehaviour
     public int GetNumOfHearts() { return numOfHearts; }
     public void SetNumOfHearts(int numOfHearts) { this.numOfHearts = numOfHearts; }
 
-    public void UpdateHealthBar(int health)
+    public void UpdateHealthBar(int health, int maxHealthPowerUp)
     {
-        List<int> threeDightsNum = new List<int>();
-
-        threeDightsNum = separateDigits(health);
-
-        if (numOfHearts < 0)
+        if (health == maxHealthPowerUp)
         {
-            return;
+            maxHearts();
         }
         else
         {
-            fullHearts();
+            List<int> threeDightsNum = new List<int>();
 
-            //haftHeats(threeDightsNum);
+            threeDightsNum = separateDigits(health);
 
-            if (numOfHearts != MaxNumOfHearts)
+            if (numOfHearts < 0)
             {
+                return;
+
+            }
+            else
+            {
+                fullHearts(threeDightsNum);
+
+                //haftHeats(threeDightsNum);
+
                 emptyHearts(threeDightsNum);
             }
         }
@@ -59,17 +64,30 @@ public class HealthBar : MonoBehaviour
         threeDightsNum.Add(tens);
         threeDightsNum.Add(ones);
 
+
         return threeDightsNum;
     }
 
-    private void fullHearts()
+    private void maxHearts()
     {
-        for (int i = 0; i < numOfHearts; i++)
+        for (int i = 0; i < MaxNumOfHearts; i++)
         {
             heartImages[i].sprite = fullHeartSprite;
             heartImages[i].enabled = true;
         }
+    }
 
+    private void fullHearts(List <int> threeDightsNum)
+    {
+        for (int i = 0; i < numOfHearts; i++)
+        {
+            heartImages[i].enabled = true;
+        }
+
+        for (int i = 0; i < threeDightsNum[1]; i++)
+        {
+            heartImages[i].sprite = fullHeartSprite;
+        }
     }
 
     //private void haftHeats(List<int> threeDightsNum)
