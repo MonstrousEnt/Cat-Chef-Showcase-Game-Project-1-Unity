@@ -12,6 +12,8 @@ public class PlayerBase : MonoBehaviour
     [SerializeField] private int maxHealth;
     [SerializeField] private int maxHealthPowerUp = 100;
 
+    [SerializeField] private HealthBar healthBar;
+
     public int GetFullHeartNum() { return fullHeartNum; }
 
     private void Awake()
@@ -44,7 +46,7 @@ public class PlayerBase : MonoBehaviour
         health = maxHealth;
 
         //Display it in the UI
-        UIManager.instance.GetHealthBar().UpdateHealthBar(health, maxHealthPowerUp);
+        healthBar.UpdateHealthBar(health, maxHealthPowerUp);
     }
 
     public void HealthPowerUp(GameObject healthPowerUpGameObject)
@@ -59,7 +61,7 @@ public class PlayerBase : MonoBehaviour
             health = health + GetFullHeartNum();
 
             //Display it in the UI
-            UIManager.instance.GetHealthBar().UpdateHealthBar(health, maxHealthPowerUp);
+            healthBar.UpdateHealthBar(health, maxHealthPowerUp);
 
             GameManager.instance.SetTolatPoints(GameManager.instance.GetTolatPoints() + GameManager.instance.GetHealthPowerUpPointNum());
 
@@ -74,7 +76,7 @@ public class PlayerBase : MonoBehaviour
 		health -= damage;
 
         //Display it in the UI
-        UIManager.instance.GetHealthBar().UpdateHealthBar(health, maxHealthPowerUp);
+        healthBar.UpdateHealthBar(health, maxHealthPowerUp);
 
         //If the player dies
         if (health <= 0)
@@ -98,16 +100,25 @@ public class PlayerBase : MonoBehaviour
 
     private void Respawn()
     {
-        //Reset the health
-        health = maxHealth;
+        if (LiveSystemManager.instance.GetLivesCount() == 0)
+        {
+            LiveSystemManager.instance.OutOfLives();
+        }
+        else
+        {
+            //Reset the health
+            health = maxHealth;
 
-        //Reset the health bar
-        UIManager.instance.GetHealthBar().UpdateHealthBar(health, maxHealthPowerUp);
+            //Reset the health bar
+            healthBar.UpdateHealthBar(health, maxHealthPowerUp);
 
-        //Set the player potion to the last checkpoint position
-        gameObject.transform.position = GameManager.instance.GetLastCheckpointPos();
+            LiveSystemManager.instance.LoseALife();
 
-        //Turn on the player game object
-        gameObject.SetActive(true);
+            //Set the player potion to the last checkpoint position
+            gameObject.transform.position = GameManager.instance.GetLastCheckpointPos();
+
+            //Turn on the player game object
+            gameObject.SetActive(true);
+        }
     }
 }

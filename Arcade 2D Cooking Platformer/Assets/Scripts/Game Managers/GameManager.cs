@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Vector2 lastCheckpointPos;
 
-    [SerializeField] private GameOverUI gameOverUI;
     [SerializeField] private WinScreenUI WinScreenUI;
 
 
