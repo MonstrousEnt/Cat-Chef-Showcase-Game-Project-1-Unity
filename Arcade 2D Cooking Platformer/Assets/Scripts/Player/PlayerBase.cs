@@ -12,8 +12,6 @@ public class PlayerBase : MonoBehaviour
     [SerializeField] private int maxHealth;
     [SerializeField] private int maxHealthPowerUp = 100;
 
-    [SerializeField] private HealthBar healthBar;
-
     public int GetFullHeartNum() { return fullHeartNum; }
 
     private void Awake()
@@ -46,7 +44,7 @@ public class PlayerBase : MonoBehaviour
         health = maxHealth;
 
         //Display it in the UI
-        healthBar.UpdateHealthBar(health, maxHealthPowerUp);
+        UIManager.instance.GetHealthBar().UpdateHealthBar(health, maxHealthPowerUp);
     }
 
     public void FullHeartPowerUp()
@@ -61,11 +59,11 @@ public class PlayerBase : MonoBehaviour
             health = health + GetFullHeartNum();
 
             //Update hearts
-            int tempNumOfHearts = healthBar.GetNumOfHearts() + 1;
-            healthBar.SetNumOfHearts(tempNumOfHearts);
+            int tempNumOfHearts = UIManager.instance.GetHealthBar().GetNumOfHearts() + 1;
+            UIManager.instance.GetHealthBar().SetNumOfHearts(tempNumOfHearts);
 
             //Display it in the UI
-            healthBar.UpdateHealthBar(health, maxHealthPowerUp);
+            UIManager.instance.GetHealthBar().UpdateHealthBar(health, maxHealthPowerUp);
         }
     }
 
@@ -75,7 +73,7 @@ public class PlayerBase : MonoBehaviour
 		health -= damage;
 
         //Display it in the UI
-        healthBar.UpdateHealthBar(health, maxHealthPowerUp);
+        UIManager.instance.GetHealthBar().UpdateHealthBar(health, maxHealthPowerUp);
 
         //If the player dies
         if (health <= 0)
