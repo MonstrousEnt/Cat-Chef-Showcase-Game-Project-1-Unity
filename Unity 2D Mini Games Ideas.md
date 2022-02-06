@@ -49,12 +49,11 @@
 	- [x] Coding
 	- [ ] Animations
 - [x] Audio Manager
-- [ ] Lives System
-	- [ ] UI
-	- [ ] 3 lives then game over
-- [ ] Checkpoint
-	- [ ] Desgin
-	- [ ] Prefab Version
+- [x] Lives System
+	- [x] UI
+	- [x] 3 lives then game over
+- [x] Checkpoint
+	- [x] Code
 - [ ] Pause Menu
 	- [ ] UI
 	- [ ] Code
