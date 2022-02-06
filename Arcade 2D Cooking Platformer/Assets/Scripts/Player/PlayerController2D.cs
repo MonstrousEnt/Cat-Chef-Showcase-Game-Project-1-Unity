@@ -50,6 +50,7 @@ public class PlayerController2D : MonoBehaviour
     {
         if(isGrounded == true)
         {
+            _animator.SetBool("isJumping", false);
             _extraJumps = extraJumpsAmount;
         }
         Inputs();
@@ -62,6 +63,7 @@ public class PlayerController2D : MonoBehaviour
             _rigidbody2D.velocity = Vector2.up * _jumpHeight;
             //_rigidbody2D.AddForce(new Vector2(0, _jumpHeight), ForceMode2D.Impulse);
             _extraJumps--;
+            _animator.SetBool("isJumping", true);
 
         }
         //jump from ground with no extra jumps, prevents infinite jumps
@@ -70,12 +72,11 @@ public class PlayerController2D : MonoBehaviour
             //Modify the velocity with force
             _rigidbody2D.velocity = Vector2.up * _jumpHeight;
             //_rigidbody2D.AddForce(new Vector2(0, _jumpHeight), ForceMode2D.Impulse);
+            _animator.SetBool("isJumping", true);
 
         }
 
-        _animator.SetFloat("verticalvelocity", Mathf.Abs(_rigidbody2D.velocity.y));
-
-       
+        _animator.SetFloat("verticalvelocity", Mathf.Abs(_rigidbody2D.velocity.y));      
 
     }
 
@@ -91,9 +92,7 @@ public class PlayerController2D : MonoBehaviour
     private void Inputs()
     {
         //Move the player left and right
-        _moveHorizontal = Input.GetAxisRaw("Horizontal");
-
-       
+        _moveHorizontal = Input.GetAxisRaw("Horizontal");      
 
 
     }
@@ -111,18 +110,21 @@ public class PlayerController2D : MonoBehaviour
         if (isTouchingFront && !isGrounded && _moveHorizontal != 0)
         {
             Debug.Log("wall sliding");
+            _animator.SetBool("isJumping", false);
             _animator.SetBool("isClinging", true);
             wallSliding = true;
 
         }
         else
         {
+            _animator.SetBool("isClinging", false);
             wallSliding = false;
         }
 
         if (wallSliding)
         {
-            _animator.SetBool("isClinging", false);
+            
+            _animator.SetBool("isClinging", true);
             _extraJumps = extraJumpsAmount;
             //velocity for y is set between wall sliding speed and max value 
             _rigidbody2D.velocity = new Vector2(0, 0);
