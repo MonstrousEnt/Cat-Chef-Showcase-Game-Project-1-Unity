@@ -24,8 +24,7 @@
 		- [x] Desgin
 		- [x] UI
 		- [x] Code 
-- [ ] Points System
-	- [ ] UI
+- [x] Points System
 	- [x] Code
 - [x] Power ups
 	- [x] Desgin
