@@ -32,7 +32,7 @@ public class HealthBar : MonoBehaviour
 
             threeDightsNum = separateDigits(health);
 
-            if (numOfHearts < 0)
+            if (health < 0)
             {
                 return;
 

@@ -8,15 +8,15 @@ public class PlayerBase : MonoBehaviour
     public static PlayerBase instance; //A static reference of the class
 
     [SerializeField] private int health = 0;
-    [SerializeField] private int fullHeartDamage = 10;
-    [SerializeField] private int halftHeartDamge = 5;
+    [SerializeField] private int fullHeartNum = 10;
+    [SerializeField] private int halftHeartNum = 5;
     [SerializeField] private int maxHealth;
     [SerializeField] private int maxHealthPowerUp = 100;
 
     [SerializeField] private HealthBar healthBar;
 
-    public int GetFullHeartDamage() { return fullHeartDamage; }
-    public int GetHalftHeartDamge() { return halftHeartDamge; }
+    public int GetFullHeartNum() { return fullHeartNum; }
+    public int GetHalftHeartNum() { return halftHeartNum; }
 
     private void Awake()
     {
@@ -51,7 +51,7 @@ public class PlayerBase : MonoBehaviour
         healthBar.UpdateHealthBar(health, maxHealthPowerUp);
     }
 
-    public void HealthPowerUp()
+    public void FullHeartPowerUp()
     {
         if (health == maxHealthPowerUp)
         {
@@ -60,11 +60,27 @@ public class PlayerBase : MonoBehaviour
         else
         {
             //Power up health
-            health = health + GetFullHeartDamage();
+            health = health + GetFullHeartNum();
 
             //Update hearts
             int tempNumOfHearts = healthBar.GetNumOfHearts() + 1;
             healthBar.SetNumOfHearts(tempNumOfHearts);
+
+            //Display it in the UI
+            healthBar.UpdateHealthBar(health, maxHealthPowerUp);
+        }
+    }
+
+    public void HaftlHeartPowerUp()
+    {
+        if (health == maxHealthPowerUp)
+        {
+            return;
+        }
+        else
+        {
+            //Power up health
+            health = health + GetHalftHeartNum();
 
             //Display it in the UI
             healthBar.UpdateHealthBar(health, maxHealthPowerUp);
@@ -78,10 +94,6 @@ public class PlayerBase : MonoBehaviour
     {
 		//The player take the damage from the monsters.
 		health -= damage;
-
-        //Update hearts
-        int tempNumOfHearts = healthBar.GetNumOfHearts() - 1;
-        healthBar.SetNumOfHearts(tempNumOfHearts);
 
         //Display it in the UI
         healthBar.UpdateHealthBar(health, maxHealthPowerUp);
