@@ -71,7 +71,7 @@ public class PlayerBase : MonoBehaviour
         }
     }
 
-    public void HaftlHeartPowerUp()
+    public void HeartFragmentPowerUp(int fragmentNum)
     {
         if (health == maxHealthPowerUp)
         {
@@ -80,7 +80,7 @@ public class PlayerBase : MonoBehaviour
         else
         {
             //Power up health
-            health = health + GetHalftHeartNum();
+            health = health + fragmentNum;
 
             //Display it in the UI
             healthBar.UpdateHealthBar(health, maxHealthPowerUp);

@@ -90,7 +90,7 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    //private void HeartsFragments(List<int> threeDightsNum)
+    //private void HeartFragments(List<int> threeDightsNum)
     //{
     //    if (threeDightsNum[2] == PlayerBase.instance.GetThreeFourthtHeartNum())
     //    {
