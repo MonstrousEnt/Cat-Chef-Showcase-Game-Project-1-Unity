@@ -2,7 +2,7 @@
 # Unity 2D Mini Games Ideas
 
 ### Arade 2D Platfrom
-- [ ] Find clue to sovle the puzzle or found keys
+- [x] Find clue to sovle the puzzle or found keys
 	- [x] Desgin 
 	- [x] Coding
 - [ ] Monsters
@@ -19,7 +19,7 @@
         	- [x] Double jump
         	- [ ] Attack 	
         	- [ ] Clean up
-- [ ] Collectable
+- [x] Collectable
 	- [x] conis
 		- [x] Desgin
 		- [x] UI
@@ -27,19 +27,19 @@
 - [ ] Points System
 	- [ ] UI
 	- [x] Code
-- [ ] Power ups
-	- [ ] Desgin
+- [x] Power ups
+	- [x] Desgin
 	- [x] Code
 - [ ] Start screen
    - [ ] Desgin
    - [x] UI
    - [x] Code
-- [ ] Game over screen
-   - [ ] Desgin
+- [x] Game over screen
+   - [x] Desgin
    - [x] UI
    - [x] Code
-- [ ] You win Screen
-   - [ ] Desgin
+- [x] You win Screen
+   - [x] Desgin
    - [x] UI
    - [x] Code
 - [ ] Level Desgin
