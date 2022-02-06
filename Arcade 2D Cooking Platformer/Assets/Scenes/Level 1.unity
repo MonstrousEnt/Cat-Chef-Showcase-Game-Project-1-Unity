@@ -9679,6 +9679,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 604663871103684910, guid: b264af3f2adbc984e8477bc94e9f0f06, type: 3}
+      propertyPath: levelLoader
+      value: 
+      objectReference: {fileID: 355479415}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b264af3f2adbc984e8477bc94e9f0f06, type: 3}
 --- !u!224 &117238877 stripped
@@ -9722,6 +9726,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 343026151, guid: 27481aad696654245bc84e42f6218a57, type: 3}
   m_PrefabInstance: {fileID: 5470487900917728911}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &355479415 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3030067104699651214, guid: 3dc6ccb191e66a44288364275b302e22, type: 3}
+  m_PrefabInstance: {fileID: 2138893009}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c774e10735e4e5346abd203370bf5d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &405950426
 GameObject:
   m_ObjectHideFlags: 0
@@ -10225,6 +10240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOverScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 2229971142533975263, guid: da3e62df45270554cbb3d535a666021d, type: 3}
+      propertyPath: levelLoader
+      value: 
+      objectReference: {fileID: 355479415}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da3e62df45270554cbb3d535a666021d, type: 3}
 --- !u!224 &564426793 stripped

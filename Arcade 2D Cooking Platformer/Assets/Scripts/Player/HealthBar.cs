@@ -28,7 +28,7 @@ public class HealthBar : MonoBehaviour
         {
             maxHearts();
         }
-        else
+        else if (health < maxHealthPowerUp)
         {
             List<int> threeDightsNum = new List<int>();
 
@@ -37,9 +37,8 @@ public class HealthBar : MonoBehaviour
             if (health < 0)
             {
                 return;
-
             }
-            else
+            else if (health >= 0)
             {
                 fullHearts(threeDightsNum);
 
