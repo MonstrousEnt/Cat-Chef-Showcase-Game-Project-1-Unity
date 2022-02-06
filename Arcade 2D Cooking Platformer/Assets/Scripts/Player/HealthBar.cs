@@ -1,4 +1,3 @@
-
 //Note: Heart Fragments Version 7ae06cb.
 
 using System.Collections;
@@ -22,53 +21,79 @@ public class HealthBar : MonoBehaviour
     public int GetNumOfHearts() { return numOfHearts; }
     public void SetNumOfHearts(int numOfHearts) { this.numOfHearts = numOfHearts; }
 
+    /// <summary>
+    /// Update the health bar.
+    /// </summary>
+    /// <param name="health"></param>
+    /// <param name="maxHealthPowerUp"></param>
     public void UpdateHealthBar(int health, int maxHealthPowerUp)
     {
+        //Max Hearts
         if (health == maxHealthPowerUp)
         {
+           
             maxHearts();
         }
+        //Health is less than Max Hearts
         else if (health < maxHealthPowerUp)
         {
-            List<int> threeDightsNum = new List<int>();
-
-            threeDightsNum = separateDigits(health);
-
+            //If the player has die. Don't update the UI.
             if (health < 0)
             {
                 return;
             }
+            //If the player is live. Update the UI.
             else if (health >= 0)
             {
+                //Separate the number into three digits. 
+                List<int> threeDightsNum = new List<int>();
+                threeDightsNum = separateDigits(health);
+
+                //Show full hearts based off the tenth placements.
                 fullHearts(threeDightsNum);
 
+                //Show empty hearts for the reminder heart.
                 emptyHearts(threeDightsNum);
             }
         }
     }
 
+    /// <summary>
+    /// Separate the number into three digits.
+    /// </summary>
+    /// <param name="number"></param>
+    /// <returns></returns>
     private List<int> separateDigits(int number)
     {
+        //Local Variables
         int hundreds;
         int tens;
         int ones;
 
+        //Get each digits 
         hundreds = (number / 100) % 10;
         tens = (number / 10) % 10;
         ones = number % 10;
 
+        //Create a list to hold all the digits.
         List<int> threeDightsNum = new List<int>();
 
+        //Add each digits
         threeDightsNum.Add(hundreds);
         threeDightsNum.Add(tens);
         threeDightsNum.Add(ones);
 
-
+        //Return the list
         return threeDightsNum;
     }
 
+
+    /// <summary>
+    /// Display the max hearts.
+    /// </summary>
     private void maxHearts()
     {
+        //Enable all hearts and set the sprite to a full heart.
         for (int i = 0; i < MaxNumOfHearts; i++)
         {
             heartImages[i].sprite = fullHeartSprite;
@@ -76,23 +101,33 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    private void fullHearts(List <int> threeDightsNum)
+    /// <summary>
+    /// Display the full hearts based on tenth placement.
+    /// </summary>
+    /// <param name="threeDigitsNum"></param>
+    private void fullHearts(List<int> threeDigitsNum)
     {
+        //Enable number of hearts.
         for (int i = 0; i < numOfHearts; i++)
         {
             heartImages[i].enabled = true;
         }
 
-        for (int i = 0; i < threeDightsNum[1]; i++)
+        //Display the full hearts based on tenth placement.
+        for (int i = 0; i < threeDigitsNum[1]; i++)
         {
             heartImages[i].sprite = fullHeartSprite;
         }
     }
 
-    private void emptyHearts(List<int> threeDightsNum)
+    /// <summary>
+    /// Show the reminder of hearts empty.
+    /// </summary>
+    /// <param name="threeDigitsNum"></param>
+    private void emptyHearts(List<int> threeDigitsNum)
     {
-
-        for (int i = threeDightsNum[1]; i < MaxNumOfHearts; i++)
+        //Enable the reminder of hearts as empty heart.
+        for (int i = threeDigitsNum[1]; i < MaxNumOfHearts; i++)
         {
             heartImages[i].sprite = emptyHeartSprite;
         }
