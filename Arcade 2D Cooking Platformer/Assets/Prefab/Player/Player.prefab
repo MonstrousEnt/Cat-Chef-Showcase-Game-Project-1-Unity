@@ -253,7 +253,7 @@ MonoBehaviour:
   wallSlidingSpeed: 0
   xWallForce: 10
   yWallForce: 10
-  wallJumpTime: 0.1
+  wallJumpTime: 0.12
 --- !u!95 &8462256792850483002
 Animator:
   serializedVersion: 3
@@ -286,6 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  healthIconNum: 1
-  maxHealth: 3
+  fullHeartNum: 10
+  maxHealth: 30
+  maxHealthPowerUp: 100
   healthBar: {fileID: 0}

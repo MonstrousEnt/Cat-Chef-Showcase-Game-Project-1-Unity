@@ -11419,11 +11419,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &707349559 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2255876801300219490, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
-  m_PrefabInstance: {fileID: 1606419476095093252}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &733759958
 GameObject:
   m_ObjectHideFlags: 0
@@ -11521,81 +11516,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1633900865732519672, guid: 70d863a9943bba949b22d6e31f7e66f8, type: 3}
   m_PrefabInstance: {fileID: 748234721}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &810326813
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 810326814}
-  - component: {fileID: 810326816}
-  - component: {fileID: 810326815}
-  m_Layer: 0
-  m_Name: HeartImage1 (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &810326814
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 810326813}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 707349559}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75.3, y: -28.290588}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &810326815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 810326813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3a741706eaa8d764785744721c7ace71, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &810326816
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 810326813}
-  m_CullTransparentMesh: 1
 --- !u!1 &834248462
 GameObject:
   m_ObjectHideFlags: 0
@@ -44737,22 +44657,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 115280081}
     m_Modifications:
-    - target: {fileID: 1606419477356122042, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 3a741706eaa8d764785744721c7ace71, type: 3}
-    - target: {fileID: 1606419477446737816, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 3a741706eaa8d764785744721c7ace71, type: 3}
-    - target: {fileID: 1606419477803489456, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 3a741706eaa8d764785744721c7ace71, type: 3}
-    - target: {fileID: 2759581767203561836, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
-      propertyPath: hearts.Array.data[3]
-      value: 
-      objectReference: {fileID: 810326815}
     - target: {fileID: 2759581768839175090, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
       propertyPath: m_Name
       value: PlayerHub
@@ -45488,10 +45392,6 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 3460777717635148648}
-    - target: {fileID: 8462256792850482998, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
-      propertyPath: wallJumpTime
-      value: 0.12
-      objectReference: {fileID: 0}
     - target: {fileID: 8462256792850483000, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
       propertyPath: m_Name
       value: Player
