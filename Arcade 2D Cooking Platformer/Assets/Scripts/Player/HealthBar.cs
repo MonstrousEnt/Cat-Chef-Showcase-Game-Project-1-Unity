@@ -43,7 +43,7 @@ public class HealthBar : MonoBehaviour
 
                 //haftHeats(threeDightsNum);
 
-                emptyHearts(threeDightsNum);
+                //emptyHearts(threeDightsNum);
             }
         }
     }
@@ -90,31 +90,28 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    //public void UpdateHeartFragments(int damage)
+    //public void UpdateHeartFragments(int fragmentNum)
     //{
-    //    if (damage == PlayerBase.instance.GetThreeFourthtHeartDamage())
+    //    if (fragmentNum == PlayerBase.instance.GetThreeFourthtHeartNum())
     //    {
     //        int index = numOfHearts + 1;
     //        heartImages[index].sprite = threeFourthHeartSprite;
     //    }
-    //    else if (damage == PlayerBase.instance.GetHalftHeartDamage())
+    //    else if (fragmentNum == PlayerBase.instance.GetHalftHeartNum())
     //    {
     //        int index = numOfHearts + 1;
     //        heartImages[index].sprite = halfHeartSprite;
     //    }
-    //    else if (damage == PlayerBase.instance.GetOneFourthHeartDamage())
+    //    else if (fragmentNum == PlayerBase.instance.GetOneFourthHeartNum())
     //    {
     //        int index = numOfHearts + 1;
     //        heartImages[index].sprite = OneFourthHeartSprite;
     //    }
+    //    else if (fragmentNum == PlayerBase.instance.GetFullHeartNum())
+    //    {
+    //        int index = numOfHearts + 1;
+    //        heartImages[index].sprite = emptyHeartSprite;
+    //    }
+
     //}
-
-    private void emptyHearts(List<int> threeDightsNum)
-    {
-
-        for (int i = threeDightsNum[1]; i < MaxNumOfHearts; i++)
-        {
-            heartImages[i].sprite = emptyHeartSprite;
-        }
-    }
 }
