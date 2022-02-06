@@ -1,3 +1,6 @@
+
+//Note: Heart Fragments Version 7ae06cb.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +15,6 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private List<Image> heartImages;
 
     [SerializeField] private Sprite fullHeartSprite;
-    //[SerializeField] private Sprite halfHeartSprite;
     [SerializeField] private Sprite emptyHeartSprite;
     
 
@@ -41,9 +43,7 @@ public class HealthBar : MonoBehaviour
             {
                 fullHearts(threeDightsNum);
 
-                //haftHeats(threeDightsNum);
-
-                //emptyHearts(threeDightsNum);
+                emptyHearts(threeDightsNum);
             }
         }
     }
@@ -90,28 +90,12 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    //public void UpdateHeartFragments(int fragmentNum)
-    //{
-    //    if (fragmentNum == PlayerBase.instance.GetThreeFourthtHeartNum())
-    //    {
-    //        int index = numOfHearts + 1;
-    //        heartImages[index].sprite = threeFourthHeartSprite;
-    //    }
-    //    else if (fragmentNum == PlayerBase.instance.GetHalftHeartNum())
-    //    {
-    //        int index = numOfHearts + 1;
-    //        heartImages[index].sprite = halfHeartSprite;
-    //    }
-    //    else if (fragmentNum == PlayerBase.instance.GetOneFourthHeartNum())
-    //    {
-    //        int index = numOfHearts + 1;
-    //        heartImages[index].sprite = OneFourthHeartSprite;
-    //    }
-    //    else if (fragmentNum == PlayerBase.instance.GetFullHeartNum())
-    //    {
-    //        int index = numOfHearts + 1;
-    //        heartImages[index].sprite = emptyHeartSprite;
-    //    }
+    private void emptyHearts(List<int> threeDightsNum)
+    {
 
-    //}
+        for (int i = threeDightsNum[1]; i < MaxNumOfHearts; i++)
+        {
+            heartImages[i].sprite = emptyHeartSprite;
+        }
+    }
 }

@@ -9,14 +9,12 @@ public class PlayerBase : MonoBehaviour
 
     [SerializeField] private int health = 0;
     [SerializeField] private int fullHeartNum = 10;
-    [SerializeField] private int halftHeatNum = 5;
     [SerializeField] private int maxHealth;
     [SerializeField] private int maxHealthPowerUp = 100;
 
     [SerializeField] private HealthBar healthBar;
 
     public int GetFullHeartNum() { return fullHeartNum; }
-    public int GetHalftHeartNum() { return halftHeatNum; }
 
     private void Awake()
     {
@@ -71,27 +69,6 @@ public class PlayerBase : MonoBehaviour
         }
     }
 
-    public void HeartFragmentPowerUp(int fragmentNum)
-    {
-        if (health == maxHealthPowerUp)
-        {
-            return;
-        }
-        else
-        {
-            //Power up health
-            health = health + fragmentNum;
-
-            //Display it in the UI
-            healthBar.UpdateHealthBar(health, maxHealthPowerUp);
-
-            //healthBar.UpdateHeartFragments(fragmentNum);
-        }
-    }
-
-
-
-
     public void TakeDmage(int damage)
     {
 		//The player take the damage from the monsters.
@@ -99,8 +76,6 @@ public class PlayerBase : MonoBehaviour
 
         //Display it in the UI
         healthBar.UpdateHealthBar(health, maxHealthPowerUp);
-
-        //healthBar.UpdateHeartFragments(damage);
 
         //If the player dies
         if (health <= 0)
