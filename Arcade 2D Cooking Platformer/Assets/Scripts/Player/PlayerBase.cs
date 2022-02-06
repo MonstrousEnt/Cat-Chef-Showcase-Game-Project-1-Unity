@@ -63,7 +63,7 @@ public class PlayerBase : MonoBehaviour
             //Display it in the UI
             healthBar.UpdateHealthBar(health, maxHealthPowerUp);
 
-            GameManager.instance.SetTolatPoints(GameManager.instance.GetTolatPoints() + GameManager.instance.GetHealthPowerUpPointNum());
+            PointManger.instance.SetTolatPoints(PointManger.instance.GetTolatPoints() + PointManger.instance.GetPointData().GetHealthPowerUpPointNum());
 
             //destroy the object
             healthPowerUpGameObject.SetActive(false);
