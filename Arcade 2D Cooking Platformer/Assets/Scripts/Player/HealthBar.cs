@@ -90,21 +90,21 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    //private void HeartFragments(List<int> threeDightsNum)
+    //public void UpdateHeartFragments(int damage)
     //{
-    //    if (threeDightsNum[2] == PlayerBase.instance.GetThreeFourthtHeartNum())
+    //    if (damage == PlayerBase.instance.GetThreeFourthtHeartDamage())
     //    {
-    //        int index = threeDightsNum[2] + 1;
+    //        int index = numOfHearts + 1;
     //        heartImages[index].sprite = threeFourthHeartSprite;
     //    }
-    //    else if (threeDightsNum[2] == PlayerBase.instance.GetHalftHeartNum())
+    //    else if (damage == PlayerBase.instance.GetHalftHeartDamage())
     //    {
-    //        int index = threeDightsNum[2] + 1;
+    //        int index = numOfHearts + 1;
     //        heartImages[index].sprite = halfHeartSprite;
     //    }
-    //    else if (threeDightsNum[2] == PlayerBase.instance.GetOneFourthHeartNum())
+    //    else if (damage == PlayerBase.instance.GetOneFourthHeartDamage())
     //    {
-    //        int index = threeDightsNum[2] + 1;
+    //        int index = numOfHearts + 1;
     //        heartImages[index].sprite = OneFourthHeartSprite;
     //    }
     //}

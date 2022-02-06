@@ -96,12 +96,12 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            PlayerBase.instance.TakeDmage(PlayerBase.instance.GetFullHeartNum());
+            PlayerBase.instance.TakeDmage(PlayerBase.instance.GetFullHeartDamge());
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
-            PlayerBase.instance.TakeDmage(PlayerBase.instance.GetFullHeartNum());
-            PlayerBase.instance.TakeDmage(PlayerBase.instance.GetFullHeartNum());
+            PlayerBase.instance.TakeDmage(PlayerBase.instance.GetFullHeartDamge());
+            PlayerBase.instance.TakeDmage(PlayerBase.instance.GetFullHeartDamge());
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
