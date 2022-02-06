@@ -90,12 +90,22 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    //private void haftHeats(List<int> threeDightsNum)
+    //private void HeartsFragments(List<int> threeDightsNum)
     //{
-    //    if (threeDightsNum[2] == PlayerBase.instance.GetHalftHeartNum())
+    //    if (threeDightsNum[2] == PlayerBase.instance.GetThreeFourthtHeartNum())
+    //    {
+    //        int index = threeDightsNum[2] + 1;
+    //        heartImages[index].sprite = threeFourthHeartSprite;
+    //    }
+    //    else if (threeDightsNum[2] == PlayerBase.instance.GetHalftHeartNum())
     //    {
     //        int index = threeDightsNum[2] + 1;
     //        heartImages[index].sprite = halfHeartSprite;
+    //    }
+    //    else if (threeDightsNum[2] == PlayerBase.instance.GetOneFourthHeartNum())
+    //    {
+    //        int index = threeDightsNum[2] + 1;
+    //        heartImages[index].sprite = OneFourthHeartSprite;
     //    }
     //}
 
