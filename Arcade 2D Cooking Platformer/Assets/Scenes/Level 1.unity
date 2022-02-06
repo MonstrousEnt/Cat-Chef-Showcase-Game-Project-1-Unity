@@ -44865,6 +44865,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 117238878}
     - target: {fileID: 8914847202108003659, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 8462256792850483000, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
+    - target: {fileID: 8914847202108003659, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
       propertyPath: collectablesUI
       value: 
       objectReference: {fileID: 5470487900917728912}
@@ -45681,6 +45685,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 3460777717635148648}
+    - target: {fileID: 8462256791385980606, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 8462256792850483000, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
     - target: {fileID: 8462256791385980606, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
       propertyPath: maxHealthPowerUp
       value: 30

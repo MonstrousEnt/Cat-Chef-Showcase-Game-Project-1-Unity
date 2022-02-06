@@ -9,7 +9,7 @@ public class HealthPowerUp : MonoBehaviour
         if (collision.tag == "Player")
         {
             //Added the power up to the player
-            PlayerBase.instance.FullHeartPowerUp(gameObject);
+            PlayerBase.instance.HealthPowerUp(gameObject);
         }
     }
 }

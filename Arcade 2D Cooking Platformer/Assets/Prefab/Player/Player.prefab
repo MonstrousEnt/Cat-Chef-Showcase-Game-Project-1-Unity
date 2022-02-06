@@ -120,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8462256792850483000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.56, y: 1.88, z: 0}
+  m_LocalPosition: {x: -15.71, y: 0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8462256792108958010}
@@ -289,4 +289,3 @@ MonoBehaviour:
   fullHeartNum: 10
   maxHealth: 30
   maxHealthPowerUp: 100
-  healthBar: {fileID: 0}

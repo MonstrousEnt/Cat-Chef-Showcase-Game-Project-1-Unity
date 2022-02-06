@@ -47,7 +47,7 @@ public class PlayerBase : MonoBehaviour
         UIManager.instance.GetHealthBar().UpdateHealthBar(health, maxHealthPowerUp);
     }
 
-    public void FullHeartPowerUp(GameObject healthPowerUpGameObject)
+    public void HealthPowerUp(GameObject healthPowerUpGameObject)
     {
         if (health == maxHealthPowerUp)
         {
@@ -79,13 +79,17 @@ public class PlayerBase : MonoBehaviour
         //If the player dies
         if (health <= 0)
 		{
-			Die();
+            StopCoroutine(Die());
+			StartCoroutine(Die());
 		}
 	}
 
-    public void Die()
+    private IEnumerator Die()
     {
-        GameManager.instance.SetPlayerHasDie(true);
+        //Wait a flew seconds to show all hearts are empty heat.
+        yield return new WaitForSeconds(0.5f);
+
+        //Turn off the player game object
         gameObject.SetActive(false);
 
         //Respawn the player
@@ -94,18 +98,16 @@ public class PlayerBase : MonoBehaviour
 
     private void Respawn()
     {
-
-        GameManager.instance.SetPlayerHasDie(false);
-
         //Reset the health
         health = maxHealth;
 
         //Reset the health bar
         UIManager.instance.GetHealthBar().UpdateHealthBar(health, maxHealthPowerUp);
 
+        //Set the player potion to the last checkpoint position
         gameObject.transform.position = GameManager.instance.GetLastCheckpointPos();
 
+        //Turn on the player game object
         gameObject.SetActive(true);
-
     }
 }

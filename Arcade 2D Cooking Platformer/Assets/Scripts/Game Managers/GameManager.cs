@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CollectablesUI collectablesUI;
 
     [SerializeField] private bool _atCakeOver = false;
-    [SerializeField] private bool _playerHasDie = false;
 
     [SerializeField] private Vector2 lastCheckpointPos;
 
@@ -46,7 +45,6 @@ public class GameManager : MonoBehaviour
     public void SetTolatPoints(int tolatPoints) { this._tolatPoints = tolatPoints; }
 
     public void SetAtCakeOver(bool flag) { this._atCakeOver = flag; }
-    public void SetPlayerHasDie(bool flag) { this._playerHasDie = flag; }
 
     public Vector2 GetLastCheckpointPos() { return lastCheckpointPos; }
     public void SetLastCheckpointPos(Vector2 lastCheckpointPos) { this.lastCheckpointPos = lastCheckpointPos; }
