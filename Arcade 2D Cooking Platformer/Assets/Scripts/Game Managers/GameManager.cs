@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool _atCakeOver = false;
     [SerializeField] private bool _playerHasDie = false;
 
+    [SerializeField] private Vector2 lastCheckpointPos;
+
     [SerializeField] private GameOverUI gameOverUI;
     [SerializeField] private WinScreenUI WinScreenUI;
 
@@ -46,8 +48,11 @@ public class GameManager : MonoBehaviour
     public void SetAtCakeOver(bool flag) { this._atCakeOver = flag; }
     public void SetPlayerHasDie(bool flag) { this._playerHasDie = flag; }
 
-    
-    
+    public Vector2 GetLastCheckpointPos() { return lastCheckpointPos; }
+    public void SetLastCheckpointPos(Vector2 lastCheckpointPos) { this.lastCheckpointPos = lastCheckpointPos; }
+
+
+
     private void Awake()
     {
         //---Make sure there is only one instance of this class for each Scene.
@@ -86,14 +91,6 @@ public class GameManager : MonoBehaviour
             WinScreenUI.activeMenu(true);
         }
 
-   
-        //Die = lose
-        if (_playerHasDie)
-        {
-            //Game Over
-            gameOverUI.activeMenu(true);
-        }
-
         if (Input.GetKeyDown(KeyCode.H))
         {
             PlayerBase.instance.TakeDmage(PlayerBase.instance.GetFullHeartNum());
@@ -102,10 +99,6 @@ public class GameManager : MonoBehaviour
         {
             PlayerBase.instance.TakeDmage(PlayerBase.instance.GetFullHeartNum());
             PlayerBase.instance.TakeDmage(PlayerBase.instance.GetFullHeartNum());
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            PlayerBase.instance.FullHeartPowerUp();
         }
     }
 }

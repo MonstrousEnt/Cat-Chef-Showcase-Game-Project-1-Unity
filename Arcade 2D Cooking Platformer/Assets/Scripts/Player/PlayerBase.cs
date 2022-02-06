@@ -47,7 +47,7 @@ public class PlayerBase : MonoBehaviour
         UIManager.instance.GetHealthBar().UpdateHealthBar(health, maxHealthPowerUp);
     }
 
-    public void FullHeartPowerUp()
+    public void FullHeartPowerUp(GameObject healthPowerUpGameObject)
     {
         if (health == maxHealthPowerUp)
         {
@@ -58,12 +58,13 @@ public class PlayerBase : MonoBehaviour
             //Power up health
             health = health + GetFullHeartNum();
 
-            //Update hearts
-            int tempNumOfHearts = UIManager.instance.GetHealthBar().GetNumOfHearts() + 1;
-            UIManager.instance.GetHealthBar().SetNumOfHearts(tempNumOfHearts);
-
             //Display it in the UI
             UIManager.instance.GetHealthBar().UpdateHealthBar(health, maxHealthPowerUp);
+
+            GameManager.instance.SetTolatPoints(GameManager.instance.GetTolatPoints() + GameManager.instance.GetHealthPowerUpPointNum());
+
+            //destroy the object
+            healthPowerUpGameObject.SetActive(false);
         }
     }
 
@@ -86,5 +87,25 @@ public class PlayerBase : MonoBehaviour
     {
         GameManager.instance.SetPlayerHasDie(true);
         gameObject.SetActive(false);
+
+        //Respawn the player
+        Respawn();
+    }
+
+    private void Respawn()
+    {
+
+        GameManager.instance.SetPlayerHasDie(false);
+
+        //Reset the health
+        health = maxHealth;
+
+        //Reset the health bar
+        UIManager.instance.GetHealthBar().UpdateHealthBar(health, maxHealthPowerUp);
+
+        gameObject.transform.position = GameManager.instance.GetLastCheckpointPos();
+
+        gameObject.SetActive(true);
+
     }
 }
