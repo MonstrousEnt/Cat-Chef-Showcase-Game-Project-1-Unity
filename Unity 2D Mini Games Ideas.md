@@ -8,7 +8,7 @@
 - [ ] Monsters
 	- [x] Desgin
 	- [x] Move AI
-	- [ ] Flip AI
+	- [x] Flip AI
 	- [ ] Attack AI 	
 - [ ] Main Player 
 	- [x] UI health
@@ -17,6 +17,7 @@
         	- [x] Move
         	- [x] Jump
         	- [x] Double jump
+        	- [x] Wall Jump
         	- [ ] Attack 	
         	- [ ] Clean up
 - [x] Collectable
