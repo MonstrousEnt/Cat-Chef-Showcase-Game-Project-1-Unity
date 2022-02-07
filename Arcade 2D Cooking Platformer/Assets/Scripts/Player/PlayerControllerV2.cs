@@ -1,14 +1,15 @@
 
 using UnityEngine;
 
-public class PlayerController2D : MonoBehaviour
+public class PlayerControllerV2 : MonoBehaviour
 {
+    [SerializeField] private LayerMask _groundLayer; // The layer of the ground. This is use for collision checks.
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
-    private float _moveHorizontal; 
+    private float _moveHorizontal;
 
-    [SerializeField] public float _moveSpeed; 
-    [SerializeField] private float _jumpHeight; 
+    [SerializeField] public float _moveSpeed;
+    [SerializeField] private float _jumpHeight;
     [SerializeField] private bool isJumping;
 
     //jumping
@@ -16,11 +17,6 @@ public class PlayerController2D : MonoBehaviour
 
     private int _extraJumps;
     public int extraJumpsAmount;
-
-    [SerializeField] private bool isGrounded;
-    public Transform groundCheck;
-    public float checkRadius;
-    public LayerMask whatIsGround;
 
     //wall jumping
     bool isTouchingFront;
@@ -33,11 +29,24 @@ public class PlayerController2D : MonoBehaviour
     public float yWallForce;
     public float wallJumpTime;
 
-   [SerializeField] private PauseMneu pauseMneu;
+    public float checkRadius;
+
+    [Header("Collision")]
+    [SerializeField] private bool _onGround = false; //Determines if player is on ground using raycast
+    [SerializeField] private bool isCeiling; //Determines if player is hitting the celling using raycast
+    [SerializeField] private bool wasOnGround; //For checking if player is currently landing
+    [SerializeField] private float _groundLength; //Length of the raycast for ground check
+    [SerializeField] private float ceilingLength; //Length of the raycast for celling check
+    [SerializeField] private float _cornerLength; //Length of the raycast for corner check
+
+    [SerializeField] private Vector3 _colliderOffset; //Offset of raycast from the center of the player for FEET
+    [SerializeField] private Vector3 _colliderOffset2; //Offset of raycast from the center of the player for HEAD
+    [SerializeField] private Vector3 _colliderOffset3; //Offset of raycast from the center of the player for CORNERS
 
 
-    private void Awake() 
-    { 
+
+    private void Awake()
+    {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
     }
@@ -49,6 +58,13 @@ public class PlayerController2D : MonoBehaviour
 
     private void Update()
     {
+        //Boolean for landing set to the on ground raycasted value (jumping)
+        wasOnGround = _onGround;
+        //Ground check based on the raycast gizmos from the player location(collider offsets) (Jumping)
+        _onGround = Physics2D.Raycast(transform.position + _colliderOffset, Vector2.down, _groundLength, _groundLayer)
+            || Physics2D.Raycast(transform.position - _colliderOffset, Vector2.down, _groundLength, _groundLayer);
+
+
         Inputs();
         Jump();
 
@@ -56,10 +72,8 @@ public class PlayerController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
-        
         Move();
-        
+
         Flip();
     }
 
@@ -67,21 +81,9 @@ public class PlayerController2D : MonoBehaviour
     private void Inputs()
     {
         //Move the player left and right
-        _moveHorizontal = Input.GetAxisRaw("Horizontal");      
+        _moveHorizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (!pauseMneu.gameObject.activeSelf)
-            {
-                pauseMneu.activeMenu(true);
-                SettingManager.instance.ActivePause(true, 0f);
-            }
-            else
-            {
-                pauseMneu.activeMenu(false);
-                SettingManager.instance.ActivePause(false, 1f);
-            }
-        }
+
     }
 
     private void Move()
@@ -92,9 +94,9 @@ public class PlayerController2D : MonoBehaviour
         _animator.SetFloat("movespeed", Mathf.Abs(_moveHorizontal));
 
         //-----wall jump check------
-        isTouchingFront = Physics2D.OverlapCircle(frontCheck.position, checkRadius, whatIsGround);
+        isTouchingFront = Physics2D.OverlapCircle(frontCheck.position, checkRadius, _groundLayer);
 
-        if (isTouchingFront && !isGrounded && _moveHorizontal != 0)
+        if (isTouchingFront && !_onGround && _moveHorizontal != 0)
         {
             _animator.SetBool("isJumping", false);
             _animator.SetBool("isClinging", true);
@@ -157,12 +159,12 @@ public class PlayerController2D : MonoBehaviour
 
     private void Jump()
     {
-        if (isGrounded == true)
+        if (_onGround == true)
         {
             _animator.SetBool("isJumping", false);
             _extraJumps = extraJumpsAmount;
         }
-        
+
 
         //Jump
         //jump in air with extra jumps aka double jumps
@@ -176,7 +178,7 @@ public class PlayerController2D : MonoBehaviour
 
         }
         //jump from ground with no extra jumps, prevents infinite jumps
-        else if (Input.GetButtonDown("Jump") && _extraJumps == 0 && isGrounded)
+        else if (Input.GetButtonDown("Jump") && _extraJumps == 0 && _onGround)
         {
             //Modify the velocity with force
             _rigidbody2D.velocity = Vector2.up * _jumpHeight;
@@ -186,9 +188,6 @@ public class PlayerController2D : MonoBehaviour
         }
 
         _animator.SetFloat("verticalvelocity", Mathf.Abs(_rigidbody2D.velocity.y));
-
-
-        
 
     }
 
@@ -205,5 +204,23 @@ public class PlayerController2D : MonoBehaviour
     private void SetWallJumpingFalse()
     {
         wallJumping = false;
+    }
+
+    private void OnDrawGizmos()
+    {
+        //ground check
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position + _colliderOffset, transform.position + _colliderOffset + Vector3.down * _groundLength);
+        Gizmos.DrawLine(transform.position - _colliderOffset, transform.position - _colliderOffset + Vector3.down * _groundLength);
+
+        //ground Corner check
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position + _colliderOffset3, transform.position + _colliderOffset3 + new Vector3(Mathf.Sin(215), -1, Mathf.Cos(45)) * _cornerLength);
+        Gizmos.DrawLine(transform.position - _colliderOffset3, transform.position - _colliderOffset3 + new Vector3(Mathf.Sin(215), -1, Mathf.Cos(45)) * _cornerLength);
+
+        //celling check
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(transform.position + _colliderOffset2, transform.position + _colliderOffset2 + Vector3.up * ceilingLength);
+        Gizmos.DrawLine(transform.position - _colliderOffset2, transform.position - _colliderOffset2 + Vector3.up * ceilingLength);
     }
 }
