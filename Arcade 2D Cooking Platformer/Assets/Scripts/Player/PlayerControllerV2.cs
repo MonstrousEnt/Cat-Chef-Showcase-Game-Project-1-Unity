@@ -37,8 +37,11 @@ public class PlayerControllerV2 : MonoBehaviour
     [SerializeField] private bool wasOnGround; //For checking if player is currently landing
     [SerializeField] private float _groundLength; //Length of the raycast for ground check
     [SerializeField] private float ceilingLength; //Length of the raycast for celling check
+    [SerializeField] private float _cornerLength; //Length of the raycast for corner check
+
     [SerializeField] private Vector3 _colliderOffset; //Offset of raycast from the center of the player for FEET
     [SerializeField] private Vector3 _colliderOffset2; //Offset of raycast from the center of the player for HEAD
+    [SerializeField] private Vector3 _colliderOffset3; //Offset of raycast from the center of the player for CORNERS
 
 
 
@@ -60,6 +63,7 @@ public class PlayerControllerV2 : MonoBehaviour
         //Ground check based on the raycast gizmos from the player location(collider offsets) (Jumping)
         _onGround = Physics2D.Raycast(transform.position + _colliderOffset, Vector2.down, _groundLength, _groundLayer)
             || Physics2D.Raycast(transform.position - _colliderOffset, Vector2.down, _groundLength, _groundLayer);
+
 
         Inputs();
         Jump();
@@ -185,9 +189,6 @@ public class PlayerControllerV2 : MonoBehaviour
 
         _animator.SetFloat("verticalvelocity", Mathf.Abs(_rigidbody2D.velocity.y));
 
-
-
-
     }
 
 
@@ -211,6 +212,11 @@ public class PlayerControllerV2 : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position + _colliderOffset, transform.position + _colliderOffset + Vector3.down * _groundLength);
         Gizmos.DrawLine(transform.position - _colliderOffset, transform.position - _colliderOffset + Vector3.down * _groundLength);
+
+        //ground Corner check
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position + _colliderOffset3, transform.position + _colliderOffset3 + new Vector3(Mathf.Sin(215), -1, Mathf.Cos(45)) * _cornerLength);
+        Gizmos.DrawLine(transform.position - _colliderOffset3, transform.position - _colliderOffset3 + new Vector3(Mathf.Sin(215), -1, Mathf.Cos(45)) * _cornerLength);
 
         //celling check
         Gizmos.color = Color.yellow;
