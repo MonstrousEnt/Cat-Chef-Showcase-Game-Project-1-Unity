@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Vector2 lastCheckpointPos;
 
-
+    [SerializeField] private bool Restart = false;
 
     public int GetMaxIngredients() {return _maxIngredients;}
     public int GetFoundIngredinetsNum() { return _foundIngredinetsNum; }
@@ -28,7 +28,8 @@ public class GameManager : MonoBehaviour
     public void SetCoinNum(int coinNum) { this._coinNum = coinNum;}
     public int GetCoinNum() { return _coinNum; }
 
-
+    public bool GetRestart() { return Restart; }
+    public void SetRestart(bool restart) { this.Restart = restart; }
 
     public void SetAtCakeOver(bool flag) { this._atCakeOver = flag; }
 

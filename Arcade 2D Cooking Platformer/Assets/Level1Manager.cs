@@ -11,8 +11,19 @@ public class Level1Manager : MonoBehaviour
     private void Start()
     {
         collectablesUI.SetText(GameManager.instance.GetCoinNum());
-        AudioManager.instance.playAudio("Level Music");
+
+        if (!GameManager.instance.GetRestart())
+        {
+            AudioManager.instance.stopAudio("Level Music");
+            AudioManager.instance.SetAudioLoop("Level Music", false);
+
+            AudioManager.instance.SetAudioLoop("Level Music", true);
+            AudioManager.instance.playAudio("Level Music");
+        }
+
+        GameManager.instance.SetRestart(false);
 
         PlayerBase.instance.gameObject.transform.position = checkpointOnePos;
+
     }
 }
