@@ -12,14 +12,14 @@
 	- [ ] Attack AI 	
 - [ ] Main Player 
 	- [x] UI health
-        - [x] Player Base
-        - [ ] Player controls
-        	- [x] Move
-        	- [x] Jump
-        	- [x] Double jump
-        	- [x] Wall Jump
-        	- [ ] Attack 	
-        	- [ ] Clean up
+	- [x] Player Base
+	- [ ] Player controls
+		- [x] Move
+		- [x] Jump
+		- [x] Double jump
+		- [x] Wall Jump
+		- [ ] Attack 	
+		- [ ] Clean up
 - [x] Collectable
 	- [x] conis
 		- [x] Desgin
