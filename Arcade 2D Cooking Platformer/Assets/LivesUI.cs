@@ -5,9 +5,35 @@ using UnityEngine.UI;
 
 public class LivesUI : MonoBehaviour
 {
-	[SerializeField] private Text LivesText;
+    public static LivesUI instance; //A static reference of the class
 
-	public void SetLives(int lives)
+    [SerializeField] private Text LivesText;
+
+    private void Awake()
+    {
+        //---Make sure there is only one instance of this class for each Scene.
+
+        //If there is no instance of the object
+        if (instance == null)
+        {
+            //Set an instance of it
+            instance = this;
+        }
+
+        //Else, if there's already an instance
+        else
+        {
+            //Destroy it
+            Destroy(gameObject);
+            return;
+        }
+
+
+        //This won't get destroy when you switch scene
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public void SetLives(int lives)
 	{
 		LivesText.text = "x " + lives.ToString();
 	}

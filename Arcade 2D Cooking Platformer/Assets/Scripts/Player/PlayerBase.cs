@@ -34,10 +34,6 @@ public class PlayerBase : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-
-        //This won't get destroy when you switch scene
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -47,6 +43,10 @@ public class PlayerBase : MonoBehaviour
 
         //Display it in the UI
         healthBar.UpdateHealthBar(health, maxHealthPowerUp);
+
+        LiveSystemManager.instance.ResetLives();
+
+        gameObject.SetActive(true);
     }
 
     public void HealthPowerUp(GameObject healthPowerUpGameObject)

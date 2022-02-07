@@ -9,9 +9,6 @@ public class LiveSystemManager : MonoBehaviour
     [SerializeField] private int _livesCount = 4;
     [SerializeField] private int _defauftLives = 4;
 
-    [SerializeField] private GameOverUI gameOverUI;
-    [SerializeField] private LivesUI livesUI;
-
     //Getters and Setters
     public int GetLivesCount() { return _livesCount; }
     public void SetLivesCount(int livesCount) { this._livesCount = livesCount; }
@@ -48,7 +45,7 @@ public class LiveSystemManager : MonoBehaviour
         _livesCount--;
 
         //Set Lives UI
-        livesUI.SetLives(_livesCount);
+        LivesUI.instance.SetLives(_livesCount);
     }
 
 
@@ -62,7 +59,7 @@ public class LiveSystemManager : MonoBehaviour
         //Pause the game
 
         //Enable the game over screen
-        gameOverUI.activeMenu(true);
+        GameOverUI.instance.activeMenu(true);
 
         //Player can no longer move.
         PlayerBase.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -76,6 +73,6 @@ public class LiveSystemManager : MonoBehaviour
         //Reset the lives count.
         _livesCount = _defauftLives;
 
-        livesUI.SetLives(_livesCount);
+        LivesUI.instance.SetLives(_livesCount);
     }
 }
