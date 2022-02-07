@@ -201,4 +201,9 @@ public class PlayerController2D : MonoBehaviour
     {
         wallJumping = false;
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(groundCheck.position, checkRadius);
+    }
 }

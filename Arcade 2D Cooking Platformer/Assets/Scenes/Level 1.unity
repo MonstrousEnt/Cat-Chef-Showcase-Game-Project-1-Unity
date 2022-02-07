@@ -13152,6 +13152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f2b7a8b8e0dfee4db06bd822ab1123f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 2
 --- !u!1001 &1276383711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13672,6 +13674,10 @@ PrefabInstance:
     - target: {fileID: 2530334980016236214, guid: 3176d1dd10843bf4e8666fd8146606a4, type: 3}
       propertyPath: maxFrameTime
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530334980016236214, guid: 3176d1dd10843bf4e8666fd8146606a4, type: 3}
+      propertyPath: logPathResults
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2530334980016236214, guid: 3176d1dd10843bf4e8666fd8146606a4, type: 3}
       propertyPath: data.dataString
@@ -46054,6 +46060,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 343340646, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
+      propertyPath: clawDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 343340646, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
       propertyPath: attackPoint
       value: 
       objectReference: {fileID: 1443183051}
@@ -46073,6 +46083,10 @@ PrefabInstance:
       propertyPath: pauseMneu
       value: 
       objectReference: {fileID: 79315460}
+    - target: {fileID: 8462256792850482998, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
+      propertyPath: checkRadius
+      value: 0.34
+      objectReference: {fileID: 0}
     - target: {fileID: 8462256792850483000, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
       propertyPath: m_Name
       value: Player
