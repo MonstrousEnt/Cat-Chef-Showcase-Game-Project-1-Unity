@@ -23,7 +23,15 @@ public class Level1Manager : MonoBehaviour
 
         GameManager.instance.SetRestart(false);
 
+        SettingManager.instance.ActivePause(false, 1f);
+
+        GameManager.instance.SetFoundIngredinetsNum(0);
+
+        GameManager.instance.SetAtCakeOver(false);
+
+
         PlayerBase.instance.gameObject.transform.position = checkpointOnePos;
+
 
     }
 }

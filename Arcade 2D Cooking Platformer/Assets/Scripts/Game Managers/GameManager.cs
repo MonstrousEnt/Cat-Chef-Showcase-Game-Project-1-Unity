@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _coinNum;
     [SerializeField] private int _coinMax;
 
-    [SerializeField] private CollectablesUI collectablesUI;
-
     [SerializeField] private bool _atCakeOver = false;
 
     [SerializeField] private Vector2 lastCheckpointPos;
@@ -60,12 +58,6 @@ public class GameManager : MonoBehaviour
 
         //This won't get destroy when you switch scene
         DontDestroyOnLoad(gameObject);
-    }
-
-    private void Start()
-    {
-        collectablesUI.SetText(_coinNum);
-        AudioManager.instance.playAudio("Level Music");
     }
 
     private void Update()
