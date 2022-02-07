@@ -13152,7 +13152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5691833155412073422, guid: f4cd8c872cf2bc3448d7e1e2a4d172f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 75.287056
+      value: -14.432942
       objectReference: {fileID: 0}
     - target: {fileID: 5691833155412073422, guid: f4cd8c872cf2bc3448d7e1e2a4d172f9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13522,6 +13522,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AuidoManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2423732365864756193, guid: 6eb57734273e84c429f2afd0e870d391, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5558327428883592310, guid: 6eb57734273e84c429f2afd0e870d391, type: 3}
       propertyPath: _sounds.Array.size
       value: 3
@@ -13556,7 +13560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5558327428883592310, guid: 6eb57734273e84c429f2afd0e870d391, type: 3}
       propertyPath: _sounds.Array.data[0].volume
-      value: 0.401
+      value: 0.047
       objectReference: {fileID: 0}
     - target: {fileID: 5558327428883592310, guid: 6eb57734273e84c429f2afd0e870d391, type: 3}
       propertyPath: _sounds.Array.data[1].volume
@@ -13644,8 +13648,12 @@ PrefabInstance:
       value: A_ Pathfinder
       objectReference: {fileID: 0}
     - target: {fileID: 2530334980016236214, guid: 3176d1dd10843bf4e8666fd8146606a4, type: 3}
+      propertyPath: maxFrameTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530334980016236214, guid: 3176d1dd10843bf4e8666fd8146606a4, type: 3}
       propertyPath: data.dataString
-      value: UEsDBBQAAAgIAACgn+sY/FvqfwIAAEQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoWxMQ3QW+sQ0kMSpqSTiy9CWmMNsuSR5ADJ8N+7km3sUB9s8d5+vl3xSYSyFTCnzdoI/qQ5kB8j4s/k26gnH+FE91ptxQd0Nm+Cu8Ib0WDzhzqhEY+9m9UlOCPYT7WX3jhCsFYi16Zc8T2k2jqLcE6lBaSMdt5bIfQ5Iif8jJfe5Yyn6dyfPvC0jEYXPDJQDkxvGieT2RKfRdx6RJNl88xax3gyXyziWTS/W42jeQhSKyZpWQH3HQ1izbqswUphq62BD860lMK2dRJ3roIOKa1sjV2iARcU+w7FxZMEgQLEvnA+3tD9Jc8tuFYWQ8/3wqCATVzySzeqltQemsLeqayDiKGmJuTTf+w4DnRudPnYZY0jn8EVgh3+0DOj1g1EH8L3g8KDOkcqD3Qn4a0A9azXRteKI+lM7V1rC9P7/ue1sbQAdujxptQbsK56ubsZNwNKlneJH1A7Nd/QJQhxSqUod2GyswbYSh3ED1sCBsf0G6sPO2TbuIj6kv5aeKX74bK1xIMw1iHVtqx8rTtdG29KVkFA31rtUm0UBLjtoAJFpTtvMIy7neYNN0h7wzxQf63a5C3X3ZYblwD39lF0Q2308To5W+jjE9jipXZSKOiL9sQz6pRqpZplG2rSuW1rk1M2cNvXgn/dM7JM4l3M8t13vmAJX9DxnE6TOb/DEeJrmgMJiygU9knlpim0lQenNtRE4db5kK9g3WgtDB+tqanC+nNDj2vxUephmULlessMgHr5GsiCwVx4U/mKC9RpC84JFcZOPjMiNTsAz65tZaHh1ckZmvVRMlKJd+08kpE0/MtkxMPX/d4YeBdw9Mm7YBdy+QdQSwMEFAAACAgAAKCf630C0x1sAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJKlsWGSYXJakmmKRbJxikWirnmikbF5ipm5hQWQMEpLVYoFqi+pLEj1S8xNhegJSCzJSMvMS8nMS9dzL8pMcQcZrRRbCwBQSwECLQAUAAAICAAAoJ/rGPxb6n8CAABEBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAoJ/rfQLTHWwAAAB4AAAACQAkAAAAAAAAAAAAAADMAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAIMDAAAAAA==
+      value: UEsDBBQAAAgIAACgn+v7TKC7fAIAADkFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoWxMQmmt9aQpIckTGgnF1+EtcYaZMkjyQGS4b93JX+W+oDF2923u29X/iJcmgoyq/Sj5uxZMSDfJ8SdybfJYHyCMz0oueOf0Pm8c2YL50S9zxu1XCEeujCjSrCaZz/kQTjnAMFa8lzpcsMOkChjDcI5FQbQpJV10RKhrwk542u6ciEXPM2X7vSJp1UwueIxA2lBj1yj2SJunafBbOWfuzZmGs6WcRxGq8VqMw2WnqCWmaBlBcx1M/CEUZfRe0lss3VwLWVKCG7aGom9VF6DhFamxg7RgXGKPfvCwpmjKoAfCuv4xuGveW7AtpJoellzjeI1vOSnahQtqTk2hX1QUXsBfU0N5fN/1mnozblW5VOXNQxcBlvw7PhGLxk1diT4GF6PCvfqnKg40r2A9wLki3rUqpYMjVbXLrQ2MF8Pf/vGkgKy44A3pd6AdTXI3c93FsWLML6P7t2A+rFNrlcvxDkRvNw7/9miAXZCefH9hoDGMf3C6v3+mJYXUVfSHwO/6WG8aK3hgWtj0dS2LF2te1Vr50o2XkDXWm0TpSV4uO2gAkmFvWyRxt5O88Y2SntjeaDuSrXJW1t3U25CPDz4B8GNaatO/eRMoU7PYIrX2gouYSjaGV5Qp0RJ2SzbWJMubFfrnGajsEPN2b97RlZRuA+zfH/H4ixiMZ0u6Txasnu8Y/gzz4H4ReQS+6Ri2xTayoNTkwO5xKXzaksoL2H3vWGanh75Z6lGknOZq12mAeRrw9AXDhqT4BVlG8ZRoB1Yy6WfN/lKiVDZEVjaE6W+083ZapoOLCmp+IeyDklJ4j8tKXFwv9hbDR8cTi55R3Yl179QSwMEFAAACAgAAKCf630C0x1sAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJKlsWGSYXJakmmKRbJxikWirnmikbF5ipm5hQWQMEpLVYoFqi+pLEj1S8xNhegJSCzJSMvMS8nMS9dzL8pMcQcZrRRbCwBQSwECLQAUAAAICAAAoJ/r+0ygu3wCAAA5BQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAoJ/rfQLTHWwAAAB4AAAACQAkAAAAAAAAAAAAAADJAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAIADAAAAAA==
       objectReference: {fileID: 0}
     - target: {fileID: 2530334980016236215, guid: 3176d1dd10843bf4e8666fd8146606a4, type: 3}
       propertyPath: m_RootOrder
@@ -44617,7 +44625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7602037129954974233, guid: a7107688cdff2014d9c567bf014ab2a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 75.287056
+      value: -14.432942
       objectReference: {fileID: 0}
     - target: {fileID: 7602037129954974233, guid: a7107688cdff2014d9c567bf014ab2a6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -45525,10 +45533,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 733759959}
     m_Modifications:
+    - target: {fileID: 594807867, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: targetRange
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3771559445793220590, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: m_Name
       value: Bananaman
       objectReference: {fileID: 0}
+    - target: {fileID: 3771559445793220590, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4592808895627609621, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680638396623622087, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1464859013}
     - target: {fileID: 8629438484392667594, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -46061,7 +46085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8462256792850483001, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 74.26
+      value: -15.44
       objectReference: {fileID: 0}
     - target: {fileID: 8462256792850483001, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
       propertyPath: m_LocalPosition.y
