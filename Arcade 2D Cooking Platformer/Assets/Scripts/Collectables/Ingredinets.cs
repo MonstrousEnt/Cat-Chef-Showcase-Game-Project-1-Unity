@@ -12,9 +12,10 @@ public class Ingredinets : MonoBehaviour
         if (collision.tag == "Player")
         {
             int tempFoundIngredinetsNum = 1;
-
             GameManager.instance.SetFoundIngredinetsNum(GameManager.instance.GetFoundIngredinetsNum() + tempFoundIngredinetsNum);
-            GameManager.instance.SetTolatPoints(GameManager.instance.GetTolatPoints() + GameManager.instance.GetIngredientPointNum());
+
+            PointManger.instance.SetTolatPoints(PointManger.instance.GetTolatPoints() + PointManger.instance.GetPointData().GetIngredientPointNum());
+            
             Debug.Log("found one!");
             //play the sound
             FindObjectOfType<AudioManager>().playAudio("getitem");

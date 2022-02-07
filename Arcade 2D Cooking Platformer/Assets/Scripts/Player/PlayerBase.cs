@@ -8,12 +8,13 @@ public class PlayerBase : MonoBehaviour
     public static PlayerBase instance; //A static reference of the class
 
     [SerializeField] private int health = 0;
-    [SerializeField] private int healthIconNum = 1;
+    [SerializeField] private int fullHeartNum = 10;
     [SerializeField] private int maxHealth;
+    [SerializeField] private int maxHealthPowerUp = 100;
 
     [SerializeField] private HealthBar healthBar;
 
-    public int GetHealthIconNum() { return healthIconNum; }
+    public int GetFullHeartNum() { return fullHeartNum; }
 
     private void Awake()
     {
@@ -33,10 +34,6 @@ public class PlayerBase : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-
-        //This won't get destroy when you switch scene
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -45,24 +42,33 @@ public class PlayerBase : MonoBehaviour
         health = maxHealth;
 
         //Display it in the UI
-        healthBar.UpdateHealthBar(health);
+        healthBar.UpdateHealthBar(health, maxHealthPowerUp);
+
+        LiveSystemManager.instance.ResetLives();
+
+        gameObject.SetActive(true);
     }
 
-    public void SetHealthPowerUp()
+    public void HealthPowerUp(GameObject healthPowerUpGameObject)
     {
-        //Power up health
-        health = health + healthIconNum;
+        if (health == maxHealthPowerUp)
+        {
+            return;
+        }
+        else
+        {
+            //Power up health
+            health = health + GetFullHeartNum();
 
-        //Update hearts
-        int tempNumOfHearts = healthBar.GetNumOfHearts() + 1;
-        healthBar.SetNumOfHearts(tempNumOfHearts);
+            //Display it in the UI
+            healthBar.UpdateHealthBar(health, maxHealthPowerUp);
 
-        //Display it in the UI
-        healthBar.UpdateHealthBar(health);
+            PointManger.instance.SetTolatPoints(PointManger.instance.GetTolatPoints() + PointManger.instance.GetPointData().GetHealthPowerUpPointNum());
+
+            //destroy the object
+            healthPowerUpGameObject.SetActive(false);
+        }
     }
-
-
-
 
     public void TakeDmage(int damage)
     {
@@ -70,18 +76,49 @@ public class PlayerBase : MonoBehaviour
 		health -= damage;
 
         //Display it in the UI
-        healthBar.UpdateHealthBar(health);
+        healthBar.UpdateHealthBar(health, maxHealthPowerUp);
 
-		//If the player dies
-		if (health <= 0)
+        //If the player dies
+        if (health <= 0)
 		{
-			Die();
+            StopCoroutine(Die());
+			StartCoroutine(Die());
 		}
 	}
 
-    public void Die()
+    private IEnumerator Die()
     {
-        GameManager.instance.SetPlayerHasDie(true);
+        //Wait a flew seconds to show all hearts are empty heat.
+        yield return new WaitForSeconds(0.5f);
+
+        //Turn off the player game object
         gameObject.SetActive(false);
+
+        //Respawn the player
+        Respawn();
+    }
+
+    private void Respawn()
+    {
+        if (LiveSystemManager.instance.GetLivesCount() == 0)
+        {
+            LiveSystemManager.instance.OutOfLives();
+        }
+        else
+        {
+            //Reset the health
+            health = maxHealth;
+
+            //Reset the health bar
+            healthBar.UpdateHealthBar(health, maxHealthPowerUp);
+
+            LiveSystemManager.instance.LoseALife();
+
+            //Set the player potion to the last checkpoint position
+            gameObject.transform.position = GameManager.instance.GetLastCheckpointPos();
+
+            //Turn on the player game object
+            gameObject.SetActive(true);
+        }
     }
 }

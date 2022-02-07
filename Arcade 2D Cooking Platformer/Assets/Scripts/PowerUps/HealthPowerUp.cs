@@ -8,15 +8,8 @@ public class HealthPowerUp : MonoBehaviour
     { 
         if (collision.tag == "Player")
         {
-            Debug.Log("I have 10 more health!");
-
             //Added the power up to the player
-            PlayerBase.instance.SetHealthPowerUp();
-
-            GameManager.instance.SetTolatPoints(GameManager.instance.GetTolatPoints() + GameManager.instance.GetHealthPowerUpPointNum());
-
-            //destroy the object
-            gameObject.SetActive(false);
+            PlayerBase.instance.HealthPowerUp(gameObject);
         }
     }
 }

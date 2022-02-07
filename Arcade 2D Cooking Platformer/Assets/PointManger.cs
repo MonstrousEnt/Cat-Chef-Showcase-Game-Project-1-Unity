@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class CollectablesUI : MonoBehaviour
+public class PointManger : MonoBehaviour
 {
-    [SerializeField] private Text coinText;
+    public static PointManger instance; //A static reference of the class
 
-    public static CollectablesUI instance; //A static reference of the class
+    [SerializeField] private int _tolatPoints = 0;
+
+    [SerializeField] private PointData pointData;
+
+    public int GetTolatPoints() { return _tolatPoints; }
+    public void SetTolatPoints(int tolatPoints) { this._tolatPoints = tolatPoints; }
+    public PointData GetPointData() { return pointData; }
 
     private void Awake()
     {
@@ -31,11 +36,5 @@ public class CollectablesUI : MonoBehaviour
 
         //This won't get destroy when you switch scene
         DontDestroyOnLoad(gameObject);
-    }
-
-
-    public void SetText(int coinNum)
-   {
-        coinText.text = coinNum.ToString();
     }
 }

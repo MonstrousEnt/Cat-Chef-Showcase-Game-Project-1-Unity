@@ -33,6 +33,7 @@ public class PlayerController2D : MonoBehaviour
     public float yWallForce;
     public float wallJumpTime;
 
+   [SerializeField] private PauseMneu pauseMneu;
 
 
     private void Awake() 
@@ -68,7 +69,19 @@ public class PlayerController2D : MonoBehaviour
         //Move the player left and right
         _moveHorizontal = Input.GetAxisRaw("Horizontal");      
 
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!pauseMneu.gameObject.activeSelf)
+            {
+                pauseMneu.activeMenu(true);
+                SettingManager.instance.ActivePause(true, 0f);
+            }
+            else
+            {
+                pauseMneu.activeMenu(false);
+                SettingManager.instance.ActivePause(false, 1f);
+            }
+        }
     }
 
     private void Move()

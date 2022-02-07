@@ -11,22 +11,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int _coinNum;
     [SerializeField] private int _coinMax;
-    
-    [SerializeField] private int _coinPointNum = 10;
-    [SerializeField] private int _monsterPointNum = 20;
-    [SerializeField] private int _ingredientPointNum = 30;
-    [SerializeField] private int _healthPowerUpPointNum = 40;
-    [SerializeField] private int _tolatPoints = 0;
 
     [SerializeField] private CollectablesUI collectablesUI;
 
     [SerializeField] private bool _atCakeOver = false;
-    [SerializeField] private bool _playerHasDie = false;
 
-    [SerializeField] private GameOverUI gameOverUI;
-    [SerializeField] private WinScreenUI WinScreenUI;
+    [SerializeField] private Vector2 lastCheckpointPos;
 
-
+    [SerializeField] private bool Restart = false;
 
     public int GetMaxIngredients() {return _maxIngredients;}
     public int GetFoundIngredinetsNum() { return _foundIngredinetsNum; }
@@ -36,18 +28,16 @@ public class GameManager : MonoBehaviour
     public void SetCoinNum(int coinNum) { this._coinNum = coinNum;}
     public int GetCoinNum() { return _coinNum; }
 
-    public int GetIngredientPointNum() { return _ingredientPointNum; }
-    public int GetCoinPointNum() { return _coinPointNum; }
-    public int GetMonsterPointNum() { return _monsterPointNum; }
-    public int GetHealthPowerUpPointNum() { return _healthPowerUpPointNum; }
-    public int GetTolatPoints() { return _tolatPoints; }
-    public void SetTolatPoints(int tolatPoints) { this._tolatPoints = tolatPoints; }
+    public bool GetRestart() { return Restart; }
+    public void SetRestart(bool restart) { this.Restart = restart; }
 
     public void SetAtCakeOver(bool flag) { this._atCakeOver = flag; }
-    public void SetPlayerHasDie(bool flag) { this._playerHasDie = flag; }
 
-    
-    
+    public Vector2 GetLastCheckpointPos() { return lastCheckpointPos; }
+    public void SetLastCheckpointPos(Vector2 lastCheckpointPos) { this.lastCheckpointPos = lastCheckpointPos; }
+
+
+
     private void Awake()
     {
         //---Make sure there is only one instance of this class for each Scene.
@@ -82,26 +72,20 @@ public class GameManager : MonoBehaviour
     {
         if (_foundIngredinetsNum == _maxIngredients && _atCakeOver)
         {
-            //Level Completed
-            WinScreenUI.activeMenu(true);
-        }
+            SettingManager.instance.ActivePause(true, 0f);
 
-   
-        //Die = lose
-        if (_playerHasDie)
-        {
-            //Game Over
-            gameOverUI.activeMenu(true);
+            //Level Completed
+            WinScreenUI.instance.activeMenu(true);
         }
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            PlayerBase.instance.TakeDmage(PlayerBase.instance.GetHealthIconNum());
+            PlayerBase.instance.TakeDmage(PlayerBase.instance.GetFullHeartNum());
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
-            PlayerBase.instance.TakeDmage(PlayerBase.instance.GetHealthIconNum());
-            PlayerBase.instance.TakeDmage(PlayerBase.instance.GetHealthIconNum());
+            PlayerBase.instance.TakeDmage(PlayerBase.instance.GetFullHeartNum());
+            PlayerBase.instance.TakeDmage(PlayerBase.instance.GetFullHeartNum());
         }
     }
 }

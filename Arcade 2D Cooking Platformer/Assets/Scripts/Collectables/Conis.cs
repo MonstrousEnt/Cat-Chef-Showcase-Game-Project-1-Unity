@@ -11,9 +11,9 @@ public class Conis : MonoBehaviour
         if (collision.tag == "Player")
         {
             int tempCoinNum = 1;
-
             GameManager.instance.SetCoinNum(GameManager.instance.GetCoinNum() + tempCoinNum);
-            GameManager.instance.SetTolatPoints(GameManager.instance.GetTolatPoints() + GameManager.instance.GetCoinNum());
+
+            PointManger.instance.SetTolatPoints(PointManger.instance.GetTolatPoints() + PointManger.instance.GetPointData().GetCoinPointNum());
 
             //play the sound
             FindObjectOfType<AudioManager>().playAudio("coin1");

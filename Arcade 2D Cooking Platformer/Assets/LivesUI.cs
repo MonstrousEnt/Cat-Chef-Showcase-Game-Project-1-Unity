@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CollectablesUI : MonoBehaviour
+public class LivesUI : MonoBehaviour
 {
-    [SerializeField] private Text coinText;
+    public static LivesUI instance; //A static reference of the class
 
-    public static CollectablesUI instance; //A static reference of the class
+    [SerializeField] private Text LivesText;
 
     private void Awake()
     {
@@ -33,9 +33,8 @@ public class CollectablesUI : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-
-    public void SetText(int coinNum)
-   {
-        coinText.text = coinNum.ToString();
-    }
+    public void SetLives(int lives)
+	{
+		LivesText.text = "x " + lives.ToString();
+	}
 }
