@@ -53,9 +53,9 @@
 	- [x] 3 lives then game over
 - [x] Checkpoint
 	- [x] Code
-- [ ] Pause Menu
-	- [ ] UI
-	- [ ] Code
+- [x] Pause Menu
+	- [x] UI
+	- [x] Code
 - [ ] How to play
 	- [ ] UI Desgin
 	- [ ] Dialagoue Manager
