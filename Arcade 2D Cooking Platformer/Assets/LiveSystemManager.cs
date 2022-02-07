@@ -54,9 +54,8 @@ public class LiveSystemManager : MonoBehaviour
         //Set Lives Count to 0
         _livesCount = 0;
 
-        //Set the lives to 0 in the UI
-
         //Pause the game
+        SettingManager.instance.ActivePause(true, 0f);
 
         //Enable the game over screen
         GameOverUI.instance.activeMenu(true);

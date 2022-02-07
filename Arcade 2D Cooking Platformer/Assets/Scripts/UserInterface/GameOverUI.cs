@@ -54,6 +54,8 @@ public class GameOverUI : MonoBehaviour
         //Close the game over screen.
         gameObject.SetActive(false);
 
+        SettingManager.instance.ActivePause(true, 1f);
+
         //Re-load the level
         levelLoader.LoadNextLevel("Level 1");
     }
