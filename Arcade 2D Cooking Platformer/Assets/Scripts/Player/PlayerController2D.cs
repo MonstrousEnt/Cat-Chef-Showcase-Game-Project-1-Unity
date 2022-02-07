@@ -56,10 +56,8 @@ public class PlayerController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
-        
-        Move();
-        
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);        
+        Move();        
         Flip();
     }
 
@@ -185,10 +183,7 @@ public class PlayerController2D : MonoBehaviour
 
         }
 
-        _animator.SetFloat("verticalvelocity", Mathf.Abs(_rigidbody2D.velocity.y));
-
-
-        
+        _animator.SetFloat("verticalvelocity", Mathf.Abs(_rigidbody2D.velocity.y));        
 
     }
 

@@ -9944,11 +9944,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1633900865732519672, guid: 70d863a9943bba949b22d6e31f7e66f8, type: 3}
   m_PrefabInstance: {fileID: 651336046}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &230999442 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1853963123, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
-  m_PrefabInstance: {fileID: 8462256791385980604}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &252129860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13775,45 +13770,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1633900865732519672, guid: 70d863a9943bba949b22d6e31f7e66f8, type: 3}
   m_PrefabInstance: {fileID: 651120770}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1498147311 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8462256792850483000, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
-  m_PrefabInstance: {fileID: 8462256791385980604}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1498147318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498147311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf081370f8aac5149b31271827397cd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  _moveSpeed: 6
-  _jumpHeight: 10
-  isJumping: 0
-  extraJumpsAmount: 1
-  frontCheck: {fileID: 230999442}
-  wallSlidingSpeed: 0
-  xWallForce: 10
-  yWallForce: 10
-  wallJumpTime: 0.12
-  checkRadius: 0.3
-  _onGround: 0
-  isCeiling: 0
-  wasOnGround: 0
-  _groundLength: 1.4
-  ceilingLength: 0
-  _cornerLength: 0
-  _colliderOffset: {x: -0.35, y: 0, z: 0}
-  _colliderOffset2: {x: 0, y: 0, z: 0}
-  _colliderOffset3: {x: 0, y: 0, z: 0}
 --- !u!1001 &1498470254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46069,7 +46025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8462256792805296807, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8462256792850482996, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
       propertyPath: m_LinearDrag
@@ -46081,7 +46037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8462256792850482998, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8462256792850482998, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
       propertyPath: pauseMneu
