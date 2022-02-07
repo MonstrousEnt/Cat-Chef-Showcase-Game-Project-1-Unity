@@ -5,11 +5,13 @@
 - [x] Find clue to sovle the puzzle or found keys
 	- [x] Desgin 
 	- [x] Coding
+	- [ ] Normal cke or bananacake
 - [ ] Monsters
 	- [x] Desgin
 	- [x] Move AI
 	- [x] Flip AI
-	- [ ] Attack AI 	
+	- [ ] Attack AI 
+	- [ ] Monsters Drops	
 - [ ] Main Player 
 	- [x] UI health
 	- [x] Player Base
@@ -57,6 +59,16 @@
 - [x] Pause Menu
 	- [x] UI
 	- [x] Code
+- [ ] Sounds
+	- [ ] Player
+	- [ ] Enemies
+	- [ ] UI
+	- [ ] Collectables
+		- [x] Cake Ingredients
+		- [x] Conis
+		- [ ] Pwer Up
+	- [ ] Start Screen Soundtrack
+	- [x] Level 1 Soundtrack
 - [ ] Universal Code
 	- [ ]  Pop Ups
 	- [ ]  Power Ups
