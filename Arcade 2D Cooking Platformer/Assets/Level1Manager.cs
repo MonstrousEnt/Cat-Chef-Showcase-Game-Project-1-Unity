@@ -23,6 +23,11 @@ public class Level1Manager : MonoBehaviour
 
             GameManager.instance.SetRestart(false);
 
+            for (int i = 0; i < GameManager.instance.GetIngredinetImagesActive().Count; i++)
+            {
+                GameManager.instance.GetIngredinetImagesActive()[i] = false;
+            }
+
             LiveSystemManager.instance.ResetLives();
 
             PlayerBase.instance.gameObject.transform.position = checkpointOnePos;

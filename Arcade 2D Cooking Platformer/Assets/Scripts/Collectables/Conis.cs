@@ -18,6 +18,8 @@ public class Conis : MonoBehaviour
 
             CollectablesUI.instance.SetText(GameManager.instance.GetCoinNum());
 
+            LevelObjectiveCakeIngredientsUI.instance.UpdateImage();
+
             gameObject.SetActive(false);
         }
     }

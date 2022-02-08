@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Ingredinets : MonoBehaviour
 {
-    [SerializeField] private LevelObjectiveCakeIngredientsUI levelObjectiveCakeIngredientsUI;
+    [SerializeField] private int ingredinetImagesActiveIndex;
+
     [SerializeField] private GameObject imageGameObject;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,7 +22,7 @@ public class Ingredinets : MonoBehaviour
             FindObjectOfType<AudioManager>().playAudio("getitem");
 
             //Set UI
-            levelObjectiveCakeIngredientsUI.ActiveImage(imageGameObject, true);
+            LevelObjectiveCakeIngredientsUI.instance.ActiveImage(imageGameObject, true, ingredinetImagesActiveIndex);
 
             gameObject.SetActive(false);
         }

@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance; //A static reference of the class
 
     [SerializeField] private int _foundIngredinetsNum = 0;
+    [SerializeField] private List<GameObject> _IngredinetImages;
+    [SerializeField] private List<bool> _IngredinetImagesActive;
     [SerializeField] private int _maxIngredients;
 
     [SerializeField] private int _coinNum;
@@ -20,6 +22,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private bool _levelStarted; //A boolean for when the level started or not
 
+
+    public List<GameObject> GetIngredinetImages() { return _IngredinetImages; }
+    public List<bool> GetIngredinetImagesActive() { return _IngredinetImagesActive; }
 
     public int GetMaxIngredients() {return _maxIngredients;}
     public int GetFoundIngredinetsNum() { return _foundIngredinetsNum; }
