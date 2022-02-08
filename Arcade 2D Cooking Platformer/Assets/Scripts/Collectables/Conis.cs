@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Conis : MonoBehaviour
 {
-   [SerializeField] private CollectablesUI collectablesUI;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -18,7 +16,7 @@ public class Conis : MonoBehaviour
             //play the sound
             FindObjectOfType<AudioManager>().playAudio("coin1");
 
-            collectablesUI.SetText(GameManager.instance.GetCoinNum());
+            CollectablesUI.instance.SetText(GameManager.instance.GetCoinNum());
 
             gameObject.SetActive(false);
         }

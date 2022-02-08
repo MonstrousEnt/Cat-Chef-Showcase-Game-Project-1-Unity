@@ -35,6 +35,9 @@ public class LoadCkeckpoint : MonoBehaviour
 
 			Debug.Log("Checkpoint loaded.");
 
+			LivesUI.instance.SetLives(LiveSystemManager.instance.GetLivesCount());
+			CollectablesUI.instance.SetText(GameManager.instance.GetCoinNum());
+
 			//Set the boolean flag to false
 			player.isRespawn = false;
 		}

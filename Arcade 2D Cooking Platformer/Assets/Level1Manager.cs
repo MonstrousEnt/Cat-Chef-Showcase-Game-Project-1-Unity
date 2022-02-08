@@ -4,26 +4,30 @@ using UnityEngine;
 
 public class Level1Manager : MonoBehaviour
 {
-    [SerializeField] private CollectablesUI collectablesUI;
-
     [SerializeField] private Vector2 checkpointOnePos;
 
     private void Start()
     {
-        collectablesUI.SetText(GameManager.instance.GetCoinNum());
-
-        if (!GameManager.instance.GetRestart())
+        if (GameManager.instance.GetLevelStarted())
         {
-            AudioManager.instance.stopAudio("Level Music");
-            AudioManager.instance.SetAudioLoop("Level Music", false);
+            CollectablesUI.instance.SetText(GameManager.instance.GetCoinNum());
 
-            AudioManager.instance.SetAudioLoop("Level Music", true);
-            AudioManager.instance.playAudio("Level Music");
+            if (!GameManager.instance.GetRestart())
+            {
+                AudioManager.instance.stopAudio("Level Music");
+                AudioManager.instance.SetAudioLoop("Level Music", false);
+
+                AudioManager.instance.SetAudioLoop("Level Music", true);
+                AudioManager.instance.playAudio("Level Music");
+            }
+
+            GameManager.instance.SetRestart(false);
+
+            LiveSystemManager.instance.ResetLives();
+
+            PlayerBase.instance.gameObject.transform.position = checkpointOnePos;
+
+            GameManager.instance.SetLevelStarted(false);
         }
-
-        GameManager.instance.SetRestart(false);
-
-        PlayerBase.instance.gameObject.transform.position = checkpointOnePos;
-
     }
 }

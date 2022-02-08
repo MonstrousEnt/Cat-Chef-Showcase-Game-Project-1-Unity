@@ -12,13 +12,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _coinNum;
     [SerializeField] private int _coinMax;
 
-    [SerializeField] private CollectablesUI collectablesUI;
-
     [SerializeField] private bool _atCakeOver = false;
 
     [SerializeField] private Vector2 lastCheckpointPos;
 
     [SerializeField] private bool Restart = false;
+
+    [SerializeField] private bool _levelStarted; //A boolean for when the level started or not
+
 
     public int GetMaxIngredients() {return _maxIngredients;}
     public int GetFoundIngredinetsNum() { return _foundIngredinetsNum; }
@@ -35,6 +36,9 @@ public class GameManager : MonoBehaviour
 
     public Vector2 GetLastCheckpointPos() { return lastCheckpointPos; }
     public void SetLastCheckpointPos(Vector2 lastCheckpointPos) { this.lastCheckpointPos = lastCheckpointPos; }
+
+    public bool GetLevelStarted() { return _levelStarted; }
+    public void SetLevelStarted(bool levelStarted) { this._levelStarted = levelStarted; }
 
     private void Awake()
     {
@@ -58,12 +62,6 @@ public class GameManager : MonoBehaviour
 
         //This won't get destroy when you switch scene
         DontDestroyOnLoad(gameObject);
-    }
-
-    private void Start()
-    {
-        collectablesUI.SetText(_coinNum);
-        AudioManager.instance.playAudio("Level Music");
     }
 
     private void Update()

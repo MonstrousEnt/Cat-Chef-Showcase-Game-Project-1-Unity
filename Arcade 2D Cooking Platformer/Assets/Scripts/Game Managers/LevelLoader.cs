@@ -38,6 +38,9 @@ public class LevelLoader: MonoBehaviour
 		////Wait for a couple seconds
 		//yield return new WaitForSeconds(_transtionTime);
 
+		//The level has started, set the boolean to true
+		GameManager.instance.SetLevelStarted(true);
+
 		//Load the next scene
 		SceneManager.LoadScene(sceneName);
 	}
