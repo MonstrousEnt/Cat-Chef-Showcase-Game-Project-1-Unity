@@ -14,25 +14,16 @@ public class PlayerBase : MonoBehaviour
 
     [SerializeField] private HealthBar healthBar;
 
+    public bool isRespawn = false; //A boolean flag for when the player is respawn at a checkpoint
+
     public int GetFullHeartNum() { return fullHeartNum; }
 
-    private void Awake()
+    public void Awake()
     {
-        //---Make sure there is only one instance of this class for each Scene.
-
-        //If there is no instance of the object
         if (instance == null)
         {
             //Set an instance of it
             instance = this;
-        }
-
-        //Else, if there's already an instance
-        else
-        {
-            //Destroy it
-            Destroy(gameObject);
-            return;
         }
     }
 
@@ -45,8 +36,6 @@ public class PlayerBase : MonoBehaviour
         healthBar.UpdateHealthBar(health, maxHealthPowerUp);
 
         LiveSystemManager.instance.ResetLives();
-
-        gameObject.SetActive(true);
     }
 
     public void HealthPowerUp(GameObject healthPowerUpGameObject)
@@ -91,9 +80,6 @@ public class PlayerBase : MonoBehaviour
         //Wait a flew seconds to show all hearts are empty heat.
         yield return new WaitForSeconds(0.5f);
 
-        //Turn off the player game object
-        gameObject.SetActive(false);
-
         //Respawn the player
         Respawn();
     }
@@ -114,11 +100,13 @@ public class PlayerBase : MonoBehaviour
 
             LiveSystemManager.instance.LoseALife();
 
-            //Set the player potion to the last checkpoint position
-            gameObject.transform.position = GameManager.instance.GetLastCheckpointPos();
-
-            //Turn on the player game object
-            gameObject.SetActive(true);
+             //Respawn at checkpoint
+			isRespawn = true;
         }
+    }
+
+    private void OnDestroy()
+    {
+        instance = null;
     }
 }

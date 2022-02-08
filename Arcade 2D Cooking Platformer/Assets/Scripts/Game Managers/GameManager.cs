@@ -36,8 +36,6 @@ public class GameManager : MonoBehaviour
     public Vector2 GetLastCheckpointPos() { return lastCheckpointPos; }
     public void SetLastCheckpointPos(Vector2 lastCheckpointPos) { this.lastCheckpointPos = lastCheckpointPos; }
 
-
-
     private void Awake()
     {
         //---Make sure there is only one instance of this class for each Scene.
