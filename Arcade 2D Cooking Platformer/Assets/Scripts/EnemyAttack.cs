@@ -15,6 +15,8 @@ public class EnemyAttack : MonoBehaviour
 
     public LayerMask playerLayer;
 
+	private bool isAttacking = false;
+
     [Header("Combat")]
     public int forkDamage;
 
@@ -31,26 +33,44 @@ public class EnemyAttack : MonoBehaviour
 		if (attackPlayer != null)
 		{
 			//Attack the player
-			Attack();
+			isAttacking = true;
+			Debug.Log("Enemy attack!");
 		}
 	}
 
-	private void Attack()
-    {
-		//animation
-		animator.SetTrigger("Attack");
-		Collider2D weaponAttackPlayer = Physics2D.OverlapCircle(attackPoint.position, attackRadius, playerLayer);
-		//check if player is touching the weapon
-		if (weaponAttackPlayer != null)
-		{
-			//deal damage to the player 
-			PlayerBase.instance.TakeDmage(forkDamage);
-		}
-	}
+	//private void Attack()
+ //   {
+	//	//animation
+		
+	//	//check if player is touching the weapon
+	//	if (weaponAttackPlayer != null)
+	//	{
+	//		//deal damage to the player 
+	//		PlayerBase.instance.TakeDmage(forkDamage);
+	//	}
+	//}
 
 	private void OnDrawGizmos()
 	{
 		Gizmos.DrawWireSphere(threatPoint.position, threatRadius);
 		Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+		
+		if (collision.tag == "Player")
+        {
+			Debug.Log("Enemy collider with player tag!");
+
+			if (isAttacking)
+			{
+				Debug.Log("Do the enemy attack animation and damage!");
+				animator.SetTrigger("Attack");
+				PlayerBase.instance.TakeDmage(forkDamage);
+				isAttacking = false;
+			}
+			
+		}
+    }
 }
