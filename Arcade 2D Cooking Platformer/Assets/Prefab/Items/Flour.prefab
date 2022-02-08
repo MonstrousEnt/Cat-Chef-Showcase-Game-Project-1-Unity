@@ -116,8 +116,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768e6db4b7d2ee140983da698a1d25d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelObjectiveCakeIngredientsUI: {fileID: 0}
+  ingredinetImagesActiveIndex: 3
   imageGameObject: {fileID: 0}
+  indexIngredientsTigger: 3
+  maxCount: 4
 --- !u!61 &5689669821412406023
 BoxCollider2D:
   m_ObjectHideFlags: 0

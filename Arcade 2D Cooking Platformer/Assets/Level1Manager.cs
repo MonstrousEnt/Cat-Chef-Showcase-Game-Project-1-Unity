@@ -35,7 +35,10 @@ public class Level1Manager : MonoBehaviour
 
             GameObjectActiveManger.instance.GetCheckpointTriggerList().Clear();
             GameObjectActiveManger.instance.AddAllTriggers(3, GameObjectActiveManger.instance.GetCheckpointTriggerList());
-            
+
+            GameObjectActiveManger.instance.GetIngredientsTiggerList().Clear();
+            GameObjectActiveManger.instance.AddAllTriggers(4, GameObjectActiveManger.instance.GetIngredientsTiggerList());
+
             GameManager.instance.SetLevelStarted(false);
         }
     }
