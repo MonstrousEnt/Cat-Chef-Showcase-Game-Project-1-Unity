@@ -48,6 +48,11 @@ public class Level1Manager : MonoBehaviour
             GameObjectActiveManger.instance.GetHealthPowerUpTriggerList().Clear();
             GameObjectActiveManger.instance.AddAllTriggers(2, GameObjectActiveManger.instance.GetHealthPowerUpTriggerList());
 
+            GameObjectActiveManger.instance.GetEnemyTriggerList().Clear();
+            GameObjectActiveManger.instance.AddAllTriggers(1, GameObjectActiveManger.instance.GetEnemyTriggerList());
+
+
+
             GameManager.instance.SetLevelStarted(false);
         }
        

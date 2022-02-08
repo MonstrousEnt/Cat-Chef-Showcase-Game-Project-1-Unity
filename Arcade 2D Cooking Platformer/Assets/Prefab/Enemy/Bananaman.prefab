@@ -333,6 +333,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 2
+  indexEnemyTriggerList: 0
+  maxCount: 1
 --- !u!114 &1258437975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,5 +354,5 @@ MonoBehaviour:
   attackRadius: 0.37
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   forkDamage: 0
