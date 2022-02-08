@@ -158,7 +158,11 @@ MonoBehaviour:
   lastCheckpointPos: {x: 0, y: 0}
   Restart: 0
   _levelStarted: 1
-  IngredientNameList: []
+  IngredientNameList:
+  - Banana
+  - Milk
+  - Sugar
+  - Flour
 --- !u!1001 &802459909
 PrefabInstance:
   m_ObjectHideFlags: 0
