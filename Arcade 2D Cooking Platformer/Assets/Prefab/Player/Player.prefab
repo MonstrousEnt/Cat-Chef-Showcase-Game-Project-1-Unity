@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1443183050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1443183051}
+  m_Layer: 6
+  m_Name: AttackCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1443183051
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443183050}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.852, y: -0.378, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8462256792850483001}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1853963122
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,7 +105,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8462256792805296800
 Transform:
   m_ObjectHideFlags: 0
@@ -105,8 +135,7 @@ GameObject:
   - component: {fileID: 8462256792850482998}
   - component: {fileID: 8462256792850483002}
   - component: {fileID: 8462256791385980606}
-  - component: {fileID: 1498147312}
-  - component: {fileID: 1498147318}
+  - component: {fileID: 343340646}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -128,6 +157,7 @@ Transform:
   - {fileID: 8462256792108958010}
   - {fileID: 8462256792805296800}
   - {fileID: 1853963123}
+  - {fileID: 1443183051}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -236,7 +266,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8462256792850483000}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92e041cb8cb6d304ba8d8b4e6706400e, type: 3}
   m_Name: 
@@ -247,7 +277,7 @@ MonoBehaviour:
   extraJumpsAmount: 1
   isGrounded: 0
   groundCheck: {fileID: 8462256792805296800}
-  checkRadius: 0.3
+  checkRadius: 0.34
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
@@ -291,10 +321,10 @@ MonoBehaviour:
   health: 0
   fullHeartNum: 10
   maxHealth: 30
-  maxHealthPowerUp: 100
+  maxHealthPowerUp: 30
   healthBar: {fileID: 0}
-  isRespawn: 0
---- !u!114 &1498147312
+  _animator: {fileID: 8462256792850483002}
+--- !u!114 &343340646
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -303,40 +333,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8462256792850483000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e768a7106e0f95f49a86e9807f982b00, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a0fa29550e686c4481b656f90811e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1498147318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8462256792850483000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf081370f8aac5149b31271827397cd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _groundLayer:
+  animator: {fileID: 8462256792850483002}
+  attackPoint: {fileID: 1443183051}
+  attackRadius: 0.5
+  enemyLayers:
     serializedVersion: 2
-    m_Bits: 128
-  _moveSpeed: 6
-  _jumpHeight: 10
-  isJumping: 0
-  extraJumpsAmount: 1
-  frontCheck: {fileID: 1853963123}
-  wallSlidingSpeed: 0
-  xWallForce: 10
-  yWallForce: 10
-  wallJumpTime: 0.12
-  checkRadius: 0.3
-  _onGround: 0
-  isCeiling: 0
-  wasOnGround: 0
-  _groundLength: 1.4
-  ceilingLength: 0
-  _cornerLength: 0
-  _colliderOffset: {x: -0.35, y: 0, z: 0}
-  _colliderOffset2: {x: 0, y: 0, z: 0}
-  _colliderOffset3: {x: 0, y: 0, z: 0}
+    m_Bits: 256
+  clawDamage: 1
