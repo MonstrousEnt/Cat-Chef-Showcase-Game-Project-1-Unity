@@ -19,8 +19,6 @@ public class PlayerBase : MonoBehaviour
     private int enemyLayer; //layer of the enemy
     [SerializeField] private Animator _animator; //Reference to the animator 
 
-    [SerializeField] private bool damageIndicatorComplete = false;
-
 
     public int GetFullHeartNum() { return fullHeartNum; }
 
@@ -34,7 +32,10 @@ public class PlayerBase : MonoBehaviour
     }
 
     private void Start()
-    { 
+    {
+        playerLayer = LayerMask.NameToLayer("Player");
+        enemyLayer = LayerMask.NameToLayer("Enemy");
+
         //set the health to max health of the player
         health = maxHealth;
 
@@ -42,11 +43,11 @@ public class PlayerBase : MonoBehaviour
         healthBar.UpdateHealthBar(health, maxHealthPowerUp);
 
         LiveSystemManager.instance.ResetLives();
+    }
 
-        gameObject.SetActive(true);
+    private void Update()
+    {
 
-        playerLayer = LayerMask.NameToLayer("Player");
-        enemyLayer = LayerMask.NameToLayer("Enemy");
     }
 
     public void HealthPowerUp(GameObject healthPowerUpGameObject)
@@ -78,21 +79,19 @@ public class PlayerBase : MonoBehaviour
         //Display it in the UI
         healthBar.UpdateHealthBar(health, maxHealthPowerUp);
 
-        StopCoroutine(DamageIndicator());
+        StopAllCoroutines();
         StartCoroutine(DamageIndicator());
 
         //If the player dies
         if (health <= 0)
 		{
-            StopCoroutine(Die());
+            StopAllCoroutines();
 			StartCoroutine(Die());
 		}
 	}
 
     private IEnumerator DamageIndicator()
     {
-        damageIndicatorComplete = false;
-
         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
 
         //take damage frame
@@ -109,23 +108,16 @@ public class PlayerBase : MonoBehaviour
 
         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
 
-        damageIndicatorComplete = true;
-
     }
 
     private IEnumerator Die()
     {
-        if(damageIndicatorComplete)
-        {
-            //Wait a flew seconds to show all hearts are empty heat.
-            yield return new WaitForSeconds(0.5f);
+        //Wait a flew seconds to show all hearts are empty heat.
+        yield return new WaitForSeconds(0.5f);
 
-            //Turn off the player game object
-            gameObject.SetActive(false);
-
-            //Respawn the player
-            Respawn();
-        }
+        //Respawn the player
+        Respawn();
+       
         
     }
 

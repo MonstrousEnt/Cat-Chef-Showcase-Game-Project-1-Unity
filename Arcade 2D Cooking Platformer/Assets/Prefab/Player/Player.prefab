@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 8462256792850483002}
   - component: {fileID: 8462256791385980606}
   - component: {fileID: 343340646}
+  - component: {fileID: 6164898391710461271}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -323,7 +324,9 @@ MonoBehaviour:
   maxHealth: 30
   maxHealthPowerUp: 30
   healthBar: {fileID: 0}
+  isRespawn: 0
   _animator: {fileID: 8462256792850483002}
+  damageIndicatorComplete: 0
 --- !u!114 &343340646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,3 +346,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   clawDamage: 1
+--- !u!114 &6164898391710461271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8462256792850483000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e768a7106e0f95f49a86e9807f982b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
