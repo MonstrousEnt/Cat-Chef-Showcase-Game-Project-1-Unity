@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class GameObjectActiveManger : MonoBehaviour
 {
-
     public static GameObjectActiveManger instance; //A static reference of the class
-
 
     [SerializeField] private List<bool> checkpointTriggerList;
     [SerializeField] private List<bool> enemyTriggerList;
     [SerializeField] private List<bool> coinTriggerList;
     [SerializeField] private List<bool> ingredientsTiggerList;
+    [SerializeField] private List<bool> healthPowerUpTriggerList;
 
     public List<bool> GetCheckpointTriggerList() { return checkpointTriggerList; }
     public List<bool> GetEnemyTriggerList() { return enemyTriggerList; }
     public List<bool> GetCoinTriggerList() { return coinTriggerList; }
     public List<bool> GetIngredientsTiggerList() { return ingredientsTiggerList; }
-
+    public List<bool> GetHealthPowerUpTriggerList() { return healthPowerUpTriggerList; }
 
     public void AddAllTriggers(int amount, List<bool> triggerList)
     {
