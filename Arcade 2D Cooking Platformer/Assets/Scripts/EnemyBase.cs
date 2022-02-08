@@ -10,6 +10,13 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] private int indexEnemyTriggerList; 
     [SerializeField] private int maxCount;
 
+    [SerializeField] private Animator _animator;
+
+    private void Awake()
+    {
+        _animator.GetComponent<Animator>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,11 +40,26 @@ public class EnemyBase : MonoBehaviour
         //The enemy take the damage from the monsters.
         health -= damage;
 
+        StopAllCoroutines();
+        StartCoroutine(DamageIndicator());
+
         //If the enemy dies
         if (health <= 0)
         {
             Die();
         }
+        
+    }
+
+    private IEnumerator DamageIndicator()
+    {
+
+        //take damage frame
+        _animator.SetTrigger("takeDamage");
+
+        //Wait a second or 2
+        yield return new WaitForSeconds(2f);
+
     }
 
     private void Die()

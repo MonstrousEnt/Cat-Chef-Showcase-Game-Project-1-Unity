@@ -11531,6 +11531,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ac7dd5f0f6e1d14790edcaa831315eb, type: 3}
+--- !u!95 &717063770 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2413547772758558773, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+  m_PrefabInstance: {fileID: 4434789788553837474}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &733759958
 GameObject:
   m_ObjectHideFlags: 0
@@ -45565,6 +45570,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: EnemyWeaponTag
       objectReference: {fileID: 0}
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 717063770}
     - target: {fileID: 3771559445793220590, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: m_Name
       value: Bananaman

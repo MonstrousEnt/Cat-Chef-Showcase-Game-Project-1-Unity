@@ -73,4 +73,9 @@ public class EnemyAttack : MonoBehaviour
 			
 		}
     }
+
+	private IEnumerator enemyAttackDelay()
+    {
+		yield return new WaitForSeconds(3f);
+	}
 }
