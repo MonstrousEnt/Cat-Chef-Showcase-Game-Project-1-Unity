@@ -103,6 +103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e0dacace730ca54daa692d064694c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexCheckpointTrigger: 0
+  maxCount: 2
 --- !u!1 &3792599155928185167
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e0dacace730ca54daa692d064694c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexCheckpointTrigger: 1
+  maxCount: 2
 --- !u!1 &3792599156794071031
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,3 +247,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e0dacace730ca54daa692d064694c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexCheckpointTrigger: 2
+  maxCount: 2

@@ -32,6 +32,10 @@ public class Level1Manager : MonoBehaviour
 
             PlayerBase.instance.gameObject.transform.position = checkpointOnePos;
 
+
+            GameObjectActiveManger.instance.GetCheckpointTriggerList().Clear();
+            GameObjectActiveManger.instance.AddAllTriggers(3, GameObjectActiveManger.instance.GetCheckpointTriggerList());
+            
             GameManager.instance.SetLevelStarted(false);
         }
     }
