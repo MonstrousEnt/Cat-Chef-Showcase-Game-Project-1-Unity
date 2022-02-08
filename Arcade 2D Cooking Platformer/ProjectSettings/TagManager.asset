@@ -6,6 +6,8 @@ TagManager:
   tags:
   - LevelLoader
   - Checkpoint
+  - Enemy
+  - EnemyTrigger
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - Player
   - Ground
   - Enemy
-  - 
+  - EnemyTrigger
   - 
   - 
   - 
