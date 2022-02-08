@@ -45190,6 +45190,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8914847202108003659, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
+      propertyPath: IngredientNameList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914847202108003659, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
       propertyPath: _IngredinetImages.Array.data[0]
       value: 
       objectReference: {fileID: 343026151}
@@ -45208,6 +45212,22 @@ PrefabInstance:
     - target: {fileID: 8914847202108003659, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
       propertyPath: levelObjectiveCakeIngredientsUI
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914847202108003659, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
+      propertyPath: IngredientNameList.Array.data[0]
+      value: Banana
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914847202108003659, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
+      propertyPath: IngredientNameList.Array.data[1]
+      value: Milk
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914847202108003659, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
+      propertyPath: IngredientNameList.Array.data[2]
+      value: Sugar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914847202108003659, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
+      propertyPath: IngredientNameList.Array.data[3]
+      value: Four
       objectReference: {fileID: 0}
     - target: {fileID: 8914847202108003659, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
       propertyPath: _IngredinetImagesActive.Array.size

@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private bool _levelStarted; //A boolean for when the level started or not
 
+    [SerializeField] private List<string> IngredientNameList;
+
+    public List<string> GetIngredientNameList() { return IngredientNameList; }
 
     public List<GameObject> GetIngredinetImages() { return _IngredinetImages; }
     public List<bool> GetIngredinetImagesActive() { return _IngredinetImagesActive; }

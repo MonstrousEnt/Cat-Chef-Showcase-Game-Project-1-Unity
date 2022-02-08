@@ -27,10 +27,6 @@ public class LivesUI : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-
-        //This won't get destroy when you switch scene
-        DontDestroyOnLoad(gameObject);
     }
 
     public void SetLives(int lives)

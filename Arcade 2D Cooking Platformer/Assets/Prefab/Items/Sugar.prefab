@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768e6db4b7d2ee140983da698a1d25d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IngredinetName: Sugar
   ingredinetImagesActiveIndex: 2
   imageGameObject: {fileID: 0}
   indexIngredientsTigger: 2

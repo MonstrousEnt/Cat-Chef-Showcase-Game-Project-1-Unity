@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Ingredinets : MonoBehaviour
 {
+    [SerializeField] private string IngredinetName;
+
     [SerializeField] private int ingredinetImagesActiveIndex;
 
     [SerializeField] private GameObject imageGameObject;
@@ -21,6 +23,14 @@ public class Ingredinets : MonoBehaviour
                 {
                     Destroy(gameObject);
                 }
+            }
+        }
+
+        for (int i = 0; i < GameManager.instance.GetIngredientNameList().Count; i++)
+        {
+            if (IngredinetName == GameManager.instance.GetIngredientNameList()[i])
+            {
+                imageGameObject = GameManager.instance.GetIngredinetImages()[i];
             }
         }
     }
