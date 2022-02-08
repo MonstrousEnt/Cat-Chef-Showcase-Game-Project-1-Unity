@@ -277,7 +277,7 @@ MonoBehaviour:
   extraJumpsAmount: 1
   isGrounded: 0
   groundCheck: {fileID: 8462256792805296800}
-  checkRadius: 0.3
+  checkRadius: 0.34
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
@@ -323,6 +323,7 @@ MonoBehaviour:
   maxHealth: 30
   maxHealthPowerUp: 30
   healthBar: {fileID: 0}
+  _animator: {fileID: 8462256792850483002}
 --- !u!114 &343340646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,8 +337,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8462256792850483002}
-  attackRadius: {fileID: 1443183051}
-  attackRange: 0.5
+  attackPoint: {fileID: 1443183051}
+  attackRadius: 0.5
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
+  clawDamage: 1
