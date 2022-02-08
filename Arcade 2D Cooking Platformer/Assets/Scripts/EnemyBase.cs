@@ -40,7 +40,7 @@ public class EnemyBase : MonoBehaviour
         //The enemy take the damage from the monsters.
         health -= damage;
 
-        StopAllCoroutines();
+        StartCoroutine(DamageIndicator());
         StartCoroutine(DamageIndicator());
 
         //If the enemy dies

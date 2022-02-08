@@ -65,6 +65,9 @@ public class EnemyAttack : MonoBehaviour
 
 			if (isAttacking)
 			{
+				StopCoroutine(enemyAttackDelay());
+				StartCoroutine(enemyAttackDelay());
+
 				Debug.Log("Do the enemy attack animation and damage!");
 				animator.SetTrigger("Attack");
 				PlayerBase.instance.TakeDmage(forkDamage);

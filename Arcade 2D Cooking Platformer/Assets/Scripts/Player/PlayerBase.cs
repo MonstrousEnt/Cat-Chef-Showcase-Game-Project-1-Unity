@@ -82,15 +82,49 @@ public class PlayerBase : MonoBehaviour
         //Display it in the UI
         healthBar.UpdateHealthBar(health, maxHealthPowerUp);
 
+        StopCoroutine(DamageIndicator());
+        StopCoroutine(Flickering());
+
+        StartCoroutine(DamageIndicator());
+        StartCoroutine(Flickering());
+
         //If the player dies
         if (health <= 0)
 		{
-            StopAllCoroutines();
+            StopCoroutine(Die());
 			StartCoroutine(Die());
 		}
 	}
 
-    
+    private IEnumerator DamageIndicator()
+    {
+        Physics2D.IgnoreLayerCollision(6, 8, true);
+
+        //take damage frame
+        _animator.SetTrigger("takeDamage");
+
+        //Wait a second or 2
+        yield return new WaitForSeconds(2f);
+
+        Physics2D.IgnoreLayerCollision(6, 8, false);
+
+    }
+
+    private IEnumerator Flickering()
+    {   //Turn the player red
+
+        for (int i = 0; i < 3; i++)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            yield return new WaitForSeconds(.1f);
+            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            yield return new WaitForSeconds(.2f);
+        }
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+
+    }
+
+
 
     private IEnumerator Die()
     {
