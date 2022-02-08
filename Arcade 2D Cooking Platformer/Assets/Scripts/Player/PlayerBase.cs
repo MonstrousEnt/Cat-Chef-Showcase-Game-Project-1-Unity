@@ -41,8 +41,6 @@ public class PlayerBase : MonoBehaviour
 
         //Display it in the UI
         healthBar.UpdateHealthBar(health, maxHealthPowerUp);
-
-        LiveSystemManager.instance.ResetLives();
     }
 
     private void Update()
