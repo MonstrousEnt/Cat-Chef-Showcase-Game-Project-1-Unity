@@ -62,6 +62,8 @@ public class WinScreenUI : MonoBehaviour
 
         GameManager.instance.SetRestart(true);
 
+        GameManager.instance.SetLevelStarted(true);
+
         //Re-load the level
         levelLoader.LoadNextLevel("Level 1");
     }
