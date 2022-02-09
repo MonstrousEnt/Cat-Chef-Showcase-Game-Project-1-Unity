@@ -13210,7 +13210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5691833155412073422, guid: f4cd8c872cf2bc3448d7e1e2a4d172f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.6568775
+      value: -14.656258
       objectReference: {fileID: 0}
     - target: {fileID: 5691833155412073422, guid: f4cd8c872cf2bc3448d7e1e2a4d172f9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -44724,7 +44724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7602037129954974233, guid: a7107688cdff2014d9c567bf014ab2a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.6568775
+      value: -14.656258
       objectReference: {fileID: 0}
     - target: {fileID: 7602037129954974233, guid: a7107688cdff2014d9c567bf014ab2a6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -45715,10 +45715,6 @@ PrefabInstance:
       propertyPath: imageGameObject
       value: 
       objectReference: {fileID: 1449719165}
-    - target: {fileID: 1022657848640920624, guid: 87f38a0643bd6844d8d602473596b4dd, type: 3}
-      propertyPath: levelObjectiveCakeIngredientsUI
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3314998620161472091, guid: 87f38a0643bd6844d8d602473596b4dd, type: 3}
       propertyPath: m_RootOrder
       value: 3

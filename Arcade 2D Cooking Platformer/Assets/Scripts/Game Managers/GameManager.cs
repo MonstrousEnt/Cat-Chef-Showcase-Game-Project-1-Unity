@@ -81,15 +81,5 @@ public class GameManager : MonoBehaviour
             //Level Completed
             WinScreenUI.instance.activeMenu(true);
         }
-
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            PlayerBase.instance.TakeDmage(PlayerBase.instance.GetFullHeartNum());
-        }
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            PlayerBase.instance.TakeDmage(PlayerBase.instance.GetFullHeartNum());
-            PlayerBase.instance.TakeDmage(PlayerBase.instance.GetFullHeartNum());
-        }
     }
 }
