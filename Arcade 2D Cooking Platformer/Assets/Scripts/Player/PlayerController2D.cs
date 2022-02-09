@@ -167,24 +167,9 @@ public class PlayerController2D : MonoBehaviour
         //Jump
         //jump in air with extra jumps aka double jumps
         if (Input.GetButtonDown("Jump") && _extraJumps > 0)
-        {
+        {                      
 
-            int randNum = Random.Range(1, 3);
-            Debug.Log(randNum);
-
-            switch (randNum)
-            {
-                case 1:
-                    Debug.Log("playing sound 1");
-                    FindObjectOfType<AudioManager>().playAudio("meow_jump");
-                    break;
-                case 2:
-                    FindObjectOfType<AudioManager>().playAudio("meow_jump2");
-                    Debug.Log("playing sound 2");
-                    break;
-            }
-
-            
+            FindObjectOfType<AudioManager>().playAudio("meow_jump");
 
             //Modify the velocity with force
             _rigidbody2D.velocity = Vector2.up * _jumpHeight;

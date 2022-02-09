@@ -100,6 +100,9 @@ public class PlayerBase : MonoBehaviour
     {
         Physics2D.IgnoreLayerCollision(6, 10, true);
 
+        //play sound
+        FindObjectOfType<AudioManager>().playAudio("meow_take_dmg");
+
         //take damage frame
         _animator.SetTrigger("takeDamage");
 
