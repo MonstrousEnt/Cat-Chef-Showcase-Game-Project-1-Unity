@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
     {
         if (_foundIngredinetsNum == _maxIngredients && _atCakeOver)
         {
-            SettingManager.instance.ActivePause(true, 0f);
+            CakeOver.instance.GameCompleted();
 
             //Level Completed
             WinScreenUI.instance.activeMenu(true);

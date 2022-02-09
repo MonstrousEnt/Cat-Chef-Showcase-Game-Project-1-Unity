@@ -151,7 +151,7 @@ MonoBehaviour:
   - {fileID: 1666240045}
   - {fileID: 9085024207006643883}
   _IngredinetImagesActive: 00000000
-  _maxIngredients: 1
+  _maxIngredients: 4
   _coinNum: 0
   _coinMax: 5
   _atCakeOver: 0

@@ -117,6 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26b0db58e3f57946b52c9803ed16d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 660631320441489045}
+  CakeGameObject: {fileID: 8229436114235268878}
 --- !u!61 &7930553712019190670
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -168,7 +170,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8229436114235268878}
   m_LocalRotation: {x: -0, y: -0, z: 1.1641534e-10, w: 1}
-  m_LocalPosition: {x: -0.05, y: 2.2, z: -2.4530926}
+  m_LocalPosition: {x: -0.05, y: 3.01, z: -2.4530926}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 550212130957423301}
