@@ -26,10 +26,10 @@ public class PlayerAttack : MonoBehaviour
             switch (randNum)
             {
                 case 1:
-                    FindObjectOfType<AudioManager>().playAudio("meow_attack");
+                   AudioManager.instance.playAudio("meow_attack");
                     break;
                 case 2:
-                    FindObjectOfType<AudioManager>().playAudio("meow_attack2");
+                    AudioManager.instance.playAudio("meow_attack2");
                     break;
             }
             Attack();

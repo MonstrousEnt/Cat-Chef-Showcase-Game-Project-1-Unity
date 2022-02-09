@@ -45,7 +45,8 @@ public class EnemyBase : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        FindObjectOfType<AudioManager>().playAudio("slash");
+        AudioManager.instance.playAudio("slash");
+
         //The enemy take the damage from the monsters.
         health -= damage;
 

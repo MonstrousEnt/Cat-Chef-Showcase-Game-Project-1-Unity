@@ -77,7 +77,7 @@ public class EnemyAttack : MonoBehaviour
 		aipath.canMove = false;
 
 		//Debug.Log("Do the enemy attack animation and damage!");
-		FindObjectOfType<AudioManager>().playAudio("enemy_attack");
+		AudioManager.instance.playAudio("enemy_attack");
 		animator.SetTrigger("Attack");
 		PlayerBase.instance.TakeDmage(forkDamage);
 		isAttacking = false;

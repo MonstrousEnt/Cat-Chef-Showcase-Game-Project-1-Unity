@@ -55,8 +55,9 @@ public class PlayerBase : MonoBehaviour
         {
             //Power up health
             health = health + GetFullHeartNum();
-            FindObjectOfType<AudioManager>().playAudio("health_item");
-            FindObjectOfType<AudioManager>().playAudio("happy_purr");
+
+            AudioManager.instance.playAudio("health_item");
+            AudioManager.instance.playAudio("happy_purr");
 
             //Display it in the UI
             healthBar.UpdateHealthBar(health, maxHealthPowerUp);
@@ -103,7 +104,7 @@ public class PlayerBase : MonoBehaviour
         Physics2D.IgnoreLayerCollision(6, 10, true);
 
         //play sound
-        FindObjectOfType<AudioManager>().playAudio("meow_take_dmg");
+        AudioManager.instance.playAudio("meow_take_dmg");
 
         //take damage frame
         _animator.SetTrigger("takeDamage");

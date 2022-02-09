@@ -46,7 +46,7 @@ public class Ingredinets : MonoBehaviour
             
             Debug.Log("found one!");
             //play the sound
-            FindObjectOfType<AudioManager>().playAudio("getitem");
+            AudioManager.instance.playAudio("getitem");
 
             //Set UI
             LevelObjectiveCakeIngredientsUI.instance.ActiveImage(imageGameObject, true, ingredinetImagesActiveIndex);

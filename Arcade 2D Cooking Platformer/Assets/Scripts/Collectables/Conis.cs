@@ -14,7 +14,7 @@ public class Conis : MonoBehaviour
             PointManger.instance.SetTolatPoints(PointManger.instance.GetTolatPoints() + PointManger.instance.GetPointData().GetCoinPointNum());
 
             //play the sound
-            FindObjectOfType<AudioManager>().playAudio("coin1");
+            AudioManager.instance.playAudio("coin1");
 
             CollectablesUI.instance.SetText(GameManager.instance.GetCoinNum());
 
