@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,9 @@ public class EnemyBase : MonoBehaviour
 
     [SerializeField] private Animator _animator;
 
+    [SerializeField] private AIPath aipath;
+
+
     private void Awake()
     {
         _animator.GetComponent<Animator>();
@@ -19,7 +23,11 @@ public class EnemyBase : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {       
+
+        //disable the enemy
+        GetComponent<Collider2D>().enabled = true;
+
         if (GameObjectActiveManger.instance.GetEnemyTriggerList() != null)
         {
             if (GameObjectActiveManger.instance.GetEnemyTriggerList().Count == maxCount)
@@ -45,7 +53,7 @@ public class EnemyBase : MonoBehaviour
 
         //If the enemy dies
         if (health <= 0)
-        {
+        {            
             Die();
         }
         
@@ -53,17 +61,19 @@ public class EnemyBase : MonoBehaviour
 
     private IEnumerator DamageIndicator()
     {
-
+        aipath.canMove = false;
         //take damage frame
         _animator.SetTrigger("takeDamage");
 
         //Wait a second or 2
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
+        aipath.canMove = true;
 
     }
 
     private void Die()
     {
+
         if (GameObjectActiveManger.instance.GetEnemyTriggerList() != null)
         {
             if (GameObjectActiveManger.instance.GetEnemyTriggerList().Count == maxCount)
@@ -72,7 +82,40 @@ public class EnemyBase : MonoBehaviour
             }
         }
 
-        //Turn off the player game object
-        Destroy(gameObject);
+        //disable the enemy
+        GetComponent<Collider2D>().enabled = false;
+
+        StopCoroutine(FlickeringDie());
+        StartCoroutine(FlickeringDie());
+
+        StopCoroutine(playDeathAnimation());
+        StartCoroutine(playDeathAnimation());
+  
+              
     }
+
+    private IEnumerator playDeathAnimation()
+    {
+        //play animation
+        _animator.SetBool("isDead", true);
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
+
+    }
+
+
+    private IEnumerator FlickeringDie()
+    {   //Turn the enemy red
+
+        for (int i = 0; i < 3; i++)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+            yield return new WaitForSeconds(.1f);
+            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            yield return new WaitForSeconds(.2f);
+        }
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+
+    }
+
 }

@@ -326,7 +326,6 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   isRespawn: 0
   _animator: {fileID: 8462256792850483002}
-  damageIndicatorComplete: 0
 --- !u!114 &343340646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,7 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8462256792850483002}
   attackPoint: {fileID: 1443183051}
-  attackRadius: 0.5
+  attackRadius: 0.9
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256

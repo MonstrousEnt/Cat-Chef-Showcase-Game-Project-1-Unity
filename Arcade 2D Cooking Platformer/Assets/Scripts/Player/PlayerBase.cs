@@ -98,7 +98,7 @@ public class PlayerBase : MonoBehaviour
 
     private IEnumerator DamageIndicator()
     {
-        Physics2D.IgnoreLayerCollision(6, 8, true);
+        Physics2D.IgnoreLayerCollision(6, 10, true);
 
         //take damage frame
         _animator.SetTrigger("takeDamage");
@@ -106,7 +106,7 @@ public class PlayerBase : MonoBehaviour
         //Wait a second or 2
         yield return new WaitForSeconds(2f);
 
-        Physics2D.IgnoreLayerCollision(6, 8, false);
+        Physics2D.IgnoreLayerCollision(6, 10, false);
 
     }
 
