@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void PlayLevelMusic(string levelMusicName)
     {
-        if (!GameManager.instance.GetRestart())
+        if (Restart)
         {
             AudioManager.instance.SetAudioLoop(levelMusicName, false);
             AudioManager.instance.stopAudio(levelMusicName);
