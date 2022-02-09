@@ -11,6 +11,7 @@
 	- [x] Move AI
 	- [x] Flip AI
 	- [x] Attack AI 
+	- [ ] death animation 
 	- [ ] Monsters Drops	
 - [ ] Main Player 
 	- [x] UI health
