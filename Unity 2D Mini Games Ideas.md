@@ -10,7 +10,7 @@
 	- [x] Desgin
 	- [x] Move AI
 	- [x] Flip AI
-	- [ ] Attack AI 
+	- [x] Attack AI 
 	- [ ] Monsters Drops	
 - [ ] Main Player 
 	- [x] UI health
@@ -20,7 +20,7 @@
 		- [x] Jump
 		- [x] Double jump
 		- [x] Wall Jump
-		- [ ] Attack 	
+		- [x] Attack 	
 		- [ ] Clean up
 - [x] Collectable
 	- [x] conis
