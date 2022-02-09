@@ -119,8 +119,8 @@ MonoBehaviour:
   IngredinetName: Sugar
   ingredinetImagesActiveIndex: 2
   imageGameObject: {fileID: 0}
-  indexIngredientsTigger: 2
-  maxCount: 4
+  indexIngredientsTiggerList: 2
+  maxCountIngredientTiggerList: 4
 --- !u!61 &2239707914703028747
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -119,8 +119,8 @@ MonoBehaviour:
   IngredinetName: Banana
   ingredinetImagesActiveIndex: 0
   imageGameObject: {fileID: 0}
-  indexIngredientsTigger: 0
-  maxCount: 4
+  indexIngredientsTiggerList: 0
+  maxCountIngredientTiggerList: 4
 --- !u!61 &9102428933238438070
 BoxCollider2D:
   m_ObjectHideFlags: 0

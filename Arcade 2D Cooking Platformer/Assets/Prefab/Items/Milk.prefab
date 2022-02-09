@@ -119,8 +119,8 @@ MonoBehaviour:
   IngredinetName: Milk
   ingredinetImagesActiveIndex: 1
   imageGameObject: {fileID: 0}
-  indexIngredientsTigger: 1
-  maxCount: 4
+  indexIngredientsTiggerList: 1
+  maxCountIngredientTiggerList: 4
 --- !u!61 &6516649788119913064
 BoxCollider2D:
   m_ObjectHideFlags: 0
