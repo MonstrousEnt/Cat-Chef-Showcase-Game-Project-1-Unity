@@ -5,8 +5,8 @@
 - [x] Find clue to sovle the puzzle or found keys
 	- [x] Desgin 
 	- [x] Coding
-	- [ ] bananacake
-- [ ] Monsters
+	- [x] bananacake
+- [x] Monsters
 	- [x] Desgin
 	- [x] Move AI
 	- [x] Flip AI
