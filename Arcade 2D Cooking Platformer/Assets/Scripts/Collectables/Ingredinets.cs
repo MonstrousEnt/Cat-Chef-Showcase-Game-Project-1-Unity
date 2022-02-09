@@ -1,31 +1,46 @@
+/* Project Name: Arcade 2D Platformer
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox, Ben Topple
+ * Created Date: January 30, 2022
+ * Latest Update: February 11, 2022
+ * Description: The class is the manager for collecting ingredients. 
+ * Notes: 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Ingredinets : MonoBehaviour
 {
+    //Class Variables 
+    [Header("Data Info")]
     [SerializeField] private string IngredinetName;
 
+    [Header("UI Images")]
     [SerializeField] private int ingredinetImagesActiveIndex;
-
     [SerializeField] private GameObject imageGameObject;
 
-    [SerializeField] private int indexIngredientsTigger; //id of the checkpoint
-    [SerializeField] private int maxCount;
+    [Header("Trigger Reference")]
+    [SerializeField] private int indexIngredientsTiggerList; //id of the checkpoint
+    [SerializeField] private int maxCountIngredientTiggerList;
 
     private void Start()
     {
+        #region Destroy Game object if already been collected
         if (GameObjectActiveManger.instance.GetIngredientsTiggerList() != null)
         {
-            if (GameObjectActiveManger.instance.GetIngredientsTiggerList().Count == maxCount)
+            if (GameObjectActiveManger.instance.GetIngredientsTiggerList().Count == maxCountIngredientTiggerList)
             {
-                if (GameObjectActiveManger.instance.GetIngredientsTiggerList()[indexIngredientsTigger] == true)
+                if (GameObjectActiveManger.instance.GetIngredientsTiggerList()[indexIngredientsTiggerList] == true)
                 {
                     Destroy(gameObject);
                 }
             }
         }
+        #endregion
 
+        #region Get Ingredients UI Image from Game Manager
         for (int i = 0; i < GameManager.instance.GetIngredientNameList().Count; i++)
         {
             if (IngredinetName == GameManager.instance.GetIngredientNameList()[i])
@@ -33,33 +48,44 @@ public class Ingredinets : MonoBehaviour
                 imageGameObject = GameManager.instance.GetIngredinetImages()[i];
             }
         }
+       #endregion
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            int tempFoundIngredinetsNum = 1;
-            GameManager.instance.SetFoundIngredinetsNum(GameManager.instance.GetFoundIngredinetsNum() + tempFoundIngredinetsNum);
-
-            PointManger.instance.SetTolatPoints(PointManger.instance.GetTolatPoints() + PointManger.instance.GetPointData().GetIngredientPointNum());
-            
-            Debug.Log("found one!");
-            //play the sound
-            AudioManager.instance.playAudio("getitem");
-
-            //Set UI
-            LevelObjectiveCakeIngredientsUI.instance.ActiveImage(imageGameObject, true, ingredinetImagesActiveIndex);
-
-            if (GameObjectActiveManger.instance.GetIngredientsTiggerList() != null)
-            {
-                if (GameObjectActiveManger.instance.GetIngredientsTiggerList().Count == maxCount)
-                {
-                    GameObjectActiveManger.instance.GetIngredientsTiggerList()[indexIngredientsTigger] = true;
-                }
-            }
-                    
-            Destroy(gameObject);
+            CollectItem();
         }
+    }
+
+    private void CollectItem()
+    {
+        //Ingredients up go up by one and set it to the game manager
+        int tempFoundIngredinetsNum = 1;
+        GameManager.instance.SetFoundIngredinetsNum(GameManager.instance.GetFoundIngredinetsNum() + tempFoundIngredinetsNum);
+
+        //Added the Ingredients to the total points
+        PointManger.instance.SetTolatPoints(PointManger.instance.GetTolatPoints() + PointManger.instance.GetPointData().GetIngredientPointNum());
+
+        //Play the sound
+        AudioManager.instance.playAudio("getitem");
+
+        //Set UI
+        LevelObjectiveCakeIngredientsUI.instance.ActiveImage(imageGameObject, true, ingredinetImagesActiveIndex);
+      
+
+        #region Game Object has been trigger. Set the boolean to false to destroy the object after the player respwan from a checkpoint.
+        if (GameObjectActiveManger.instance.GetIngredientsTiggerList() != null)
+        {
+            if (GameObjectActiveManger.instance.GetIngredientsTiggerList().Count == maxCountIngredientTiggerList)
+            {
+                GameObjectActiveManger.instance.GetIngredientsTiggerList()[indexIngredientsTiggerList] = true;
+            }
+        }
+        #endregion
+
+        //Destroy the game object
+        Destroy(gameObject);
     }
 }

@@ -37,6 +37,7 @@ public class LoadCkeckpoint : MonoBehaviour
 
 			LivesUI.instance.SetLives(LiveSystemManager.instance.GetLivesCount());
 			CollectablesUI.instance.SetText(GameManager.instance.GetCoinNum());
+			LevelObjectiveCakeIngredientsUI.instance.UpdateImage();
 
 			//Set the boolean flag to false
 			player.isRespawn = false;
