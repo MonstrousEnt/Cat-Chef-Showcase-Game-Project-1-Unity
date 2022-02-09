@@ -55,6 +55,8 @@ public class PlayerBase : MonoBehaviour
         {
             //Power up health
             health = health + GetFullHeartNum();
+            FindObjectOfType<AudioManager>().playAudio("health_item");
+            FindObjectOfType<AudioManager>().playAudio("happy_purr");
 
             //Display it in the UI
             healthBar.UpdateHealthBar(health, maxHealthPowerUp);
