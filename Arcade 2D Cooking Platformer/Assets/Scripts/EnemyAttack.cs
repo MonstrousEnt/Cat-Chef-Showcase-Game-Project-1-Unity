@@ -17,7 +17,7 @@ public class EnemyAttack : MonoBehaviour
 
     public LayerMask playerLayer;
 
-	private bool isAttacking = false;
+	[SerializeField] private bool isAttacking = false;
 
 	[SerializeField] private AIPath aipath;
 
