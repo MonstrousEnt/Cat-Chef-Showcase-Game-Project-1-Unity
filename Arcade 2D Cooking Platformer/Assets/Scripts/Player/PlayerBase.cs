@@ -1,3 +1,12 @@
+/* Project Name: Arcade 2D Platformer
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox, Ben Topple
+ * Created Date: January 30, 2022
+ * Latest Update: February 11, 2022
+ * Description: The class is the manger for the player
+ * Notes: 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,44 +14,62 @@ using UnityEngine.UI;
 
 public class PlayerBase : MonoBehaviour
 {
-    public static PlayerBase instance; //A static reference of the class
+    //Class Variables
+    public static PlayerBase instance;
 
+    [Header("Player Data")]
     [SerializeField] public int health = 0;
-    [SerializeField] private int fullHeartNum = 10;
     [SerializeField] private int maxHealth;
+    [SerializeField] private int fullHeartNum = 10;
+
+    [Header("Health Power Up")]
     [SerializeField] private int maxHealthPowerUp = 100;
 
+    [Header("Layer")]
+    [SerializeField] private int playerLayer;
+    [SerializeField] private int enemyLayer;
+
+    [Header("Component References")]
     [SerializeField] private HealthBar healthBar;
 
-    public bool isRespawn = false; //A boolean flag for when the player is respawn at a checkpoint
-    [SerializeField] private Animator _animator; //Reference to the animator 
+    [Header("Animator References")]
+    [SerializeField] private Animator _animator;
+    [SerializeField] private string takeDamage = "takeDamage";
 
+    [Header("Sound Effects")]
+    private string takeDamageSoundEffect = "meow_take_dmg";
 
+    [Header("Flag Boolean")]
+    private bool isRespawn = false;
+
+    //Getter and Setters
     public int GetFullHeartNum() { return fullHeartNum; }
+    public bool GetIsRespawn() { return isRespawn; }
+    public void SetIsRespawn(bool isRespawn) { this.isRespawn = isRespawn; }
 
     public void Awake()
     {
+        #region Singleton Reference
         if (instance == null)
         {
-            //Set an instance of it
             instance = this;
         }
+        #endregion
+
+        //Get game components 
+        _animator = GetComponent<Animator>();
     }
 
     private void Start()
     {
-        Physics2D.IgnoreLayerCollision(6, 10, false);
+        //Reset collision for player and enemy layers
+        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
 
         //set the health to max health of the player
         health = maxHealth;
 
         //Display it in the UI
         healthBar.UpdateHealthBar(health, maxHealthPowerUp);
-    }
-
-    private void Update()
-    {
-
     }
 
     public void HealthPowerUp(GameObject healthPowerUpGameObject, int indexHealthPowerUpTrigger, int maxCountHeathPowerUpTriggerList)
@@ -71,6 +98,10 @@ public class PlayerBase : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// When the player takes damage.
+    /// </summary>
+    /// <param name="damage"></param>
     public void TakeDmage(int damage)
     {
 		//The player take the damage from the monsters.
@@ -79,70 +110,92 @@ public class PlayerBase : MonoBehaviour
         //Display it in the UI
         healthBar.UpdateHealthBar(health, maxHealthPowerUp);
 
-        StopCoroutine(DamageIndicator());
-        StopCoroutine(Flickering());
+        //Play sound
+        AudioManager.instance.playAudio(takeDamageSoundEffect);
 
-        StartCoroutine(DamageIndicator());
-        StartCoroutine(Flickering());
+        //Take damage frame
+        _animator.SetTrigger(takeDamage);
+
+        //Indicator the damage
+        StopCoroutine(invulnerability());
+        StopCoroutine(flickering());
+
+        StartCoroutine(invulnerability());
+        StartCoroutine(flickering());
 
         //If the player dies
         if (health <= 0)
 		{
-            StopCoroutine(Die());
-			StartCoroutine(Die());
+            StopCoroutine(die());
+			StartCoroutine(die());
 		}
 	}
 
-    private IEnumerator DamageIndicator()
+    /// <summary>
+    /// Make the player and enemy Invulnerability for a flew seconds.
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator invulnerability()
     {
-        Physics2D.IgnoreLayerCollision(6, 10, true);
-
-        //play sound
-        AudioManager.instance.playAudio("meow_take_dmg");
-
-        //take damage frame
-        _animator.SetTrigger("takeDamage");
+        //Turn off collision for player and enemy
+        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
 
         //Wait a second or 2
         yield return new WaitForSeconds(2f);
 
-        Physics2D.IgnoreLayerCollision(6, 10, false);
+        //Turn off collision for player and enemy
+        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
 
     }
 
-    private IEnumerator Flickering()
-    {   //Turn the player red
-
+    /// <summary>
+    /// Flicker the player red for a couple of seconds.
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator flickering()
+    {   
         for (int i = 0; i < 3; i++)
         {
             gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+
             yield return new WaitForSeconds(.1f);
+
             gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+
             yield return new WaitForSeconds(.2f);
         }
+
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
 
     }
 
 
-
-    private IEnumerator Die()
+    /// <summary>
+    /// When the players dies, respawn the player.
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator die()
     {
         //Wait a flew seconds to show all hearts are empty heat.
         yield return new WaitForSeconds(0.5f);
 
         //Respawn the player
-        Respawn();
+        respawn();
        
         
     }
 
-    private void Respawn()
+    /// <summary>
+    /// Respawn the player back at the checkpoint.
+    /// </summary>
+    private void respawn()
     {
+        //If the player ran out of lives
         if (LiveSystemManager.instance.GetLivesCount() == 0)
         {
             LiveSystemManager.instance.OutOfLives();
         }
+        //Otherwise respawn the player back at the checkpoint.
         else
         {
             //Reset the health
@@ -151,15 +204,17 @@ public class PlayerBase : MonoBehaviour
             //Reset the health bar
             healthBar.UpdateHealthBar(health, maxHealthPowerUp);
 
+            //Player lose one life
             LiveSystemManager.instance.LoseALife();
 
-             //Respawn at checkpoint
+            //Respawn at checkpoint
 			isRespawn = true;
         }
     }
 
     private void OnDestroy()
     {
+        //Set the singleton reference to null when the game object destroy
         instance = null;
     }
 }

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443183050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.852, y: -0.378, z: 0}
+  m_LocalPosition: {x: 0.97, y: -0.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8462256792850483001}
@@ -320,12 +320,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  fullHeartNum: 10
   maxHealth: 30
+  fullHeartNum: 10
   maxHealthPowerUp: 30
+  playerLayer: 6
+  enemyLayer: 10
   healthBar: {fileID: 0}
-  isRespawn: 0
   _animator: {fileID: 8462256792850483002}
+  takeDamage: takeDamage
+  isRespawn: 0
 --- !u!114 &343340646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,7 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8462256792850483002}
   attackPoint: {fileID: 1443183051}
-  attackRadius: 0.9
+  attackRadius: 1
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256

@@ -28,7 +28,7 @@ public class LoadCkeckpoint : MonoBehaviour
 	private void Update()
 	{
 		//If the player dies, reload the scene
-		if (PlayerBase.instance.isRespawn)
+		if (PlayerBase.instance.GetIsRespawn())
 		{
 			//To the last checkpoint position
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -42,7 +42,7 @@ public class LoadCkeckpoint : MonoBehaviour
 			LevelObjectiveCakeIngredientsUI.instance.UpdateImage();
 
 			//Set the boolean flag to false
-			PlayerBase.instance.isRespawn = false;
+			PlayerBase.instance.SetIsRespawn(false);
 		}
 	}
 }

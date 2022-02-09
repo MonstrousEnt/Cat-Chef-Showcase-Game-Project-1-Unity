@@ -46855,18 +46855,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 343340646, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
-      propertyPath: attackRadius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1443183051, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 1443183051, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.29
-      objectReference: {fileID: 0}
     - target: {fileID: 8462256791385980606, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
       propertyPath: healthBar
       value: 
