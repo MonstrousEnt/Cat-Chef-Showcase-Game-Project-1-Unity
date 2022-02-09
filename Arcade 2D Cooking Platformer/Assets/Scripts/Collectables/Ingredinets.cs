@@ -55,7 +55,7 @@ public class Ingredinets : MonoBehaviour
         GameManager.instance.SetFoundIngredinetsNum(GameManager.instance.GetFoundIngredinetsNum() + tempFoundIngredinetsNum);
 
         //Added the Ingredients to the total points
-        PointManger.instance.SetTolatPoints(PointManger.instance.GetTolatPoints() + PointManger.instance.GetPointData().GetIngredientPointNum());
+        PointManager.instance.SetTolatPoints(PointManager.instance.GetTolatPoints() + PointManager.instance.GetIngredientPointNum());
 
         //Play the sound
         AudioManager.instance.playAudio("getitem");

@@ -22,7 +22,7 @@ public class Conis : MonoBehaviour
             GameManager.instance.SetCoinNum(GameManager.instance.GetCoinNum() + tempCoinNum);
 
             //Added the Ingredients to the total points
-            PointManger.instance.SetTolatPoints(PointManger.instance.GetTolatPoints() + PointManger.instance.GetPointData().GetCoinPointNum());
+            PointManager.instance.SetTolatPoints(PointManager.instance.GetTolatPoints() + PointManager.instance.GetCoinPointNum());
 
             //play the sound
             AudioManager.instance.playAudio("coin1");

@@ -16,14 +16,14 @@ public class LoadCkeckpoint : MonoBehaviour
 
 	private void Start()
 	{
-		////if last checkpoint doesn't equal 0, 0, 0
-		//if (LevelEvents.instance.GetLastCheckPointPos() != new Vector3(0, 0, 0))
-		//{
-		//	//Set the players position to our last checkpoint position
-		//	transform.position = LevelEvents.instance.GetLastCheckPointPos();
-		//}
+        //if last checkpoint doesn't equal 0, 0, 0
+        if (GameManager.instance.GetLastCheckpointPos() != new Vector2(0, 0))
+        {
+            //Set the players position to our last checkpoint position
+            gameObject.transform.position = GameManager.instance.GetLastCheckpointPos();
+        }
 
-	}
+    }
 
 	private void Update()
 	{
@@ -35,9 +35,14 @@ public class LoadCkeckpoint : MonoBehaviour
 
 			Debug.Log("Checkpoint loaded.");
 
+			gameObject.transform.position = GameManager.instance.GetLastCheckpointPos();
+
+			Debug.Log(gameObject.transform.position);
+
 			LivesUI.instance.SetLives(LiveSystemManager.instance.GetLivesCount());
 			CollectablesUI.instance.SetText(GameManager.instance.GetCoinNum());
 			LevelObjectiveCakeIngredientsUI.instance.UpdateImage();
+
 
 			//Set the boolean flag to false
 			player.isRespawn = false;

@@ -43,7 +43,7 @@ public class WinScreenUI : MonoBehaviour
 
     public void activeMenu(bool flag)
     {
-        pointTotalText.text = "Points: " + PointManger.instance.GetTolatPoints();
+        pointTotalText.text = "Points: " + PointManager.instance.GetTolatPoints();
 
         //Enable or disable the game over screen.
         gameObject.SetActive(flag);
