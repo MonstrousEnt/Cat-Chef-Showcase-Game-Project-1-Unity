@@ -1,3 +1,12 @@
+/* Project Name: Arcade 2D Platformer
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox, Ben Topple
+ * Created Date: January 30, 2022
+ * Latest Update: February 11, 2022
+ * Description: The class load the last checkpoint for the player, and UI data.
+ * Notes: 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,21 +14,12 @@ using UnityEngine.SceneManagement;
 
 public class LoadCkeckpoint : MonoBehaviour
 {
-	//Class Variables 
-	private PlayerBase player; //Reference to the base player class
-
-	private void Awake()
-	{
-		//Get the reference to  the base player class
-		player = GetComponent<PlayerBase>();
-	}
-
 	private void Start()
 	{
-        //if last checkpoint doesn't equal 0, 0, 0
+        //If last checkpoint doesn't equal 0, 0
         if (GameManager.instance.GetLastCheckpointPos() != new Vector2(0, 0))
         {
-            //Set the players position to our last checkpoint position
+            //spawn the player at the last checkpoint
             gameObject.transform.position = GameManager.instance.GetLastCheckpointPos();
         }
 
@@ -28,24 +28,21 @@ public class LoadCkeckpoint : MonoBehaviour
 	private void Update()
 	{
 		//If the player dies, reload the scene
-		if (player.isRespawn)
+		if (PlayerBase.instance.isRespawn)
 		{
 			//To the last checkpoint position
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
-			Debug.Log("Checkpoint loaded.");
-
+			//Set the player to the last checkpoint
 			gameObject.transform.position = GameManager.instance.GetLastCheckpointPos();
 
-			Debug.Log(gameObject.transform.position);
-
+			//Update UI Data
 			LivesUI.instance.SetLives(LiveSystemManager.instance.GetLivesCount());
 			CollectablesUI.instance.SetText(GameManager.instance.GetCoinNum());
 			LevelObjectiveCakeIngredientsUI.instance.UpdateImage();
 
-
 			//Set the boolean flag to false
-			player.isRespawn = false;
+			PlayerBase.instance.isRespawn = false;
 		}
 	}
 }
