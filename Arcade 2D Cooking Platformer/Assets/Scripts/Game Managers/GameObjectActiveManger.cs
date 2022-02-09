@@ -30,6 +30,28 @@ public class GameObjectActiveManger : MonoBehaviour
     #endregion
 
     /// <summary>
+    /// Reset all the game object active Triggers.
+    /// </summary>
+    /// <param name="CheckPointamount"></param>
+    /// <param name="ingredinetAmount"></param>
+    /// <param name="healthPowrUpAmount"></param>
+    /// <param name="enemyAmount"></param>
+    public void ResetAllGameObjectActiveTriggers(int checkpointAmount, int ingredinetAmount, int healthPowrUpAmount, int enemyAmount)
+    {
+        checkpointTriggerList.Clear();
+        AddAllTriggers(checkpointAmount,checkpointTriggerList);
+
+        ingredientsTiggerList.Clear();
+        AddAllTriggers(ingredinetAmount,ingredientsTiggerList);
+
+        healthPowerUpTriggerList.Clear();
+        AddAllTriggers(healthPowrUpAmount, healthPowerUpTriggerList);
+
+        enemyTriggerList.Clear();
+        AddAllTriggers(enemyAmount, enemyTriggerList);
+    }
+
+    /// <summary>
     /// Added all Triggest to the trigger list
     /// </summary>
     /// <param name="amount"></param>

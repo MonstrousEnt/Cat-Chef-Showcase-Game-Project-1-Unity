@@ -1,63 +1,46 @@
+/* Project Name: Arcade 2D Platformer
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox, Ben Topple
+ * Created Date: January 30, 2022
+ * Latest Update: February 11, 2022
+ * Description: The class is the manager for level 1.
+ * Notes:  
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Level1Manager : MonoBehaviour
 {
+    [Header("Level 1 Data")]
     [SerializeField] private Vector2 checkpointOnePos;
+    [SerializeField] private string level1Music;
 
-    [SerializeField] private int CheckPointamount;
+    [Header("Game Object Active Trigger Size Amounts")]
+    [SerializeField] private int checkpointAmount;
     [SerializeField] private int enemyAmount;
-    [SerializeField] private int IngredinetAmount;
+    [SerializeField] private int ingredinetAmount;
     [SerializeField] private int healthPowrUpAmount;
 
     private void Start()
     {
+        //If the level has started
         if (GameManager.instance.GetLevelStarted())
         {
-            CollectablesUI.instance.SetText(GameManager.instance.GetCoinNum());
+            //Reset default game data
+            GameManager.instance.PlayLevelMusic(level1Music);
 
-            if (!GameManager.instance.GetRestart())
-            {
-                AudioManager.instance.stopAudio("Level Music");
-                AudioManager.instance.SetAudioLoop("Level Music", false);
+            GameManager.instance.ResetGameData();
 
-                AudioManager.instance.SetAudioLoop("Level Music", true);
-                AudioManager.instance.playAudio("Level Music");
-            }
+            GameManager.instance.ResetBooleanFlags();
 
-            GameManager.instance.SetRestart(false);
+            GameObjectActiveManger.instance.ResetAllGameObjectActiveTriggers(checkpointAmount, ingredinetAmount, healthPowrUpAmount, enemyAmount);
 
-            for (int i = 0; i < GameManager.instance.GetIngredinetImagesActive().Count; i++)
-            {
-                GameManager.instance.GetIngredinetImagesActive()[i] = false;
-            }
-
-            LiveSystemManager.instance.ResetLives();
-
-            SettingManager.instance.ActivePause(false, 1f);
-
-            GameManager.instance.SetFoundIngredinetsNum(0);
-
-            GameManager.instance.SetAtCakeOver(false);
-
+            //Set the player to checkpoint one
             PlayerBase.instance.gameObject.transform.position = checkpointOnePos;
 
-
-            GameObjectActiveManger.instance.GetCheckpointTriggerList().Clear();
-            GameObjectActiveManger.instance.AddAllTriggers(CheckPointamount, GameObjectActiveManger.instance.GetCheckpointTriggerList());
-
-            GameObjectActiveManger.instance.GetIngredientsTiggerList().Clear();
-            GameObjectActiveManger.instance.AddAllTriggers(IngredinetAmount, GameObjectActiveManger.instance.GetIngredientsTiggerList());
-
-            GameObjectActiveManger.instance.GetHealthPowerUpTriggerList().Clear();
-            GameObjectActiveManger.instance.AddAllTriggers(healthPowrUpAmount, GameObjectActiveManger.instance.GetHealthPowerUpTriggerList());
-
-            GameObjectActiveManger.instance.GetEnemyTriggerList().Clear();
-            GameObjectActiveManger.instance.AddAllTriggers(enemyAmount, GameObjectActiveManger.instance.GetEnemyTriggerList());
-
-
-
+            //Turn of the boolean flag for when the level has started 
             GameManager.instance.SetLevelStarted(false);
         }
        

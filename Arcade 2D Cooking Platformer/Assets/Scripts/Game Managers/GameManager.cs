@@ -72,6 +72,60 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void ResetGameData()
+    {
+        //Reset the coin UI
+        CollectablesUI.instance.SetText(GameManager.instance.GetCoinNum());
+
+        //Reset Ingredient
+        GameManager.instance.SetFoundIngredinetsNum(0);
+
+        #region reset Ingredient UI
+        for (int i = 0; i < GameManager.instance.GetIngredinetImagesActive().Count; i++)
+        {
+            GameManager.instance.GetIngredinetImagesActive()[i] = false;
+        }
+        #endregion
+
+        //Update Ingredient UI
+        LevelObjectiveCakeIngredientsUI.instance.UpdateImage();
+
+        //Reset Lives
+        LiveSystemManager.instance.ResetLives();
+    }
+
+    /// <summary>
+    /// Reset the boolean flag for the game.
+    /// </summary>
+    public void ResetBooleanFlags()
+    {
+        //Turn of the boolean flag for restart the game
+        GameManager.instance.SetRestart(false);
+
+        //Reset the boolean for when the level is completed
+        GameManager.instance.SetAtCakeOver(false);
+
+        //Unpause the game
+        SettingManager.instance.ActivePause(false, 1f);
+    }
+
+    /// <summary>
+    /// Don't play music when the level restart, otherwise play the level music
+    /// </summary>
+    public void PlayLevelMusic(string levelMusicName)
+    {
+        if (!GameManager.instance.GetRestart())
+        {
+            AudioManager.instance.SetAudioLoop(levelMusicName, false);
+            AudioManager.instance.stopAudio(levelMusicName);
+        }
+        else
+        {
+            AudioManager.instance.SetAudioLoop(levelMusicName, true);
+            AudioManager.instance.playAudio(levelMusicName);
+        }
+    }
+
     private void Update()
     {
         if (_foundIngredinetsNum == _maxIngredients && _atCakeOver)
