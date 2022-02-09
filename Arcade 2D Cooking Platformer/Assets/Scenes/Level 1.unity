@@ -11531,11 +11531,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ac7dd5f0f6e1d14790edcaa831315eb, type: 3}
---- !u!95 &717063770 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2413547772758558773, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
-  m_PrefabInstance: {fileID: 4434789788553837474}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &733759958
 GameObject:
   m_ObjectHideFlags: 0
@@ -44950,27 +44945,6 @@ Transform:
   m_Father: {fileID: 1977100830}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2095876217 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 741667311, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
-  m_PrefabInstance: {fileID: 4434789788553837474}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &2095876219
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095876217}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.38
 --- !u!1001 &2103185934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45531,37 +45505,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 733759959}
     m_Modifications:
-    - target: {fileID: 272758076, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 272758076, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 741667311, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 741667311, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
-      propertyPath: m_TagString
-      value: EnemyWeaponTag
-      objectReference: {fileID: 0}
-    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
-      propertyPath: _animator
-      value: 
-      objectReference: {fileID: 717063770}
     - target: {fileID: 3771559445793220590, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: m_Name
       value: Bananaman
-      objectReference: {fileID: 0}
-    - target: {fileID: 3771559445793220590, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3771559445793220590, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6680638396623622087, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: target

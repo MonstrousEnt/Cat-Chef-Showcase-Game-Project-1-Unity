@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 272758077}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: threatPoint
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,9 +39,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 741667312}
-  m_Layer: 8
+  - component: {fileID: 2095876219}
+  m_Layer: 10
   m_Name: AttackCheck
-  m_TagString: Untagged
+  m_TagString: EnemyWeaponTag
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,12 +55,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741667311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.032, y: -0.215, z: 0}
+  m_LocalPosition: {x: -0.558, y: -0.215, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8629438484392667594}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &2095876219
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741667311}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.26
 --- !u!1 &3771559445793220590
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,7 +98,7 @@ GameObject:
   - component: {fileID: 1258437975}
   m_Layer: 8
   m_Name: Bananaman
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -332,9 +349,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 2
+  maxHealth: 3
   indexEnemyTriggerList: 0
   maxCount: 1
+  _animator: {fileID: 2413547772758558773}
+  aipath: {fileID: 6580001628570589281}
 --- !u!114 &1258437975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,11 +367,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2413547772758558773}
-  threatRadius: 1.62
+  threatRadius: 1.12
   threatPoint: {fileID: 272758077}
   attackPoint: {fileID: 741667312}
-  attackRadius: 0.37
+  attackRadius: 0.25
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
+  aipath: {fileID: 6580001628570589281}
   forkDamage: 0

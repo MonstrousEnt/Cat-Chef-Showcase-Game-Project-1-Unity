@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] private int maxCount;
 
     [SerializeField] private Animator _animator;
+
+    [SerializeField] private AIPath aipath;
 
     private void Awake()
     {
@@ -53,12 +56,13 @@ public class EnemyBase : MonoBehaviour
 
     private IEnumerator DamageIndicator()
     {
-
+        aipath.canMove = false;
         //take damage frame
         _animator.SetTrigger("takeDamage");
 
         //Wait a second or 2
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
+        aipath.canMove = true;
 
     }
 

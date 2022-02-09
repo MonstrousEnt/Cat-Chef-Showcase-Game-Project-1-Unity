@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
+
 
 public class EnemyAttack : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class EnemyAttack : MonoBehaviour
     public LayerMask playerLayer;
 
 	private bool isAttacking = false;
+
+	[SerializeField] private AIPath aipath;
 
     [Header("Combat")]
     public int forkDamage;
@@ -38,17 +42,25 @@ public class EnemyAttack : MonoBehaviour
 		}
 	}
 
-	//private void Attack()
- //   {
-	//	//animation
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
 		
-	//	//check if player is touching the weapon
-	//	if (weaponAttackPlayer != null)
-	//	{
-	//		//deal damage to the player 
-	//		PlayerBase.instance.TakeDmage(forkDamage);
-	//	}
-	//}
+		if (collision.tag == "Player")
+        {
+			
+
+			Debug.Log("Enemy collider with player tag!");
+
+			if (isAttacking)
+			{
+				StopAllCoroutines();
+				//StopCoroutine(stopMoving());
+				StartCoroutine(stopMoving());
+
+			}
+
+		}
+    }
 
 	private void OnDrawGizmos()
 	{
@@ -56,29 +68,19 @@ public class EnemyAttack : MonoBehaviour
 		Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
 	}
 
-    private void OnTriggerEnter2D(Collider2D collision)
+	private IEnumerator stopMoving()
     {
-		
-		if (collision.tag == "Player")
-        {
-			Debug.Log("Enemy collider with player tag!");
+		aipath.canMove = false;
 
-			if (isAttacking)
-			{
-				StopCoroutine(enemyAttackDelay());
-				StartCoroutine(enemyAttackDelay());
+		Debug.Log("Do the enemy attack animation and damage!");
+		animator.SetTrigger("Attack");
+		PlayerBase.instance.TakeDmage(forkDamage);
+		isAttacking = false;
 
-				Debug.Log("Do the enemy attack animation and damage!");
-				animator.SetTrigger("Attack");
-				PlayerBase.instance.TakeDmage(forkDamage);
-				isAttacking = false;
-			}
-			
-		}
-    }
+		yield return new WaitForSeconds(.2f);
 
-	private IEnumerator enemyAttackDelay()
-    {
-		yield return new WaitForSeconds(3f);
+		aipath.canMove = true;
+
 	}
+
 }
