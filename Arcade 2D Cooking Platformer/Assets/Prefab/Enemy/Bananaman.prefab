@@ -374,5 +374,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
+  isAttacking: 0
   aipath: {fileID: 6580001628570589281}
+  enemyBase: {fileID: 1258437974}
   forkDamage: 0
