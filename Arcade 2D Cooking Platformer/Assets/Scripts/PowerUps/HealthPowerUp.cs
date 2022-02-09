@@ -25,6 +25,8 @@ public class HealthPowerUp : MonoBehaviour
     { 
         if (collision.tag == "Player")
         {
+            FindObjectOfType<AudioManager>().playAudio("health_item");
+            FindObjectOfType<AudioManager>().playAudio("happy_purr");
             //Added the power up to the player
             PlayerBase.instance.HealthPowerUp(gameObject, indexHealthPowerUpTrigger, maxCount);
         }
