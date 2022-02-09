@@ -21,6 +21,8 @@ public class EnemyAttack : MonoBehaviour
 
 	[SerializeField] private AIPath aipath;
 
+	[SerializeField] private EnemyBase enemyBase;
+
     [Header("Combat")]
     public int forkDamage;
 
@@ -31,25 +33,27 @@ public class EnemyAttack : MonoBehaviour
 
     private void Update()
 	{
+		
 		Collider2D attackPlayer = Physics2D.OverlapCircle(threatPoint.position, threatRadius, playerLayer);
 
 		//When the monster hit the player
 		if (attackPlayer != null)
 		{
+			//Debug.Log("ENEMY HEALTH: " + enemyBase.health);
 			//Attack the player
 			isAttacking = true;
 			Debug.Log("Enemy attack!");
 		}
+		
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 		
-		if (collision.tag == "Player")
-        {
-			
+		if (collision.tag == "Player" && enemyBase.health > 0)
+        {		
 
-			Debug.Log("Enemy collider with player tag!");
+			//Debug.Log("Enemy collider with player tag!");
 
 			if (isAttacking)
 			{
@@ -72,7 +76,7 @@ public class EnemyAttack : MonoBehaviour
     {
 		aipath.canMove = false;
 
-		Debug.Log("Do the enemy attack animation and damage!");
+		//Debug.Log("Do the enemy attack animation and damage!");
 		FindObjectOfType<AudioManager>().playAudio("enemy_attack");
 		animator.SetTrigger("Attack");
 		PlayerBase.instance.TakeDmage(forkDamage);

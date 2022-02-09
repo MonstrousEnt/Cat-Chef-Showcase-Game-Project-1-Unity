@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
-    [SerializeField] private int health = 0;
+    [SerializeField] public int health = 0;
     [SerializeField] private int maxHealth;
 
     [SerializeField] private int indexEnemyTriggerList; 

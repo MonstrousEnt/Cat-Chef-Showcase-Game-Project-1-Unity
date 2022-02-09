@@ -26,12 +26,10 @@ public class PlayerAttack : MonoBehaviour
             switch (randNum)
             {
                 case 1:
-                    Debug.Log("playing sound 1");
                     FindObjectOfType<AudioManager>().playAudio("meow_attack");
                     break;
                 case 2:
                     FindObjectOfType<AudioManager>().playAudio("meow_attack2");
-                    Debug.Log("playing sound 2");
                     break;
             }
             Attack();
@@ -65,7 +63,7 @@ public class PlayerAttack : MonoBehaviour
                 enemyBase.TakeDamage(clawDamage);
 
             }
-            Debug.Log("Dealt damage to " + enemy.name);
+            //Debug.Log("Dealt damage to " + enemy.name);
         }
 
     }
