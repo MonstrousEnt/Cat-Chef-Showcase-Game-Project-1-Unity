@@ -93,9 +93,9 @@ GameObject:
   - component: {fileID: 6680638396623622087}
   - component: {fileID: 4215241189758680761}
   - component: {fileID: 3555882077673410099}
-  - component: {fileID: 594807867}
   - component: {fileID: 1258437974}
   - component: {fileID: 1258437975}
+  - component: {fileID: 709265894352718906}
   m_Layer: 8
   m_Name: Bananaman
   m_TagString: Enemy
@@ -320,22 +320,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2083119, y: 1.736104}
   m_EdgeRadius: 0
---- !u!114 &594807867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3771559445793220590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d651f4c15863cd84583aac72f47d5d8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetRange: 7
-  moveSpeed: 3
-  aipath: {fileID: 6580001628570589281}
-  destinationSetter: {fileID: 6680638396623622087}
 --- !u!114 &1258437974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,11 +333,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 3
-  indexEnemyTriggerList: 0
-  maxCountEnemyTriggerList: 6
+  _maxHealth: 3
+  _takeDamagesoundEffect: slash
   _animator: {fileID: 2413547772758558773}
+  _takeDamageAnimation: takeDamage
+  _deathAnimation: isDead
   aipath: {fileID: 6580001628570589281}
+  _indexEnemyTriggerList: 0
+  _maxCountEnemyTriggerList: 6
 --- !u!114 &1258437975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,15 +353,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63946e29a4fa7745ba929df55614c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 2413547772758558773}
-  threatRadius: 1.12
-  threatPoint: {fileID: 272758077}
-  attackPoint: {fileID: 741667312}
-  attackRadius: 0.25
-  playerLayer:
+  _threatRadius: 1.12
+  _threatPoint: {fileID: 272758077}
+  _attackPoint: {fileID: 741667312}
+  _attackRadius: 0.25
+  _playerLayer:
     serializedVersion: 2
     m_Bits: 64
-  isAttacking: 0
+  _isAttacking: 0
+  _forkDamage: 0
+  _enemyAttackSoundEffect: enemy_attack
+  _animator: {fileID: 2413547772758558773}
+  _attackAnimation: Attack
+  _aipath: {fileID: 6580001628570589281}
+  _enemyBase: {fileID: 1258437974}
+--- !u!114 &709265894352718906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3771559445793220590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff096422fcca7af4ab0cfb814195455e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetRange: 7
+  _moveAnimation: movespeed
+  animator: {fileID: 2413547772758558773}
   aipath: {fileID: 6580001628570589281}
-  enemyBase: {fileID: 1258437974}
-  forkDamage: 0
+  destinationSetter: {fileID: 6680638396623622087}

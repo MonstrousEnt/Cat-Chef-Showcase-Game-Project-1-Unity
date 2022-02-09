@@ -1,3 +1,12 @@
+/* Project Name: Arcade 2D Platformer
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox, Ben Topple
+ * Created Date: January 30, 2022
+ * Latest Update: February 11, 2022
+ * Description: The class is the manger for the enemy.
+ * Notes: 
+ */
+
 using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,44 +14,59 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
+    //Class Variables
+    [Header("Enemy Data")]
     [SerializeField] public int health = 0;
-    [SerializeField] private int maxHealth;
+    [SerializeField] private int _maxHealth;
 
-    [SerializeField] private int indexEnemyTriggerList; 
-    [SerializeField] private int maxCountEnemyTriggerList;
-
+    [Header("Sound Effects")]
+    [SerializeField] string _takeDamagesoundEffect = "slash";
+    
+    [Header("Animations")]
     [SerializeField] private Animator _animator;
+    [SerializeField] private string _takeDamageAnimation = "takeDamage";
+    [SerializeField] private string _deathAnimation = "isDead";
 
+
+    [Header("AIPathfinding references")]
     [SerializeField] private AIPath aipath;
+
+    [Header("Trigger Reference")]
+    [SerializeField] private int _indexEnemyTriggerList; 
+    [SerializeField] private int _maxCountEnemyTriggerList;
 
 
     private void Awake()
     {
+        //Get the game components 
         _animator.GetComponent<Animator>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {       
-
-        //disable the enemy
+    private void Start()
+    {
+        //Enable the enemy collier
         GetComponent<Collider2D>().enabled = true;
 
-        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetEnemyTriggerList(), indexEnemyTriggerList, maxCountEnemyTriggerList, gameObject);
+        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetEnemyTriggerList(), _indexEnemyTriggerList, _maxCountEnemyTriggerList, gameObject);
 
         //set the health to max health of the enemy
-        health = maxHealth;
+        health = _maxHealth;
     }
 
+    /// <summary>
+    /// When the enemy takes damage
+    /// </summary>
+    /// <param name="damage"></param>
     public void TakeDamage(int damage)
     {
-        AudioManager.instance.playAudio("slash");
+        //player the sound effect for damage
+        AudioManager.instance.playAudio(_takeDamagesoundEffect);
 
         //The enemy take the damage from the monsters.
         health -= damage;
 
-        StartCoroutine(DamageIndicator());
-        StartCoroutine(DamageIndicator());
+        StartCoroutine(StopMoving());
+        StartCoroutine(StopMoving());
 
         //If the enemy dies
         if (health <= 0)
@@ -52,54 +76,82 @@ public class EnemyBase : MonoBehaviour
         
     }
 
-    private IEnumerator DamageIndicator()
+    /// <summary>
+    /// stop the enemy for a couple of seconds.
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator StopMoving()
     {
+        //Stop move
         aipath.canMove = false;
+
         //take damage frame
         _animator.SetTrigger("takeDamage");
 
         //Wait a second or 2
         yield return new WaitForSeconds(1f);
+
+        //Can move now
         aipath.canMove = true;
 
     }
 
+    /// <summary>
+    /// When the enemy dies
+    /// </summary>
     private void Die()
     {
-        //disable the enemy
+        //Disable the enemy collier
         GetComponent<Collider2D>().enabled = false;
+
         //TODO prevent enemy from doing more attacks
 
-        StopCoroutine(FlickeringDie());
-        StartCoroutine(FlickeringDie());
+        //flicker the enemy
+        StopCoroutine(flickeringDie());
+        StartCoroutine(flickeringDie());
 
-        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetEnemyTriggerList(), indexEnemyTriggerList, maxCountEnemyTriggerList, true);
+        //Game object has been trigger
+        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetEnemyTriggerList(), _indexEnemyTriggerList, _maxCountEnemyTriggerList, true);
 
+        //Run death animation and destroy the enemy
         StopCoroutine(playDeathAnimation());
         StartCoroutine(playDeathAnimation());  
               
     }
 
+    /// <summary>
+    /// Play the death animation for the enemy then die.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator playDeathAnimation()
     {
-        //play animation
-        _animator.SetBool("isDead", true);
-        yield return new WaitForSeconds(1f);
-        Destroy(gameObject);
+        //Play the animation
+        _animator.SetBool(_deathAnimation, true);
 
+        //Wait for a flew seconds
+        yield return new WaitForSeconds(1f);
+
+        //Destroy the game object
+        Destroy(gameObject);
     }
 
-
-    private IEnumerator FlickeringDie()
-    {   //Turn the enemy red
-
+    /// <summary>
+    /// flicker the enemy from invisible to normal for a couple seconds.
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator flickeringDie()
+    {  
         for (int i = 0; i < 3; i++)
         {
             gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+
             yield return new WaitForSeconds(.1f);
+
             gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+
             yield return new WaitForSeconds(.2f);
         }
+
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
 
     }

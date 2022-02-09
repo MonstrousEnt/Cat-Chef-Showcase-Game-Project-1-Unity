@@ -10049,6 +10049,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: _indexEnemyTriggerList
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: maxCountEnemyTriggerList
       value: 6
       objectReference: {fileID: 0}
@@ -11746,6 +11750,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: _indexEnemyTriggerList
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: maxCountEnemyTriggerList
       value: 6
       objectReference: {fileID: 0}
@@ -12615,6 +12623,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: indexEnemyTriggerList
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: _indexEnemyTriggerList
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
@@ -43863,6 +43875,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: _indexEnemyTriggerList
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: maxCountEnemyTriggerList
       value: 6
       objectReference: {fileID: 0}
@@ -44882,6 +44898,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: indexEnemyTriggerList
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: _indexEnemyTriggerList
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
