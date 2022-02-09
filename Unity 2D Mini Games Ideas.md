@@ -5,7 +5,7 @@
 - [x] Find clue to sovle the puzzle or found keys
 	- [x] Desgin 
 	- [x] Coding
-	- [ ] Normal cke or bananacake
+	- [ ] bananacake
 - [ ] Monsters
 	- [x] Desgin
 	- [x] Move AI
