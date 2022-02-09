@@ -128,51 +128,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1633900865732519672, guid: 70d863a9943bba949b22d6e31f7e66f8, type: 3}
   m_PrefabInstance: {fileID: 1634867933}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7346194 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8377535178365425451, guid: b471b31534ff76e44a9b97c4443d1fb0, type: 3}
-  m_PrefabInstance: {fileID: 7879030244060080064}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7346195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7346194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87bae7c44d413cc4fb5874c3da2f8432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  indexHealthPowerUpTrigger: 0
-  maxCount: 2
---- !u!61 &7346198
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7346194}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &9030867
 GameObject:
   m_ObjectHideFlags: 0
@@ -10027,6 +9982,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 733759959}
     m_Modifications:
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: indexEnemyTriggerList
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: maxCountEnemyTriggerList
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3771559445793220590, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: m_Name
       value: Bananaman (3)
@@ -11716,6 +11679,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 733759959}
     m_Modifications:
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: indexEnemyTriggerList
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: maxCountEnemyTriggerList
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3771559445793220590, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: m_Name
       value: Bananaman (2)
@@ -11977,7 +11948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indexHealthPowerUpTrigger: 1
-  maxCount: 2
+  maxCountHealthPowerUpTriggerList: 3
 --- !u!61 &775636184
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12580,6 +12551,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 733759959}
     m_Modifications:
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: indexEnemyTriggerList
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: maxCountEnemyTriggerList
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3771559445793220590, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: m_Name
       value: Bananaman (4)
@@ -13052,8 +13031,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1812711932275545852, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
+      propertyPath: enemyAmount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1812711932275545852, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
       propertyPath: collectablesUI
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1812711932275545852, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
+      propertyPath: CheckPointamount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1812711932275545852, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
+      propertyPath: IngredinetAmount
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1812711932275545852, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
       propertyPath: checkpointOnePos.x
@@ -13062,6 +13053,10 @@ PrefabInstance:
     - target: {fileID: 1812711932275545852, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
       propertyPath: checkpointOnePos.y
       value: 1.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 1812711932275545852, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
+      propertyPath: healthPowrUpAmount
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1812711932275545853, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
       propertyPath: m_Name
@@ -13611,8 +13606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87bae7c44d413cc4fb5874c3da2f8432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indexHealthPowerUpTrigger: 1
-  maxCount: 2
+  indexHealthPowerUpTrigger: 2
+  maxCountHealthPowerUpTriggerList: 3
 --- !u!61 &1249141435
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44041,6 +44036,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 733759959}
     m_Modifications:
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: indexEnemyTriggerList
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: maxCountEnemyTriggerList
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3771559445793220590, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: m_Name
       value: Bananaman (5)
@@ -45055,6 +45058,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 733759959}
     m_Modifications:
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: indexEnemyTriggerList
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: maxCountEnemyTriggerList
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3771559445793220590, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: m_Name
       value: Bananaman (1)
@@ -45638,54 +45649,6 @@ Transform:
   - {fileID: 6832211663848131370}
   m_Father: {fileID: 0}
   m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1968944452
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1968944454}
-  - component: {fileID: 1968944453}
-  m_Layer: 0
-  m_Name: GameObjectActiveManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1968944453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1968944452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54167ec107e2762438a294af759d56b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkpointTriggerList: 
-  enemyTriggerList: 
-  coinTriggerList: 
-  ingredientsTiggerList: 
-  healthPowerUpTriggerList: 
---- !u!4 &1968944454
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1968944452}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1977100829
 GameObject:
@@ -46632,6 +46595,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1629218244152812078, guid: 6cd6a24b72f63534ba276c0f10dce41f, type: 3}
   m_PrefabInstance: {fileID: 2031434503367893858}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2402620870950619221
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2402620870090046737, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
+      propertyPath: m_Name
+      value: GameObjectActiveManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402620870090046739, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402620870090046739, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402620870090046739, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402620870090046739, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402620870090046739, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402620870090046739, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402620870090046739, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402620870090046739, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402620870090046739, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402620870090046739, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402620870090046739, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
 --- !u!114 &3460777717635148648 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2759581767203561836, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}

@@ -27,18 +27,7 @@ public class Ingredinets : MonoBehaviour
 
     private void Start()
     {
-        #region Destroy Game object if already been collected
-        if (GameObjectActiveManger.instance.GetIngredientsTiggerList() != null)
-        {
-            if (GameObjectActiveManger.instance.GetIngredientsTiggerList().Count == maxCountIngredientTiggerList)
-            {
-                if (GameObjectActiveManger.instance.GetIngredientsTiggerList()[indexIngredientsTiggerList] == true)
-                {
-                    Destroy(gameObject);
-                }
-            }
-        }
-        #endregion
+        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetIngredientsTiggerList(), indexIngredientsTiggerList, maxCountIngredientTiggerList, gameObject);
 
         #region Get Ingredients UI Image from Game Manager
         for (int i = 0; i < GameManager.instance.GetIngredientNameList().Count; i++)
@@ -73,17 +62,9 @@ public class Ingredinets : MonoBehaviour
 
         //Set UI
         LevelObjectiveCakeIngredientsUI.instance.ActiveImage(imageGameObject, true, ingredinetImagesActiveIndex);
-      
 
-        #region Game Object has been trigger. Set the boolean to false to destroy the object after the player respwan from a checkpoint.
-        if (GameObjectActiveManger.instance.GetIngredientsTiggerList() != null)
-        {
-            if (GameObjectActiveManger.instance.GetIngredientsTiggerList().Count == maxCountIngredientTiggerList)
-            {
-                GameObjectActiveManger.instance.GetIngredientsTiggerList()[indexIngredientsTiggerList] = true;
-            }
-        }
-        #endregion
+        //Game object has been trigger
+        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetIngredientsTiggerList(), indexIngredientsTiggerList, maxCountIngredientTiggerList, true);
 
         //Destroy the game object
         Destroy(gameObject);

@@ -5,23 +5,13 @@ using UnityEngine;
 public class SaveCheckpoint : MonoBehaviour
 {
     //Class Variables
+    [Header("Trigger Reference")]
     [SerializeField] private int indexCheckpointTrigger; //id of the checkpoint
-    [SerializeField] private int maxCount;
+    [SerializeField] private int maxCountCheckpointTriggerList;
 
     private void Start()
     {
-        if (GameObjectActiveManger.instance.GetCheckpointTriggerList() != null)
-        {
-            if (GameObjectActiveManger.instance.GetCheckpointTriggerList().Count == maxCount)
-            {
-                //if the player has already pass this checkpoint
-                if (GameObjectActiveManger.instance.GetCheckpointTriggerList()[indexCheckpointTrigger] == true)
-                {
-                    //Destroy this checkpoint
-                    Destroy(gameObject);
-                }
-            }
-        }
+        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetCheckpointTriggerList(), indexCheckpointTrigger, maxCountCheckpointTriggerList, gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,15 +21,8 @@ public class SaveCheckpoint : MonoBehaviour
             Vector2 lastCheckpointPos = new Vector2(transform.position.x, transform.position.y);
             GameManager.instance.SetLastCheckpointPos(lastCheckpointPos);
 
-            if (GameObjectActiveManger.instance.GetCheckpointTriggerList() != null)
-            {
-                if (GameObjectActiveManger.instance.GetCheckpointTriggerList().Count == maxCount)
-                {
-                    //This object has been trigger by the player
-                    GameObjectActiveManger.instance.GetCheckpointTriggerList()[indexCheckpointTrigger] = true;
-                }
-            }
-
+            GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetCheckpointTriggerList(), indexCheckpointTrigger, maxCountCheckpointTriggerList, true);
+ 
             //Destroy the current checkpoint
             Destroy(gameObject);
         }

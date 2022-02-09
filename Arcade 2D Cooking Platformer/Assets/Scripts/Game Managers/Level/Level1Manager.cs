@@ -6,6 +6,11 @@ public class Level1Manager : MonoBehaviour
 {
     [SerializeField] private Vector2 checkpointOnePos;
 
+    [SerializeField] private int CheckPointamount;
+    [SerializeField] private int enemyAmount;
+    [SerializeField] private int IngredinetAmount;
+    [SerializeField] private int healthPowrUpAmount;
+
     private void Start()
     {
         if (GameManager.instance.GetLevelStarted())
@@ -40,16 +45,16 @@ public class Level1Manager : MonoBehaviour
 
 
             GameObjectActiveManger.instance.GetCheckpointTriggerList().Clear();
-            GameObjectActiveManger.instance.AddAllTriggers(3, GameObjectActiveManger.instance.GetCheckpointTriggerList());
+            GameObjectActiveManger.instance.AddAllTriggers(CheckPointamount, GameObjectActiveManger.instance.GetCheckpointTriggerList());
 
             GameObjectActiveManger.instance.GetIngredientsTiggerList().Clear();
-            GameObjectActiveManger.instance.AddAllTriggers(4, GameObjectActiveManger.instance.GetIngredientsTiggerList());
+            GameObjectActiveManger.instance.AddAllTriggers(IngredinetAmount, GameObjectActiveManger.instance.GetIngredientsTiggerList());
 
             GameObjectActiveManger.instance.GetHealthPowerUpTriggerList().Clear();
-            GameObjectActiveManger.instance.AddAllTriggers(2, GameObjectActiveManger.instance.GetHealthPowerUpTriggerList());
+            GameObjectActiveManger.instance.AddAllTriggers(healthPowrUpAmount, GameObjectActiveManger.instance.GetHealthPowerUpTriggerList());
 
             GameObjectActiveManger.instance.GetEnemyTriggerList().Clear();
-            GameObjectActiveManger.instance.AddAllTriggers(1, GameObjectActiveManger.instance.GetEnemyTriggerList());
+            GameObjectActiveManger.instance.AddAllTriggers(enemyAmount, GameObjectActiveManger.instance.GetEnemyTriggerList());
 
 
 

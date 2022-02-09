@@ -9,7 +9,7 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] private int maxHealth;
 
     [SerializeField] private int indexEnemyTriggerList; 
-    [SerializeField] private int maxCount;
+    [SerializeField] private int maxCountEnemyTriggerList;
 
     [SerializeField] private Animator _animator;
 
@@ -28,16 +28,7 @@ public class EnemyBase : MonoBehaviour
         //disable the enemy
         GetComponent<Collider2D>().enabled = true;
 
-        if (GameObjectActiveManger.instance.GetEnemyTriggerList() != null)
-        {
-            if (GameObjectActiveManger.instance.GetEnemyTriggerList().Count == maxCount)
-            {
-                if (GameObjectActiveManger.instance.GetEnemyTriggerList()[indexEnemyTriggerList] == true)
-                {
-                    Destroy(gameObject);
-                }
-            }
-        }
+        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetEnemyTriggerList(), indexEnemyTriggerList, maxCountEnemyTriggerList, gameObject);
 
         //set the health to max health of the enemy
         health = maxHealth;
@@ -79,16 +70,10 @@ public class EnemyBase : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         //TODO prevent enemy from doing more attacks
 
-        if (GameObjectActiveManger.instance.GetEnemyTriggerList() != null)
-        {
-            if (GameObjectActiveManger.instance.GetEnemyTriggerList().Count == maxCount)
-            {
-                GameObjectActiveManger.instance.GetEnemyTriggerList()[indexEnemyTriggerList] = true;
-            }
-        }       
-
         StopCoroutine(FlickeringDie());
         StartCoroutine(FlickeringDie());
+
+        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetEnemyTriggerList(), indexEnemyTriggerList, maxCountEnemyTriggerList, true);
 
         StopCoroutine(playDeathAnimation());
         StartCoroutine(playDeathAnimation());  
