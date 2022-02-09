@@ -31,7 +31,7 @@ public class PlayerBase : MonoBehaviour
 
     private void Start()
     {
-        
+        Physics2D.IgnoreLayerCollision(6, 10, false);
 
         //set the health to max health of the player
         health = maxHealth;
