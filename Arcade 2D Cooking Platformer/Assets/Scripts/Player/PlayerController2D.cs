@@ -142,7 +142,8 @@ public class PlayerController2D : MonoBehaviour
             Invoke("SetWallJumpingFalse", wallJumpTime);
         }
         if (wallJumping)
-        {
+        {         
+
             _animator.SetBool("isClinging", false);
             _extraJumps = extraJumpsAmount;
             _rigidbody2D.velocity = new Vector2(xWallForce * -_moveHorizontal, yWallForce);
@@ -155,6 +156,7 @@ public class PlayerController2D : MonoBehaviour
 
     private void Jump()
     {
+        
         if (isGrounded == true)
         {
             _animator.SetBool("isJumping", false);
@@ -166,6 +168,24 @@ public class PlayerController2D : MonoBehaviour
         //jump in air with extra jumps aka double jumps
         if (Input.GetButtonDown("Jump") && _extraJumps > 0)
         {
+
+            int randNum = Random.Range(1, 3);
+            Debug.Log(randNum);
+
+            switch (randNum)
+            {
+                case 1:
+                    Debug.Log("playing sound 1");
+                    FindObjectOfType<AudioManager>().playAudio("meow_jump");
+                    break;
+                case 2:
+                    FindObjectOfType<AudioManager>().playAudio("meow_jump2");
+                    Debug.Log("playing sound 2");
+                    break;
+            }
+
+            
+
             //Modify the velocity with force
             _rigidbody2D.velocity = Vector2.up * _jumpHeight;
             //_rigidbody2D.AddForce(new Vector2(0, _jumpHeight), ForceMode2D.Impulse);
@@ -176,6 +196,7 @@ public class PlayerController2D : MonoBehaviour
         //jump from ground with no extra jumps, prevents infinite jumps
         else if (Input.GetButtonDown("Jump") && _extraJumps == 0 && isGrounded)
         {
+            
             //Modify the velocity with force
             _rigidbody2D.velocity = Vector2.up * _jumpHeight;
             //_rigidbody2D.AddForce(new Vector2(0, _jumpHeight), ForceMode2D.Impulse);

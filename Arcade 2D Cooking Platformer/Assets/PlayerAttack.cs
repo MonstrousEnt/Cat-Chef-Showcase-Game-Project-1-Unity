@@ -19,6 +19,21 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetButtonDown("Attack"))
         {
+
+            int randNum = Random.Range(1, 3);
+            Debug.Log(randNum);
+
+            switch (randNum)
+            {
+                case 1:
+                    Debug.Log("playing sound 1");
+                    FindObjectOfType<AudioManager>().playAudio("meow_attack");
+                    break;
+                case 2:
+                    FindObjectOfType<AudioManager>().playAudio("meow_attack2");
+                    Debug.Log("playing sound 2");
+                    break;
+            }
             Attack();
         }
 
@@ -33,8 +48,7 @@ public class PlayerAttack : MonoBehaviour
     {
         //play the animation
         animator.SetBool("isAttacking", true);
-        animator.SetTrigger("Attack");
-        
+        animator.SetTrigger("Attack");        
 
         //detect enemies in attack range
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius, enemyLayers);

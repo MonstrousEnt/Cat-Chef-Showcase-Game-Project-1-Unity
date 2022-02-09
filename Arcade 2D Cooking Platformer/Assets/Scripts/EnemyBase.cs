@@ -45,6 +45,7 @@ public class EnemyBase : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        FindObjectOfType<AudioManager>().playAudio("slash");
         //The enemy take the damage from the monsters.
         health -= damage;
 
@@ -73,6 +74,9 @@ public class EnemyBase : MonoBehaviour
 
     private void Die()
     {
+        //disable the enemy
+        GetComponent<Collider2D>().enabled = false;
+        //TODO prevent enemy from doing more attacks
 
         if (GameObjectActiveManger.instance.GetEnemyTriggerList() != null)
         {
@@ -80,17 +84,13 @@ public class EnemyBase : MonoBehaviour
             {
                 GameObjectActiveManger.instance.GetEnemyTriggerList()[indexEnemyTriggerList] = true;
             }
-        }
-
-        //disable the enemy
-        GetComponent<Collider2D>().enabled = false;
+        }       
 
         StopCoroutine(FlickeringDie());
         StartCoroutine(FlickeringDie());
 
         StopCoroutine(playDeathAnimation());
-        StartCoroutine(playDeathAnimation());
-  
+        StartCoroutine(playDeathAnimation());  
               
     }
 
