@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
         #endregion
 
         //Update Ingredient UI
-        LevelObjectiveCakeIngredientsUI.instance.UpdateImage();
+        IngredientsUI.instance.UpdateImage();
 
         //Reset Lives
         LiveSystemManager.instance.ResetLives();

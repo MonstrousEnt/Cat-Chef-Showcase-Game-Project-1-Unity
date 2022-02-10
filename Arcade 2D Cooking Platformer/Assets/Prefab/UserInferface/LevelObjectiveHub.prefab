@@ -466,7 +466,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5616446535752864662}
-  - component: {fileID: 1342176994}
+  - component: {fileID: 7565456389004588048}
   m_Layer: 0
   m_Name: Ingredients
   m_TagString: Untagged
@@ -492,7 +492,7 @@ Transform:
   m_Father: {fileID: 5470487901861901339}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1342176994
+--- !u!114 &7565456389004588048
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -501,7 +501,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8166120257856682694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfb318a8a38ae0841bed19743069db23, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c3f68e69747b5f4aaf647d8fa8a7970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9085024206388733870

@@ -21,6 +21,9 @@ public class Ingredinets : MonoBehaviour
     [SerializeField] private int ingredinetImagesActiveIndex;
     [SerializeField] private GameObject imageGameObject;
 
+    [Header("SoundEffect")]
+    [SerializeField] private string getItemSoundEffect = "getitem";
+
     [Header("Trigger Reference")]
     [SerializeField] private int indexIngredientsTiggerList; //id of the checkpoint
 
@@ -57,13 +60,13 @@ public class Ingredinets : MonoBehaviour
         PointManager.instance.SetTolatPoints(PointManager.instance.GetTolatPoints() + PointManager.instance.GetIngredientPointNum());
 
         //Play the sound
-        AudioManager.instance.playAudio("getitem");
+        AudioManager.instance.playAudio(getItemSoundEffect);
 
         //Set UI
-        LevelObjectiveCakeIngredientsUI.instance.ActiveImage(imageGameObject, true, ingredinetImagesActiveIndex);
+        IngredientsUI.instance.ActiveImage(imageGameObject, true, ingredinetImagesActiveIndex);
 
         //Game object has been trigger
-        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetIngredientsTigger(), indexIngredientsTiggerList, GameObjectActiveManger.instance.GetCheckpointTriggerSize(), true);
+        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetIngredientsTigger(), indexIngredientsTiggerList, GameObjectActiveManger.instance.GetIngredientsTiggerSize(), true);
 
         //Destroy the game object
         Destroy(gameObject);
