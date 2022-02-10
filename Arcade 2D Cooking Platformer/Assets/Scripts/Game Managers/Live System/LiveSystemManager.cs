@@ -58,7 +58,7 @@ public class LiveSystemManager : MonoBehaviour
         SettingManager.instance.ActivePause(true, 0f);
 
         //Enable the game over screen
-        GameOverUI.instance.activeMenu(true);
+        EndStateScreenUI.instance.activeMenu(true);
 
         //Player can no longer move.
         PlayerBase.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;

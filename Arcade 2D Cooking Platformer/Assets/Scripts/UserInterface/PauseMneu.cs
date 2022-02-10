@@ -1,44 +1,29 @@
+/* Project Name: Arcade 2D Platformer
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox, Ben Topple
+ * Created Date: January 30, 2022
+ * Latest Update: February 11, 2022
+ * Description: The class is the UI class for pause screen.
+ * Notes: 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseMneu : MonoBehaviour
+public class PauseMneu : UIMenuBase
 {
-    [SerializeField] private LevelLoader levelLoader;
 
-    public void activeMenu(bool flag)
+    /// <summary>
+    /// Enable or disable the menu.
+    /// </summary>
+    /// <param name="flag"></param>
+    public override void activeMenu(bool flag)
     {
-        //Enable or disable the game over screen.
+        ///Pause the game
+        SettingManager.instance.ActivePause(true, 0f);
+
+        //Enable or disable menu
         gameObject.SetActive(flag);
-    }
-
-    public void BackToGame()
-    {
-        SettingManager.instance.ActivePause(false, 1f);
-
-        gameObject.SetActive(false);
-    }
-
-    public void Restart()
-    {
-        //Close the game over screen.
-        gameObject.SetActive(false);
-
-        SettingManager.instance.ActivePause(false, 1f);
-
-        GameManager.instance.SetRestart(true);
-
-        //Re-load the level
-        levelLoader.LoadNextLevel("Level 1");
-    }
-
-    public void QuitGame()
-    {
-        //Close the game over screen.
-        gameObject.SetActive(false);
-
-        //Quit the game.
-        Debug.Log("Quiting Game!");
-        Application.Quit();
     }
 }

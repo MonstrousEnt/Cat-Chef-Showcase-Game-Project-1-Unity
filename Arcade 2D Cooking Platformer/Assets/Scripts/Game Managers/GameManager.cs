@@ -74,24 +74,27 @@ public class GameManager : MonoBehaviour
 
     public void ResetGameData()
     {
+        //Reset Coins
+        _coinNum = 0;
+
         //Reset the coin UI
         CollectablesUI.instance.SetText(GameManager.instance.GetCoinNum());
 
+        //Reset Lives
+        LiveSystemManager.instance.ResetLives();
+
         //Reset Ingredient
-        GameManager.instance.SetFoundIngredinetsNum(0);
+        _foundIngredinetsNum = 0;
 
         #region reset Ingredient UI
-        for (int i = 0; i < GameManager.instance.GetIngredinetImagesActive().Count; i++)
+        for (int i = 0; i < _IngredinetImagesActive.Count; i++)
         {
-            GameManager.instance.GetIngredinetImagesActive()[i] = false;
+            _IngredinetImagesActive[i] = false;
         }
         #endregion
 
         //Update Ingredient UI
         IngredientsUI.instance.UpdateImage();
-
-        //Reset Lives
-        LiveSystemManager.instance.ResetLives();
     }
 
     /// <summary>
@@ -128,7 +131,7 @@ public class GameManager : MonoBehaviour
             CakeOver.instance.GameCompleted();
 
             //Level Completed
-            WinScreenUI.instance.activeMenu(true);
+            EndStateScreenUI.instance.activeMenu(true);
         }
     }
 }
