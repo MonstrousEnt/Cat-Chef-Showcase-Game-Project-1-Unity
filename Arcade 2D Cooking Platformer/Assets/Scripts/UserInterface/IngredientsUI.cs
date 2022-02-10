@@ -14,37 +14,23 @@ using UnityEngine.UI;
 
 public class IngredientsUI : MonoBehaviour
 {
-    //Class Variables 
-    public static IngredientsUI instance; 
+    [SerializeField] private List<GameObject> _IngredinetImages;
 
-    private void Awake()
+    private void Start()
     {
-        //---Make sure there is only one instance of this class for each Scene.
+        UIEvents.instance.onActiveIngredientImage.AddListener(activeImage);
 
-        //If there is no instance of the object
-        if (instance == null)
-        {
-            //Set an instance of it
-            instance = this;
-        }
-
-        //Else, if there's already an instance
-        else
-        {
-            //Destroy it
-            Destroy(gameObject);
-            return;
-        }
+        updateImages();
     }
 
     /// <summary>
     /// Update the ingredient images when the level or when the player respawn from the checkpoint.
     /// </summary>
-    public void UpdateImage()
+    private void updateImages()
     {
-        for (int i = 0; i < GameManager.instance.GetIngredinetImages().Count; i++)
+        for (int i = 0; i < _IngredinetImages.Count; i++)
         {
-            GameManager.instance.GetIngredinetImages()[i].SetActive(GameManager.instance.GetIngredinetImagesActive()[i]);
+            _IngredinetImages[i].SetActive(GameManager.instance.GetIngredinetImagesActive()[i]);
         }
     }
 
@@ -54,10 +40,15 @@ public class IngredientsUI : MonoBehaviour
     /// <param name="imageGameObject"></param>
     /// <param name="flag"></param>
     /// <param name="ingredinetImagesActiveIndex"></param>
-    public void ActiveImage(GameObject imageGameObject, bool flag, int ingredinetImagesActiveIndex)
+    private void activeImage(bool flag, int ingredinetImagesActiveIndex)
     {
-        imageGameObject.SetActive(flag);
+        GameManager.instance.GetIngredinetImagesActive()[ingredinetImagesActiveIndex] = flag;
 
-        GameManager.instance.GetIngredinetImagesActive()[ingredinetImagesActiveIndex] = true;
+        updateImages();
+    }
+
+    private void OnDestroy()
+    {
+        UIEvents.instance.onActiveIngredientImage.RemoveListener(activeImage);
     }
 }

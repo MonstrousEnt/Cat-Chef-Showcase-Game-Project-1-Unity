@@ -107,7 +107,7 @@ public class PlayerBase : MonoBehaviour
             //Game object has been trigger
             GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetHealthPowerUpTrigger(), indexHealthPowerUpTrigger, healthPowerUpTriggerSize, true);
 
-            //destroy the object
+            //Destroy the object game
             Destroy(healthPowerUpGameObject);
         }
     }

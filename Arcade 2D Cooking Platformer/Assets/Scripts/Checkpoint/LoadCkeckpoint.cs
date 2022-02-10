@@ -16,13 +16,13 @@ public class LoadCkeckpoint : MonoBehaviour
 {
 	private void Start()
 	{
-        //If last checkpoint doesn't equal 0, 0
-        if (GameManager.instance.GetLastCheckpointPos() != new Vector2(0, 0))
-        {
-            //spawn the player at the last checkpoint
-            gameObject.transform.position = GameManager.instance.GetLastCheckpointPos();
-        }
-
+		//If last checkpoint doesn't equal 0, 0
+		if (GameManager.instance.GetLastCheckpointPos() != new Vector2(0, 0))
+		{
+			//spawn the player at the last checkpoint
+			gameObject.transform.position = GameManager.instance.GetLastCheckpointPos();
+		}
+		
     }
 
 	private void Update()
@@ -38,7 +38,6 @@ public class LoadCkeckpoint : MonoBehaviour
 
 			//Update UI Data
 			LivesUI.instance.SetLives(LiveSystemManager.instance.GetLivesCount());
-			IngredientsUI.instance.UpdateImage();
 
 			//Set the boolean flag to false
 			PlayerBase.instance.SetIsRespawn(false);

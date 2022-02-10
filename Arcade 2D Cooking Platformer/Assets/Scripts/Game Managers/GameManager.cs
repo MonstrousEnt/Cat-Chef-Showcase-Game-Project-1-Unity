@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance; //A static reference of the class
 
     [SerializeField] private int _foundIngredinetsNum = 0;
-    [SerializeField] private List<GameObject> _IngredinetImages;
     [SerializeField] private List<bool> _IngredinetImagesActive;
     [SerializeField] private int _maxIngredients;
 
@@ -25,7 +24,6 @@ public class GameManager : MonoBehaviour
 
     public List<string> GetIngredientNameList() { return IngredientNameList; }
 
-    public List<GameObject> GetIngredinetImages() { return _IngredinetImages; }
     public List<bool> GetIngredinetImagesActive() { return _IngredinetImagesActive; }
 
     public int GetMaxIngredients() {return _maxIngredients;}
@@ -87,9 +85,6 @@ public class GameManager : MonoBehaviour
             _IngredinetImagesActive[i] = false;
         }
         #endregion
-
-        //Update Ingredient UI
-        IngredientsUI.instance.UpdateImage();
     }
 
     /// <summary>

@@ -35,7 +35,7 @@ public class Level1Manager : MonoBehaviour
             GameObjectActiveManger.instance.ResetAllGameObjectActiveTriggers(GameObjectActiveManger.instance.GetCheckpointTriggerSize(), GameObjectActiveManger.instance.GetIngredientsTiggerSize(), GameObjectActiveManger.instance.GetHealthPowerUpTriggerSize(), GameObjectActiveManger.instance.GetEnemyTriggerSize());
 
             //Set the player to checkpoint one
-            PlayerBase.instance.gameObject.transform.position = checkpointOnePos;
+            GameManager.instance.SetLastCheckpointPos(checkpointOnePos);
 
             //Turn of the boolean flag for when the level has started 
             GameManager.instance.SetLevelStarted(false);

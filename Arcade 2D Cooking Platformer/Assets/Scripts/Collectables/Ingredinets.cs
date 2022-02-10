@@ -30,16 +30,6 @@ public class Ingredinets : MonoBehaviour
     private void Start()
     {
         GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetIngredientsTigger(), indexIngredientsTiggerList, GameObjectActiveManger.instance.GetIngredientsTiggerSize(), gameObject); 
-
-        #region Get Ingredients UI Image from Game Manager
-        for (int i = 0; i < GameManager.instance.GetIngredientNameList().Count; i++)
-        {
-            if (IngredinetName == GameManager.instance.GetIngredientNameList()[i])
-            {
-                imageGameObject = GameManager.instance.GetIngredinetImages()[i];
-            }
-        }
-       #endregion
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -63,7 +53,7 @@ public class Ingredinets : MonoBehaviour
         AudioManager.instance.playAudio(getItemSoundEffect);
 
         //Set UI
-        IngredientsUI.instance.ActiveImage(imageGameObject, true, ingredinetImagesActiveIndex);
+        UIEvents.instance.ActiveIngredientImage(true, ingredinetImagesActiveIndex);
 
         //Game object has been trigger
         GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetIngredientsTigger(), indexIngredientsTiggerList, GameObjectActiveManger.instance.GetIngredientsTiggerSize(), true);

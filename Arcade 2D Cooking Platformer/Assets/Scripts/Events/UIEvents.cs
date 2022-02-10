@@ -11,11 +11,11 @@ public class UIEvents : MonoBehaviour
 	//Unity Events
 	public UnityEvent<int> onSetCollectableText;
 	public UnityEvent<int> onSetLivesText;
-	public UnityEvent onUpdateImage;
-	public UnityEvent<GameObject, bool, int> onActiveImage;
+	public UnityEvent<bool, int> onActiveIngredientImage;
 	public UnityEvent<int, int> onUpdateHealthBar;
 
 	public void SetCollectableText(int coinNum) { instance.onSetCollectableText.Invoke(coinNum); }
+    public void ActiveIngredientImage(bool flag, int ingredinetImagesActiveIndex) { instance.onActiveIngredientImage.Invoke(flag, ingredinetImagesActiveIndex); }
 
     private void Awake()
     {
