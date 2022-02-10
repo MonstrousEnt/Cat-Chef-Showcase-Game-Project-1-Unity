@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _maxIngredients;
 
     [SerializeField] private int _coinNum;
-    [SerializeField] private int _coinMax;
 
     [SerializeField] private bool _atCakeOver = false;
 
@@ -33,7 +32,6 @@ public class GameManager : MonoBehaviour
     public int GetFoundIngredinetsNum() { return _foundIngredinetsNum; }
     public void SetFoundIngredinetsNum( int foundIngredinetsNum) { this._foundIngredinetsNum = foundIngredinetsNum; }
 
-    public int GetMaxCoins () { return _coinMax; }
     public void SetCoinNum(int coinNum) { this._coinNum = coinNum;}
     public int GetCoinNum() { return _coinNum; }
 
@@ -76,9 +74,6 @@ public class GameManager : MonoBehaviour
     {
         //Reset Coins
         _coinNum = 0;
-
-        //Reset the coin UI
-        CollectablesUI.instance.SetText(GameManager.instance.GetCoinNum());
 
         //Reset Lives
         LiveSystemManager.instance.ResetLives();

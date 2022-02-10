@@ -15,36 +15,26 @@ using UnityEngine.UI;
 public class CollectablesUI : MonoBehaviour
 {
     //Class Variables
-    public static CollectablesUI instance; //A static reference of the class
-
     [SerializeField] private Text coinText;
 
-    private void Awake()
+    private void Start()
     {
-        //---Make sure there is only one instance of this class for each Scene.
+        UIEvents.instance.onSetCollectableText.AddListener(setText);
 
-        //If there is no instance of the object
-        if (instance == null)
-        {
-            //Set an instance of it
-            instance = this;
-        }
-
-        //Else, if there's already an instance
-        else
-        {
-            //Destroy it
-            Destroy(gameObject);
-            return;
-        }
+        setText(GameManager.instance.GetCoinNum());
     }
 
     /// <summary>
     /// Update number of coin you have collect in the UI.
     /// </summary>
     /// <param name="coinNum"></param>
-    public void SetText(int coinNum)
+    private void setText(int coinNum)
     {
         coinText.text = coinNum.ToString();
+    }
+
+    private void OnDestroy()
+    {
+        UIEvents.instance.onSetCollectableText.RemoveListener(setText);
     }
 }

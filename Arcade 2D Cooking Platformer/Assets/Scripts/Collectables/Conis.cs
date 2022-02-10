@@ -28,7 +28,7 @@ public class Conis : MonoBehaviour
             AudioManager.instance.playAudio("coin1");
 
             //Set UI
-            CollectablesUI.instance.SetText(GameManager.instance.GetCoinNum());
+            UIEvents.instance.SetCollectableText(GameManager.instance.GetCoinNum());
 
             //Destroy the game object
             gameObject.SetActive(false);
