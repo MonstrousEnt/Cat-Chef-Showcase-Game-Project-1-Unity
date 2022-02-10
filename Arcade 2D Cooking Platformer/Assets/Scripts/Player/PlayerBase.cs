@@ -24,6 +24,8 @@ public class PlayerBase : MonoBehaviour
 
     [Header("Health Power Up")]
     [SerializeField] private int maxHealthPowerUp = 100;
+    [SerializeField] private string healthItemSoundEffect = "health_item";
+    [SerializeField] private string happyPurrSoundEffect = "happy_purr";
 
     [Header("Layer")]
     [SerializeField] private int playerLayer;
@@ -38,7 +40,7 @@ public class PlayerBase : MonoBehaviour
 
     [Header("Sound Effects")]
     private string takeDamageSoundEffect = "meow_take_dmg";
-
+   
     [Header("Flag Boolean")]
     private bool isRespawn = false;
 
@@ -72,25 +74,37 @@ public class PlayerBase : MonoBehaviour
         healthBar.UpdateHealthBar(health, maxHealthPowerUp);
     }
 
+    /// <summary>
+    /// This power up increase the health of the player.
+    /// </summary>
+    /// <param name="healthPowerUpGameObject"></param>
+    /// <param name="indexHealthPowerUpTrigger"></param>
+    /// <param name="healthPowerUpTriggerSize"></param>
     public void HealthPowerUp(GameObject healthPowerUpGameObject, int indexHealthPowerUpTrigger, int healthPowerUpTriggerSize)
     {
+        //If player health is max out
         if (health == maxHealthPowerUp)
         {
+            //then exit out of this method
             return;
         }
+        //Otherwise increase the health by one heart
         else
         {
             //Power up health
             health = health + GetFullHeartNum();
 
-            AudioManager.instance.playAudio("health_item");
-            AudioManager.instance.playAudio("happy_purr");
+            //Ply the sound
+            AudioManager.instance.playAudio(healthItemSoundEffect);
+            AudioManager.instance.playAudio(happyPurrSoundEffect);
 
             //Display it in the UI
             healthBar.UpdateHealthBar(health, maxHealthPowerUp);
 
+            //Added the Health power up to the total points
             PointManager.instance.SetTolatPoints(PointManager.instance.GetTolatPoints() + PointManager.instance.GetHealthPowerUpPointNum());
 
+            //Game object has been trigger
             GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetHealthPowerUpTrigger(), indexHealthPowerUpTrigger, healthPowerUpTriggerSize, true);
 
             //destroy the object
