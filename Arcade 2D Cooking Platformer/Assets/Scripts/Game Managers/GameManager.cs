@@ -100,27 +100,22 @@ public class GameManager : MonoBehaviour
     public void ResetBooleanFlags()
     {
         //Turn of the boolean flag for restart the game
-        GameManager.instance.SetRestart(false);
+        Restart = false;
 
         //Reset the boolean for when the level is completed
-        GameManager.instance.SetAtCakeOver(false);
-
-        //Unpause the game
-        SettingManager.instance.ActivePause(false, 1f);
+        _atCakeOver = false;
     }
 
     /// <summary>
-    /// Don't play music when the level restart, otherwise play the level music
+    /// Play the music as long level hasn't restart.
     /// </summary>
     public void PlayLevelMusic(string levelMusicName)
     {
-        if (Restart)
+        if (!Restart)
         {
             AudioManager.instance.SetAudioLoop(levelMusicName, false);
             AudioManager.instance.stopAudio(levelMusicName);
-        }
-        else
-        {
+
             AudioManager.instance.SetAudioLoop(levelMusicName, true);
             AudioManager.instance.playAudio(levelMusicName);
         }

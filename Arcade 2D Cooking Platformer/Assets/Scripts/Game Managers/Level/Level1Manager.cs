@@ -17,11 +17,14 @@ public class Level1Manager : MonoBehaviour
     [SerializeField] private Vector2 checkpointOnePos;
     [SerializeField] private string level1Music;
 
-    private void Start()
+    private void Update()
     {
         //If the level has started
         if (GameManager.instance.GetLevelStarted())
         {
+            //Unpause the game
+            SettingManager.instance.ActivePause(false, 1f);
+
             //Reset default game data
             GameManager.instance.PlayLevelMusic(level1Music);
 
@@ -37,8 +40,5 @@ public class Level1Manager : MonoBehaviour
             //Turn of the boolean flag for when the level has started 
             GameManager.instance.SetLevelStarted(false);
         }
-       
-
-
     }
 }

@@ -52,10 +52,6 @@ public class GameOverUI : MonoBehaviour
 
         SettingManager.instance.ActivePause(false, 1f);
 
-        GameManager.instance.SetRestart(true);
-
-        GameManager.instance.SetLevelStarted(true);
-
         //Re-load the level
         levelLoader.LoadNextLevel("Level 1");
     }
