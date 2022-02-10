@@ -5,12 +5,11 @@ using UnityEngine;
 public class HealthPowerUp : MonoBehaviour
 {
     [Header("Trigger Reference")]
-    [SerializeField] private int indexHealthPowerUpTrigger; //id of the checkpoint
-    [SerializeField] private int maxCountHealthPowerUpTriggerList;
+    [SerializeField] private int indexHealthPowerUpTrigger; 
 
     private void Start()
     {
-        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetHealthPowerUpTriggerList(), indexHealthPowerUpTrigger, maxCountHealthPowerUpTriggerList, gameObject);
+        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetHealthPowerUpTrigger(), indexHealthPowerUpTrigger, GameObjectActiveManger.instance.GetHealthPowerUpTriggerSize(), gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -18,7 +17,7 @@ public class HealthPowerUp : MonoBehaviour
         if (collision.tag == "Player")
         {
             //Added the power up to the player
-            PlayerBase.instance.HealthPowerUp(gameObject, indexHealthPowerUpTrigger, maxCountHealthPowerUpTriggerList);
+            PlayerBase.instance.HealthPowerUp(gameObject, indexHealthPowerUpTrigger, GameObjectActiveManger.instance.GetHealthPowerUpTriggerSize());
         }
     }
 }

@@ -17,55 +17,65 @@ public class GameObjectActiveManger : MonoBehaviour
     public static GameObjectActiveManger instance; //A static reference of the class
 
     [Header("Trigger List")]
-    [SerializeField] private List<bool> checkpointTriggerList;
-    [SerializeField] private List<bool> enemyTriggerList;
-    [SerializeField] private List<bool> ingredientsTiggerList;
-    [SerializeField] private List<bool> healthPowerUpTriggerList;
+    [SerializeField] private List<bool> _checkpointTrigger;
+    [SerializeField] private List<bool> _enemyTrigger;
+    [SerializeField] private List<bool> _ingredientsTigger;
+    [SerializeField] private List<bool> _healthPowerUpTrigger;
+
+    [Header("Trigger List Size")]
+    [SerializeField] private int _checkpointTriggerSize;
+    [SerializeField] private int _enemyTriggerSize;
+    [SerializeField] private int _ingredientsTiggerSize;
+    [SerializeField] private int _healthPowerUpTriggerSize;
 
     #region Getters and Setters
-    public List<bool> GetCheckpointTriggerList() { return checkpointTriggerList; }
-    public List<bool> GetEnemyTriggerList() { return enemyTriggerList; }
-    public List<bool> GetIngredientsTiggerList() { return ingredientsTiggerList; }
-    public List<bool> GetHealthPowerUpTriggerList() { return healthPowerUpTriggerList; }
+    public List<bool> GetCheckpointTrigger() { return _checkpointTrigger; }
+    public List<bool> GetEnemyTrigger() { return _enemyTrigger; }
+    public List<bool> GetIngredientsTigger() { return _ingredientsTigger; }
+    public List<bool> GetHealthPowerUpTrigger() { return _healthPowerUpTrigger; }
+    public int GetCheckpointTriggerSize() { return _checkpointTriggerSize; }
+    public int GetEnemyTriggerSize() { return _enemyTriggerSize; }
+    public int GetIngredientsTiggerSize() { return _ingredientsTiggerSize; }
+    public int GetHealthPowerUpTriggerSize() { return _healthPowerUpTriggerSize; }
     #endregion
 
     /// <summary>
     /// Reset all the game object active Triggers.
     /// </summary>
-    /// <param name="CheckPointamount"></param>
-    /// <param name="ingredinetAmount"></param>
-    /// <param name="healthPowrUpAmount"></param>
-    /// <param name="enemyAmount"></param>
-    public void ResetAllGameObjectActiveTriggers(int checkpointAmount, int ingredinetAmount, int healthPowrUpAmount, int enemyAmount)
+    /// <param name="checkpointTriggerSize"></param>
+    /// <param name="ingredientsTiggerSize"></param>
+    /// <param name="healthPowerUpTriggerSize"></param>
+    /// <param name="enemyTriggerSize"></param>
+    public void ResetAllGameObjectActiveTriggers(int checkpointTriggerSize, int ingredientsTiggerSize, int healthPowerUpTriggerSize, int enemyTriggerSize)
     {
-        checkpointTriggerList.Clear();
-        AddAllTriggers(checkpointAmount,checkpointTriggerList);
+        _checkpointTrigger.Clear();
+        addAllTriggers(checkpointTriggerSize,_checkpointTrigger);
 
-        ingredientsTiggerList.Clear();
-        AddAllTriggers(ingredinetAmount,ingredientsTiggerList);
+        _ingredientsTigger.Clear();
+        addAllTriggers(ingredientsTiggerSize, _ingredientsTigger);
 
-        healthPowerUpTriggerList.Clear();
-        AddAllTriggers(healthPowrUpAmount, healthPowerUpTriggerList);
+        _healthPowerUpTrigger.Clear();
+        addAllTriggers(healthPowerUpTriggerSize, _healthPowerUpTrigger);
 
-        enemyTriggerList.Clear();
-        AddAllTriggers(enemyAmount, enemyTriggerList);
+        _enemyTrigger.Clear();
+        addAllTriggers(enemyTriggerSize, _enemyTrigger);
     }
 
     /// <summary>
     /// Added all Triggest to the trigger list
     /// </summary>
-    /// <param name="amount"></param>
+    /// <param name="triggerSize"></param>
     /// <param name="triggerList"></param>
-    public void AddAllTriggers(int amount, List<bool> triggerList)
+    private void addAllTriggers(int triggerSize, List<bool> triggerList)
     {
-        for (int i = 0; i < amount; i++)
+        for (int i = 0; i < triggerSize; i++)
         {
             triggerList.Add(false);
         }
     }
 
     /// <summary>
-    ///  Destroy Game object if already been collected
+    ///  Destroy the game object if already been collected
     /// </summary>
     /// <param name="TriggerList"></param>
     /// <param name="indexTriggerList"></param>

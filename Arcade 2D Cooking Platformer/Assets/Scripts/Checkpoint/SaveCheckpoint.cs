@@ -16,11 +16,10 @@ public class SaveCheckpoint : MonoBehaviour
     //Class Variables
     [Header("Trigger Reference")]
     [SerializeField] private int indexCheckpointTrigger; //id of the checkpoint
-    [SerializeField] private int maxCountCheckpointTriggerList;
 
     private void Start()
     {
-        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetCheckpointTriggerList(), indexCheckpointTrigger, maxCountCheckpointTriggerList, gameObject);
+        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetCheckpointTrigger(), indexCheckpointTrigger, GameObjectActiveManger.instance.GetCheckpointTriggerSize(), gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,7 +31,7 @@ public class SaveCheckpoint : MonoBehaviour
             GameManager.instance.SetLastCheckpointPos(lastCheckpointPos);
 
             //Game object has been trigger
-            GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetCheckpointTriggerList(), indexCheckpointTrigger, maxCountCheckpointTriggerList, true);
+            GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetCheckpointTrigger(), indexCheckpointTrigger, GameObjectActiveManger.instance.GetCheckpointTriggerSize(), true);
  
             //Destroy the current checkpoint
             Destroy(gameObject);

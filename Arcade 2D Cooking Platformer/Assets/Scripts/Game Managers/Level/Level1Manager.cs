@@ -17,12 +17,6 @@ public class Level1Manager : MonoBehaviour
     [SerializeField] private Vector2 checkpointOnePos;
     [SerializeField] private string level1Music;
 
-    [Header("Game Object Active Trigger Size Amounts")]
-    [SerializeField] private int checkpointAmount;
-    [SerializeField] private int enemyAmount;
-    [SerializeField] private int ingredinetAmount;
-    [SerializeField] private int healthPowrUpAmount;
-
     private void Start()
     {
         //If the level has started
@@ -35,7 +29,7 @@ public class Level1Manager : MonoBehaviour
 
             GameManager.instance.ResetBooleanFlags();
 
-            GameObjectActiveManger.instance.ResetAllGameObjectActiveTriggers(checkpointAmount, ingredinetAmount, healthPowrUpAmount, enemyAmount);
+            GameObjectActiveManger.instance.ResetAllGameObjectActiveTriggers(GameObjectActiveManger.instance.GetCheckpointTriggerSize(), GameObjectActiveManger.instance.GetIngredientsTiggerSize(), GameObjectActiveManger.instance.GetHealthPowerUpTriggerSize(), GameObjectActiveManger.instance.GetEnemyTriggerSize());
 
             //Set the player to checkpoint one
             PlayerBase.instance.gameObject.transform.position = checkpointOnePos;

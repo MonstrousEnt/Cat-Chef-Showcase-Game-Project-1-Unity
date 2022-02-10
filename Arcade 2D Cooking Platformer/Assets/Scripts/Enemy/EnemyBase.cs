@@ -33,7 +33,6 @@ public class EnemyBase : MonoBehaviour
 
     [Header("Trigger Reference")]
     [SerializeField] private int _indexEnemyTriggerList; 
-    [SerializeField] private int _maxCountEnemyTriggerList;
 
 
     private void Awake()
@@ -47,7 +46,7 @@ public class EnemyBase : MonoBehaviour
         //Enable the enemy collier
         GetComponent<Collider2D>().enabled = true;
 
-        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetEnemyTriggerList(), _indexEnemyTriggerList, _maxCountEnemyTriggerList, gameObject);
+        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetEnemyTrigger(), _indexEnemyTriggerList, GameObjectActiveManger.instance.GetEnemyTriggerSize(), gameObject);
 
         //set the health to max health of the enemy
         health = _maxHealth;
@@ -111,7 +110,7 @@ public class EnemyBase : MonoBehaviour
         StartCoroutine(flickeringDie());
 
         //Game object has been trigger
-        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetEnemyTriggerList(), _indexEnemyTriggerList, _maxCountEnemyTriggerList, true);
+        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetEnemyTrigger(), _indexEnemyTriggerList, GameObjectActiveManger.instance.GetEnemyTriggerSize(), true);
 
         //Run death animation and destroy the enemy
         StopCoroutine(playDeathAnimation());

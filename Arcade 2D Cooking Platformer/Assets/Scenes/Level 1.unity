@@ -12018,7 +12018,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indexHealthPowerUpTrigger: 1
-  maxCountHealthPowerUpTriggerList: 3
 --- !u!61 &775636184
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13637,7 +13636,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indexHealthPowerUpTrigger: 2
-  maxCountHealthPowerUpTriggerList: 3
 --- !u!61 &1249141435
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46476,6 +46474,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2402620870090046736, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
+      propertyPath: _enemyTriggerSize
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402620870090046736, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
+      propertyPath: _checkpointTriggerSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402620870090046736, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
+      propertyPath: _ingredientsTiggerSize
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402620870090046736, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
+      propertyPath: _healthPowerUpTriggerSize
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2402620870090046737, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
       propertyPath: m_Name
       value: GameObjectActiveManager

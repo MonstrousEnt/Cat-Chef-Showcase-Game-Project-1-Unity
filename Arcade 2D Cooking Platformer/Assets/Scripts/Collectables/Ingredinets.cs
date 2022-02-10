@@ -23,11 +23,10 @@ public class Ingredinets : MonoBehaviour
 
     [Header("Trigger Reference")]
     [SerializeField] private int indexIngredientsTiggerList; //id of the checkpoint
-    [SerializeField] private int maxCountIngredientTiggerList;
 
     private void Start()
     {
-        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetIngredientsTiggerList(), indexIngredientsTiggerList, maxCountIngredientTiggerList, gameObject);
+        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetIngredientsTigger(), indexIngredientsTiggerList, GameObjectActiveManger.instance.GetIngredientsTiggerSize(), gameObject); 
 
         #region Get Ingredients UI Image from Game Manager
         for (int i = 0; i < GameManager.instance.GetIngredientNameList().Count; i++)
@@ -64,7 +63,7 @@ public class Ingredinets : MonoBehaviour
         LevelObjectiveCakeIngredientsUI.instance.ActiveImage(imageGameObject, true, ingredinetImagesActiveIndex);
 
         //Game object has been trigger
-        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetIngredientsTiggerList(), indexIngredientsTiggerList, maxCountIngredientTiggerList, true);
+        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetIngredientsTigger(), indexIngredientsTiggerList, GameObjectActiveManger.instance.GetCheckpointTriggerSize(), true);
 
         //Destroy the game object
         Destroy(gameObject);

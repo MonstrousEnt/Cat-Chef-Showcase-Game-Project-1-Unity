@@ -72,7 +72,7 @@ public class PlayerBase : MonoBehaviour
         healthBar.UpdateHealthBar(health, maxHealthPowerUp);
     }
 
-    public void HealthPowerUp(GameObject healthPowerUpGameObject, int indexHealthPowerUpTrigger, int maxCountHeathPowerUpTriggerList)
+    public void HealthPowerUp(GameObject healthPowerUpGameObject, int indexHealthPowerUpTrigger, int healthPowerUpTriggerSize)
     {
         if (health == maxHealthPowerUp)
         {
@@ -91,7 +91,7 @@ public class PlayerBase : MonoBehaviour
 
             PointManager.instance.SetTolatPoints(PointManager.instance.GetTolatPoints() + PointManager.instance.GetHealthPowerUpPointNum());
 
-            GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetHealthPowerUpTriggerList(), indexHealthPowerUpTrigger, maxCountHeathPowerUpTriggerList, true);
+            GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetHealthPowerUpTrigger(), indexHealthPowerUpTrigger, healthPowerUpTriggerSize, true);
 
             //destroy the object
             Destroy(healthPowerUpGameObject);
