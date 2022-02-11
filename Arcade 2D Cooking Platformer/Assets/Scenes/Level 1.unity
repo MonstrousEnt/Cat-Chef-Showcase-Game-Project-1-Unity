@@ -44538,25 +44538,9 @@ PrefabInstance:
       propertyPath: _playerCharacter
       value: 
       objectReference: {fileID: 1800096310}
-    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
-      propertyPath: indexEnemyTriggerList
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
-      propertyPath: _indexEnemyTriggerList
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
-      propertyPath: maxCountEnemyTriggerList
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 3771559445793220590, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: m_Name
       value: Bananaman (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6380773090855447186, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
-      propertyPath: graphMask.value
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6680638396623622087, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: target
@@ -46156,6 +46140,10 @@ PrefabInstance:
     - target: {fileID: 3771559445793220590, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: m_Name
       value: Bananaman
+      objectReference: {fileID: 0}
+    - target: {fileID: 6380773090855447186, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: graphMask.value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6680638396623622087, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: target
