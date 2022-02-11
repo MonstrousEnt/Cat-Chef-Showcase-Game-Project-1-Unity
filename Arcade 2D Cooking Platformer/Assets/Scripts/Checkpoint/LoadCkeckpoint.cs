@@ -36,9 +36,6 @@ public class LoadCkeckpoint : MonoBehaviour
 			//Set the player to the last checkpoint
 			gameObject.transform.position = GameManager.instance.GetLastCheckpointPos();
 
-			//Update UI Data
-			LivesUI.instance.SetLives(LiveSystemManager.instance.GetLivesCount());
-
 			//Set the boolean flag to false
 			PlayerBase.instance.SetIsRespawn(false);
 		}

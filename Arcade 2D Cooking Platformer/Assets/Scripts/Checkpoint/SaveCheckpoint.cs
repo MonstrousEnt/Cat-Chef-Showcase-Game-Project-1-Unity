@@ -15,7 +15,7 @@ public class SaveCheckpoint : MonoBehaviour
 {
     //Class Variables
     [Header("Trigger Reference")]
-    [SerializeField] private int indexCheckpointTrigger; //id of the checkpoint
+    [SerializeField] private int indexCheckpointTrigger; 
 
     private void Start()
     {

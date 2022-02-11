@@ -45,7 +45,7 @@ public class LiveSystemManager : MonoBehaviour
         _livesCount--;
 
         //Set Lives UI
-        LivesUI.instance.SetLives(_livesCount);
+        UIEvents.instance.SetLivesText(_livesCount);
     }
 
 
@@ -72,6 +72,6 @@ public class LiveSystemManager : MonoBehaviour
         //Reset the lives count.
         _livesCount = _defauftLives;
 
-        LivesUI.instance.SetLives(_livesCount);
+        UIEvents.instance.SetLivesText(_livesCount);
     }
 }

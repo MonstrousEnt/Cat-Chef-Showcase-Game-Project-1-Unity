@@ -14,37 +14,27 @@ using UnityEngine.UI;
 
 public class LivesUI : MonoBehaviour
 {
-    //Class Variables
-    public static LivesUI instance; //A static reference of the class
-
+    //Class Variables   
     [SerializeField] private Text LivesText;
 
-    private void Awake()
+    private void Start()
     {
-        //---Make sure there is only one instance of this class for each Scene.
+        UIEvents.instance.onSetLivesText.AddListener(setLives);
 
-        //If there is no instance of the object
-        if (instance == null)
-        {
-            //Set an instance of it
-            instance = this;
-        }
-
-        //Else, if there's already an instance
-        else
-        {
-            //Destroy it
-            Destroy(gameObject);
-            return;
-        }
+        setLives(LiveSystemManager.instance.GetLivesCount());
     }
 
     /// <summary>
     /// Update number of player lives in the UI
     /// </summary>
     /// <param name="lives"></param>
-    public void SetLives(int lives)
+    private void setLives(int lives)
 	{
 		LivesText.text = "x " + lives.ToString();
 	}
+
+    private void OnDestroy()
+    {
+        UIEvents.instance.onSetLivesText.RemoveListener(setLives);
+    }
 }

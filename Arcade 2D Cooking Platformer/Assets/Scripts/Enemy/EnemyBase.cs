@@ -85,7 +85,7 @@ public class EnemyBase : MonoBehaviour
         aipath.canMove = false;
 
         //take damage frame
-        _animator.SetTrigger("takeDamage");
+        _animator.SetTrigger(_takeDamageAnimation);
 
         //Wait a second or 2
         yield return new WaitForSeconds(1f);
