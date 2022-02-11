@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da1309e7674c6543bd09356e953cbbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectablesUI: {fileID: 0}
-  checkpointOnePos: {x: -15.71, y: 0.52}
+  _checkpointOnePos: {x: -15.71, y: 1.038}
+  _level1Music: Level 1 Music

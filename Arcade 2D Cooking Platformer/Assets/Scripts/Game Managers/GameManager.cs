@@ -14,7 +14,7 @@ using UnityEngine;
 public class GameManager : GameData
 {
     //Class Variables
-    public static GameManager instance; //A static reference of the class
+    public static GameManager instance;
 
     [Header("Boolean Flags")]
     [SerializeField] private bool _restart = false;

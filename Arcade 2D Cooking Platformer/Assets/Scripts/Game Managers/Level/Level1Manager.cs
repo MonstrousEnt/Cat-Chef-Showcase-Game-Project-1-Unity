@@ -13,9 +13,10 @@ using UnityEngine;
 
 public class Level1Manager : MonoBehaviour
 {
+    //Class Variables
     [Header("Level 1 Data")]
-    [SerializeField] private Vector2 checkpointOnePos;
-    [SerializeField] private string level1Music;
+    [SerializeField] private Vector2 _checkpointOnePos;
+    [SerializeField] private string _level1Music;
 
     private void Update()
     {
@@ -26,7 +27,7 @@ public class Level1Manager : MonoBehaviour
             SettingManager.instance.ActivePause(false, 1f);
 
             //Reset default game data
-            GameManager.instance.PlayLevelMusic(level1Music);
+            GameManager.instance.PlayLevelMusic(_level1Music);
 
             GameManager.instance.ResetGameData();
 
@@ -35,7 +36,7 @@ public class Level1Manager : MonoBehaviour
             GameObjectActiveManger.instance.ResetAllGameObjectActiveTriggers(GameObjectActiveManger.instance.GetCheckpointTriggerSize(), GameObjectActiveManger.instance.GetIngredientsTiggerSize(), GameObjectActiveManger.instance.GetHealthPowerUpTriggerSize(), GameObjectActiveManger.instance.GetEnemyTriggerSize());
 
             //Set the player to checkpoint one
-            GameManager.instance.SetLastCheckpointPos(checkpointOnePos);
+            GameManager.instance.SetLastCheckpointPos(_checkpointOnePos);
 
             //Turn of the boolean flag for when the level has started 
             GameManager.instance.SetLevelStarted(false);
