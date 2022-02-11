@@ -62,6 +62,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8914847202108003658}
     m_Modifications:
+    - target: {fileID: 680452400066689872, guid: 1d878ca543639ea49a6070f84f54827a, type: 3}
+      propertyPath: _fps
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 680452400066689873, guid: 1d878ca543639ea49a6070f84f54827a, type: 3}
       propertyPath: m_Name
       value: SettingManager

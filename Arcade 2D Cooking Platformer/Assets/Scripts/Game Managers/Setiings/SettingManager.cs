@@ -1,10 +1,12 @@
-/* Name: Daniel Cox, Charles Pink
- * Date: July 25, 2021
- * Description: This manager for game settings
- * Notes: 
+/* Project Name: Arcade 2D Platformer
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox, Charles Pink
+ * Created Date:  July 25, 2021
+ * Latest Update: February 11, 2022
+ * Description: The class for loading the levels.
+ * Notes: The class for manger the game settings.
  */
 
-//Libraries
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,9 +15,8 @@ public class SettingManager : MonoBehaviour
 {
 	//Class Variables 
 	public static SettingManager instance { private set; get; }
-	[SerializeField] private int fps;
-	[SerializeField] bool gameIsPause = false;
-
+	[SerializeField] private int _fps;
+	[SerializeField] private bool _gameIsPause = false;
 
 	private void Awake()
 	{
@@ -44,18 +45,26 @@ public class SettingManager : MonoBehaviour
 		FPSLock();
 	}
 
+	/// <summary>
+	/// The fps lock for the game
+	/// </summary>
 	private void FPSLock()
 	{
 		//Disable vSync.
 		QualitySettings.vSyncCount = 0;
 
 		//Setting application frame rate.
-		Application.targetFrameRate = fps;
+		Application.targetFrameRate = _fps;
 	}
 
+	/// <summary>
+	/// Pause or Unpause the game
+	/// </summary>
+	/// <param name="flag"></param>
+	/// <param name="timeScale"></param>
 	public void ActivePause(bool flag, float timeScale)
 	{
-		gameIsPause = flag;
+		_gameIsPause = flag;
 		Time.timeScale = timeScale;
 	}
 

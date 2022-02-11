@@ -12873,42 +12873,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1812711932275545852, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
-      propertyPath: enemyAmount
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1812711932275545852, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
-      propertyPath: level1Music
-      value: Level 1 Music
-      objectReference: {fileID: 0}
-    - target: {fileID: 1812711932275545852, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
-      propertyPath: collectablesUI
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1812711932275545852, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
-      propertyPath: CheckPointamount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1812711932275545852, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
-      propertyPath: IngredinetAmount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1812711932275545852, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
-      propertyPath: ingredinetAmount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1812711932275545852, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
-      propertyPath: checkpointOnePos.x
-      value: -17.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1812711932275545852, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
-      propertyPath: checkpointOnePos.y
-      value: 1.045
-      objectReference: {fileID: 0}
-    - target: {fileID: 1812711932275545852, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
-      propertyPath: healthPowrUpAmount
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1812711932275545853, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
       propertyPath: m_Name
       value: Level1Manager
