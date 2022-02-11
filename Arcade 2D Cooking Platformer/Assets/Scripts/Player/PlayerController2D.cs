@@ -71,12 +71,12 @@ public class PlayerController2D : MonoBehaviour
         {
             if (!pauseMneu.gameObject.activeSelf)
             {
-                pauseMneu.activeMenu(true);
+                pauseMneu.ActiveMenu(true);
                 SettingManager.instance.ActivePause(true, 0f);
             }
             else
             {
-                pauseMneu.activeMenu(false);
+                pauseMneu.ActiveMenu(false);
                 SettingManager.instance.ActivePause(false, 1f);
             }
         }
@@ -167,9 +167,8 @@ public class PlayerController2D : MonoBehaviour
         //Jump
         //jump in air with extra jumps aka double jumps
         if (Input.GetButtonDown("Jump") && _extraJumps > 0)
-        {                      
-
-            FindObjectOfType<AudioManager>().playAudio("meow_jump");
+        {
+            AudioManager.instance.playAudio("meow_jump");
 
             //Modify the velocity with force
             _rigidbody2D.velocity = Vector2.up * _jumpHeight;

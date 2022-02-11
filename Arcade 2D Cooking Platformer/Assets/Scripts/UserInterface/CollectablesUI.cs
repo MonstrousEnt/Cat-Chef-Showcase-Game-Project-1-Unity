@@ -1,3 +1,12 @@
+/* Project Name: Arcade 2D Platformer
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox, Ben Topple
+ * Created Date: January 30, 2022
+ * Latest Update: February 11, 2022
+ * Description: The show the collectibles have collected throughout the level in the UI.
+ * Notes: 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,33 +14,27 @@ using UnityEngine.UI;
 
 public class CollectablesUI : MonoBehaviour
 {
-    [SerializeField] private Text coinText;
+    //Class Variables
+    [SerializeField] private Text _coinText;
 
-    public static CollectablesUI instance; //A static reference of the class
-
-    private void Awake()
+    private void Start()
     {
-        //---Make sure there is only one instance of this class for each Scene.
+        UIEvents.instance.onSetCollectableText.AddListener(setText);
 
-        //If there is no instance of the object
-        if (instance == null)
-        {
-            //Set an instance of it
-            instance = this;
-        }
-
-        //Else, if there's already an instance
-        else
-        {
-            //Destroy it
-            Destroy(gameObject);
-            return;
-        }
+        setText(GameManager.instance.GetCoinNum());
     }
 
+    /// <summary>
+    /// Update number of coin you have collect in the UI.
+    /// </summary>
+    /// <param name="coinNum"></param>
+    private void setText(int coinNum)
+    {
+        _coinText.text = coinNum.ToString();
+    }
 
-    public void SetText(int coinNum)
-   {
-        coinText.text = coinNum.ToString();
+    private void OnDestroy()
+    {
+        UIEvents.instance.onSetCollectableText.RemoveListener(setText);
     }
 }

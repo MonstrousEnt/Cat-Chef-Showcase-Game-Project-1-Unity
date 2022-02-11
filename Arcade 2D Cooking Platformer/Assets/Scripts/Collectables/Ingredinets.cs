@@ -1,65 +1,60 @@
+/* Project Name: Arcade 2D Platformer
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox, Ben Topple
+ * Created Date: January 30, 2022
+ * Latest Update: February 11, 2022
+ * Description: The class is the manager for collecting ingredients. 
+ * Notes: 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Ingredinets : MonoBehaviour
 {
-    [SerializeField] private string IngredinetName;
+    //Class Variables 
+    [Header("Data Info")]
+    [SerializeField] private int _ingredinetImagesActiveIndex;
 
-    [SerializeField] private int ingredinetImagesActiveIndex;
+    [Header("SoundEffect")]
+    [SerializeField] private string _getItemSoundEffect = "getitem";
 
-    [SerializeField] private GameObject imageGameObject;
-
-    [SerializeField] private int indexIngredientsTigger; //id of the checkpoint
-    [SerializeField] private int maxCount;
+    [Header("Trigger Reference")]
+    [SerializeField] private int _indexIngredientsTiggerList; //id of the checkpoint
 
     private void Start()
     {
-        if (GameObjectActiveManger.instance.GetIngredientsTiggerList() != null)
-        {
-            if (GameObjectActiveManger.instance.GetIngredientsTiggerList().Count == maxCount)
-            {
-                if (GameObjectActiveManger.instance.GetIngredientsTiggerList()[indexIngredientsTigger] == true)
-                {
-                    Destroy(gameObject);
-                }
-            }
-        }
-
-        for (int i = 0; i < GameManager.instance.GetIngredientNameList().Count; i++)
-        {
-            if (IngredinetName == GameManager.instance.GetIngredientNameList()[i])
-            {
-                imageGameObject = GameManager.instance.GetIngredinetImages()[i];
-            }
-        }
+        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetIngredientsTigger(), _indexIngredientsTiggerList, GameObjectActiveManger.instance.GetIngredientsTiggerSize(), gameObject); 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            int tempFoundIngredinetsNum = 1;
-            GameManager.instance.SetFoundIngredinetsNum(GameManager.instance.GetFoundIngredinetsNum() + tempFoundIngredinetsNum);
-
-            PointManger.instance.SetTolatPoints(PointManger.instance.GetTolatPoints() + PointManger.instance.GetPointData().GetIngredientPointNum());
-            
-            Debug.Log("found one!");
-            //play the sound
-            FindObjectOfType<AudioManager>().playAudio("getitem");
-
-            //Set UI
-            LevelObjectiveCakeIngredientsUI.instance.ActiveImage(imageGameObject, true, ingredinetImagesActiveIndex);
-
-            if (GameObjectActiveManger.instance.GetIngredientsTiggerList() != null)
-            {
-                if (GameObjectActiveManger.instance.GetIngredientsTiggerList().Count == maxCount)
-                {
-                    GameObjectActiveManger.instance.GetIngredientsTiggerList()[indexIngredientsTigger] = true;
-                }
-            }
-                    
-            Destroy(gameObject);
+            CollectItem();
         }
+    }
+
+    private void CollectItem()
+    {
+        //Ingredients up go up by one and set it to the game manager
+        int tempFoundIngredinetsNum = 1;
+        GameManager.instance.SetIngredinetsNum(GameManager.instance.GetIngredinetsNum() + tempFoundIngredinetsNum);
+
+        //Added the Ingredients to the total points
+        PointManager.instance.SetTolatPoints(PointManager.instance.GetTolatPoints() + PointManager.instance.GetIngredientPointNum());
+
+        //Play the sound
+        AudioManager.instance.playAudio(_getItemSoundEffect);
+
+        //Set UI
+        UIEvents.instance.ActiveIngredientImage(true, _ingredinetImagesActiveIndex);
+
+        //Game object has been trigger
+        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetIngredientsTigger(), _indexIngredientsTiggerList, GameObjectActiveManger.instance.GetIngredientsTiggerSize(), true);
+
+        //Destroy the game object
+        Destroy(gameObject);
     }
 }

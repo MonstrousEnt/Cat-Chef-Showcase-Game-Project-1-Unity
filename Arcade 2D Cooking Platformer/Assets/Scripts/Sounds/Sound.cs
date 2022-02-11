@@ -1,11 +1,12 @@
-﻿/* Name: Daniel Cox, Spencer Stoddard 
- * Date: July 6 - September 23, 2020
- * Description: This class holds all the data type for the sounds
- * Notes: 
- * Audio Manager Tutorial Used: https://youtu.be/6OT43pvUyfY
+﻿/* Project Name: Arcade 2D Platformer
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox, Spencer Stoddard 
+ * Created Date: July 6, 2020
+ * Latest Update: February 11, 2022
+ * Description: This class is data for the sounds.
+ * Notes: Audio Manager Tutorial Used: https://youtu.be/6OT43pvUyfY
  */
 
-//Libraries
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,20 +17,20 @@ using UnityEngine.Audio;
 public class Sound
 {
     //Class Variables
-    public string name; //Name of the sound
-    public AudioClip clip; //The clip of the sound
+    public string name; 
+    public AudioClip clip; 
 
     [Range(0f, 1f)]
-    public float volume; //The volume of the sound
+    public float volume; 
     
     [Range(.1f, 3f)]
-    public float pitch; //The pitch of the sounds
+    public float pitch; 
 
-    public bool loop; //loop the sound
+    public bool loop; 
 	
-	[SerializeField] private bool playOnAwake; //Sound played when the game starts
+	[SerializeField] private bool playOnAwake; 
 
     [HideInInspector]
-    public AudioSource source; //The source of the sound
+    public AudioSource source; 
 
 }

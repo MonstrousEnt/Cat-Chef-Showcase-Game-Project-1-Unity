@@ -1,3 +1,12 @@
+/* Project Name: Arcade 2D Platformer
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox, Ben Topple
+ * Created Date: January 30, 2022
+ * Latest Update: February 11, 2022
+ * Description: The class is the manager for collecting coins.
+ * Notes: 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,18 +17,20 @@ public class Conis : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            //Coin up go up by one and set it to the game manager
             int tempCoinNum = 1;
             GameManager.instance.SetCoinNum(GameManager.instance.GetCoinNum() + tempCoinNum);
 
-            PointManger.instance.SetTolatPoints(PointManger.instance.GetTolatPoints() + PointManger.instance.GetPointData().GetCoinPointNum());
+            //Added the Ingredients to the total points
+            PointManager.instance.SetTolatPoints(PointManager.instance.GetTolatPoints() + PointManager.instance.GetCoinPointNum());
 
             //play the sound
-            FindObjectOfType<AudioManager>().playAudio("coin1");
+            AudioManager.instance.playAudio("coin1");
 
-            CollectablesUI.instance.SetText(GameManager.instance.GetCoinNum());
+            //Set UI
+            UIEvents.instance.SetCollectableText(GameManager.instance.GetCoinNum());
 
-            LevelObjectiveCakeIngredientsUI.instance.UpdateImage();
-
+            //Destroy the game object
             gameObject.SetActive(false);
         }
     }
