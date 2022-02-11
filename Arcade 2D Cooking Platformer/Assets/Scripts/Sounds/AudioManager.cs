@@ -60,12 +60,24 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-	/// <summary>
-	/// Find the sound by the name of it.
-	/// </summary>
-	/// <param name="name"></param>
-	/// <returns></returns>
-	private Sound findAudio(string name)
+    /// <summary>
+    /// Find the sound by the index of it.
+    /// </summary>
+    /// <param name="index"></param>
+    /// <returns></returns>
+    private Sound findAudioByIndex(int index)
+    {
+        Sound s = _sounds[index];
+        return s;
+    }
+
+
+    /// <summary>
+    /// Find the sound by the name of it.
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
+    private Sound findAudio(string name)
 	{
 		//Find the name of the sound
         Sound s = Array.Find(_sounds, sound => sound.name == name);
