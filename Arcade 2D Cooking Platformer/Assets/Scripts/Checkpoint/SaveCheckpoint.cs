@@ -24,7 +24,7 @@ public class SaveCheckpoint : MonoBehaviour
 
     private void Start()
     {
-        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetCheckpointTrigger(), _indexCheckpointTrigger, GameObjectActiveManger.instance.GetCheckpointTriggerSize(), gameObject);
+        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetCheckpointTriggers(), _indexCheckpointTrigger, GameObjectActiveManger.instance.GetCheckpointTriggerSize(), gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,7 +36,7 @@ public class SaveCheckpoint : MonoBehaviour
             GameManager.instance.SetLastCheckpointPos(lastCheckpointPos);
 
             //Game object has been trigger
-            GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetCheckpointTrigger(), _indexCheckpointTrigger, GameObjectActiveManger.instance.GetCheckpointTriggerSize(), true);
+            GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetCheckpointTriggers(), _indexCheckpointTrigger, GameObjectActiveManger.instance.GetCheckpointTriggerSize(), true);
  
             //Destroy the current checkpoint
             Destroy(gameObject);

@@ -46,7 +46,7 @@ public class EnemyBase : MonoBehaviour
         //Enable the enemy collier
         GetComponent<Collider2D>().enabled = true;
 
-        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetEnemyTrigger(), _indexEnemyTriggerList, GameObjectActiveManger.instance.GetEnemyTriggerSize(), gameObject);
+        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetEnemyTriggers(), _indexEnemyTriggerList, GameObjectActiveManger.instance.GetEnemyTriggerSize(), gameObject);
 
         //set the health to max health of the enemy
         health = _maxHealth;
@@ -105,7 +105,7 @@ public class EnemyBase : MonoBehaviour
         
         //prevent the enemy from attacking
         //Game object has been trigger
-        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetEnemyTrigger(), _indexEnemyTriggerList, GameObjectActiveManger.instance.GetEnemyTriggerSize(), true);
+        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetEnemyTriggers(), _indexEnemyTriggerList, GameObjectActiveManger.instance.GetEnemyTriggerSize(), true);
 
         //flicker the enemy
         StopCoroutine(flickeringDie());

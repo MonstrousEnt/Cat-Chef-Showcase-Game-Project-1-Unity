@@ -19,7 +19,7 @@ public class HealthPowerUp : MonoBehaviour
 
     private void Start()
     {
-        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetHealthPowerUpTrigger(), indexHealthPowerUpTrigger, GameObjectActiveManger.instance.GetHealthPowerUpTriggerSize(), gameObject);
+        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetHealthPowerUpTriggers(), indexHealthPowerUpTrigger, GameObjectActiveManger.instance.GetHealthPowerUpTriggerSize(), gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -102,7 +102,7 @@ public class PlayerBase : MonoBehaviour
             PointManager.instance.SetTolatPoints(PointManager.instance.GetTolatPoints() + PointManager.instance.GetHealthPowerUpPointNum());
 
             //Game object has been trigger
-            GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetHealthPowerUpTrigger(), indexHealthPowerUpTrigger, healthPowerUpTriggerSize, true);
+            GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetHealthPowerUpTriggers(), indexHealthPowerUpTrigger, healthPowerUpTriggerSize, true);
 
             //Destroy the object game
             Destroy(healthPowerUpGameObject);

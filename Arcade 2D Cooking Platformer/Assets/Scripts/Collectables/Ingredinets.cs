@@ -25,7 +25,7 @@ public class Ingredinets : MonoBehaviour
 
     private void Start()
     {
-        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetIngredientsTigger(), _indexIngredientsTiggerList, GameObjectActiveManger.instance.GetIngredientsTiggerSize(), gameObject); 
+        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetIngredientsTriggers(), _indexIngredientsTiggerList, GameObjectActiveManger.instance.GetIngredientsTiggerSize(), gameObject); 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -52,7 +52,7 @@ public class Ingredinets : MonoBehaviour
         UIEvents.instance.ActiveIngredientImage(true, _ingredinetImagesActiveIndex);
 
         //Game object has been trigger
-        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetIngredientsTigger(), _indexIngredientsTiggerList, GameObjectActiveManger.instance.GetIngredientsTiggerSize(), true);
+        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetIngredientsTriggers(), _indexIngredientsTiggerList, GameObjectActiveManger.instance.GetIngredientsTiggerSize(), true);
 
         //Destroy the game object
         Destroy(gameObject);

@@ -17,10 +17,10 @@ public class GameObjectActiveManger : MonoBehaviour
     public static GameObjectActiveManger instance; //A static reference of the class
 
     [Header("Trigger List")]
-    [SerializeField] private List<bool> _checkpointTrigger;
-    [SerializeField] private List<bool> _enemyTrigger;
-    [SerializeField] private List<bool> _ingredientsTigger;
-    [SerializeField] private List<bool> _healthPowerUpTrigger;
+    [SerializeField] private List<bool> _checkpointTriggers;
+    [SerializeField] private List<bool> _enemyTriggers;
+    [SerializeField] private List<bool> _ingredientsTriggers;
+    [SerializeField] private List<bool> _healthPowerUpTriggers;
 
     [Header("Trigger List Size")]
     [SerializeField] private int _checkpointTriggerSize;
@@ -29,10 +29,10 @@ public class GameObjectActiveManger : MonoBehaviour
     [SerializeField] private int _healthPowerUpTriggerSize;
 
     #region Getters and Setters
-    public List<bool> GetCheckpointTrigger() { return _checkpointTrigger; }
-    public List<bool> GetEnemyTrigger() { return _enemyTrigger; }
-    public List<bool> GetIngredientsTigger() { return _ingredientsTigger; }
-    public List<bool> GetHealthPowerUpTrigger() { return _healthPowerUpTrigger; }
+    public List<bool> GetCheckpointTriggers() { return _checkpointTriggers; }
+    public List<bool> GetEnemyTriggers() { return _enemyTriggers; }
+    public List<bool> GetIngredientsTriggers() { return _ingredientsTriggers; }
+    public List<bool> GetHealthPowerUpTriggers() { return _healthPowerUpTriggers; }
     public int GetCheckpointTriggerSize() { return _checkpointTriggerSize; }
     public int GetEnemyTriggerSize() { return _enemyTriggerSize; }
     public int GetIngredientsTiggerSize() { return _ingredientsTiggerSize; }
@@ -48,17 +48,17 @@ public class GameObjectActiveManger : MonoBehaviour
     /// <param name="enemyTriggerSize"></param>
     public void ResetAllGameObjectActiveTriggers(int checkpointTriggerSize, int ingredientsTiggerSize, int healthPowerUpTriggerSize, int enemyTriggerSize)
     {
-        _checkpointTrigger.Clear();
-        addAllTriggers(checkpointTriggerSize,_checkpointTrigger);
+        _checkpointTriggers.Clear();
+        addAllTriggers(checkpointTriggerSize,_checkpointTriggers);
 
-        _ingredientsTigger.Clear();
-        addAllTriggers(ingredientsTiggerSize, _ingredientsTigger);
+        _ingredientsTriggers.Clear();
+        addAllTriggers(ingredientsTiggerSize, _ingredientsTriggers);
 
-        _healthPowerUpTrigger.Clear();
-        addAllTriggers(healthPowerUpTriggerSize, _healthPowerUpTrigger);
+        _healthPowerUpTriggers.Clear();
+        addAllTriggers(healthPowerUpTriggerSize, _healthPowerUpTriggers);
 
-        _enemyTrigger.Clear();
-        addAllTriggers(enemyTriggerSize, _enemyTrigger);
+        _enemyTriggers.Clear();
+        addAllTriggers(enemyTriggerSize, _enemyTriggers);
     }
 
     /// <summary>
