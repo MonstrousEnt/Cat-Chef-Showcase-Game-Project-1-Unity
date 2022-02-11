@@ -46103,26 +46103,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 115280081}
     m_Modifications:
-    - target: {fileID: 1606419477356122042, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 3a741706eaa8d764785744721c7ace71, type: 3}
-    - target: {fileID: 1606419477446737816, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 3a741706eaa8d764785744721c7ace71, type: 3}
-    - target: {fileID: 1606419477803489456, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 3a741706eaa8d764785744721c7ace71, type: 3}
-    - target: {fileID: 2759581767203561836, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
-      propertyPath: MaxNumOfHearts
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2759581767203561836, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
-      propertyPath: hearts.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2759581768839175090, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
       propertyPath: m_Name
       value: PlayerHub
@@ -46210,6 +46190,10 @@ PrefabInstance:
     - target: {fileID: 2759581768839175091, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730286200321214852, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
+      propertyPath: m_Name
+      value: LivesUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
@@ -46418,17 +46402,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23ad44fae08d55f4491492659a0ddf83, type: 3}
---- !u!114 &3460777717635148648 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2759581767203561836, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
-  m_PrefabInstance: {fileID: 1606419476095093252}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cddac1f5ac66d5244b4959f3b7743fbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &3460777719286419895 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2759581768839175091, guid: 00292bf7609f11144bcab0d6c4d24a67, type: 3}
@@ -46970,7 +46943,19 @@ PrefabInstance:
     - target: {fileID: 8462256791385980606, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 3460777717635148648}
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462256791385980606, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
+      propertyPath: maxHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462256791385980606, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
+      propertyPath: fullHeartNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462256791385980606, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
+      propertyPath: maxHealthPowerUp
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8462256792850482998, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
       propertyPath: pauseMneu
       value: 

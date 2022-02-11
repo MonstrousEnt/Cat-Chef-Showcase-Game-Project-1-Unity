@@ -215,7 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1248073845371631153}
   m_Layer: 0
-  m_Name: LivesHub
+  m_Name: LivesUi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

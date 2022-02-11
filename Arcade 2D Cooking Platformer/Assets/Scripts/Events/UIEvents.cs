@@ -1,3 +1,12 @@
+/* Project Name: Arcade 2D Platformer
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox, Ben Topple
+ * Created Date: January 30, 2022
+ * Latest Update: February 11, 2022
+ * Description: The class is the manager for the UI unity events.
+ * Notes:
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,12 +21,13 @@ public class UIEvents : MonoBehaviour
 	public UnityEvent<int> onSetCollectableText;
 	public UnityEvent<int> onSetLivesText;
 	public UnityEvent<bool, int> onActiveIngredientImage;
-	public UnityEvent<int, int> onUpdateHealthBar;
+	public UnityEvent<int> onUpdateHealthBar;
 
     //Class Methods
 	public void SetCollectableText(int coinNum) { instance.onSetCollectableText.Invoke(coinNum); }
     public void ActiveIngredientImage(bool flag, int ingredinetImagesActiveIndex) { instance.onActiveIngredientImage.Invoke(flag, ingredinetImagesActiveIndex); }
     public void SetLivesText(int liveCount) { instance.onSetLivesText.Invoke(liveCount); }
+    public void UpdateHealthBar(int playerHealth) { instance.onUpdateHealthBar.Invoke(playerHealth); }
 
     private void Awake()
     {

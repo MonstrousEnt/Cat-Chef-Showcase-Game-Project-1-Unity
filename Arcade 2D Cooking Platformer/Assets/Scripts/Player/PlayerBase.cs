@@ -19,20 +19,17 @@ public class PlayerBase : MonoBehaviour
 
     [Header("Player Data")]
     [SerializeField] public int health = 0;
-    [SerializeField] private int maxHealth;
-    [SerializeField] private int fullHeartNum = 10;
+    [SerializeField] private int maxHealth = 3;
+    [SerializeField] private int fullHeartNum = 1;
 
     [Header("Health Power Up")]
-    [SerializeField] private int maxHealthPowerUp = 100;
+    [SerializeField] private int maxHealthPowerUp = 3;
     [SerializeField] private string healthItemSoundEffect = "health_item";
     [SerializeField] private string happyPurrSoundEffect = "happy_purr";
 
     [Header("Layer")]
     [SerializeField] private int playerLayer;
     [SerializeField] private int enemyLayer;
-
-    [Header("Component References")]
-    [SerializeField] private HealthBar healthBar;
 
     [Header("Animator References")]
     [SerializeField] private Animator _animator;
@@ -71,7 +68,7 @@ public class PlayerBase : MonoBehaviour
         health = maxHealth;
 
         //Display it in the UI
-        healthBar.UpdateHealthBar(health, maxHealthPowerUp);
+        UIEvents.instance.UpdateHealthBar(health);
     }
 
     /// <summary>
@@ -99,7 +96,7 @@ public class PlayerBase : MonoBehaviour
             AudioManager.instance.playAudio(happyPurrSoundEffect);
 
             //Display it in the UI
-            healthBar.UpdateHealthBar(health, maxHealthPowerUp);
+            UIEvents.instance.UpdateHealthBar(health);
 
             //Added the Health power up to the total points
             PointManager.instance.SetTolatPoints(PointManager.instance.GetTolatPoints() + PointManager.instance.GetHealthPowerUpPointNum());
@@ -122,7 +119,7 @@ public class PlayerBase : MonoBehaviour
 		health -= damage;
 
         //Display it in the UI
-        healthBar.UpdateHealthBar(health, maxHealthPowerUp);
+        UIEvents.instance.UpdateHealthBar(health);
 
         //Play sound
         AudioManager.instance.playAudio(takeDamageSoundEffect);
@@ -216,7 +213,7 @@ public class PlayerBase : MonoBehaviour
             health = maxHealth;
 
             //Reset the health bar
-            healthBar.UpdateHealthBar(health, maxHealthPowerUp);
+            UIEvents.instance.UpdateHealthBar(health);
 
             //Player lose one life
             LiveSystemManager.instance.LoseALife();
