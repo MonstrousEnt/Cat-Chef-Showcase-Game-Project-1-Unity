@@ -45964,22 +45964,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8914847202108003659, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
-      propertyPath: _IngredinetImages.Array.data[0]
-      value: 
-      objectReference: {fileID: 1081746778830123179, guid: 5ba494946ffebcf45a109e3fbe4606ee, type: 3}
-    - target: {fileID: 8914847202108003659, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
-      propertyPath: _IngredinetImages.Array.data[1]
-      value: 
-      objectReference: {fileID: 324775365012878234, guid: 3cb06212093a852408d86abf2d798608, type: 3}
-    - target: {fileID: 8914847202108003659, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
-      propertyPath: _IngredinetImages.Array.data[2]
-      value: 
-      objectReference: {fileID: 6520625476622886078, guid: 256b24d81e40a754e8f63df96c7ad891, type: 3}
-    - target: {fileID: 8914847202108003659, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
-      propertyPath: _IngredinetImages.Array.data[3]
-      value: 
-      objectReference: {fileID: 8277122534658403715, guid: 159c5daf9a4ac0d409069387612590be, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
 --- !u!1001 &2138893009
@@ -46792,9 +46776,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 115280081}
     m_Modifications:
+    - target: {fileID: 340408321907443873, guid: 47d5d40c8f5bbb64cab7e0daa80cbef9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048781621820486527, guid: 47d5d40c8f5bbb64cab7e0daa80cbef9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3315972299997013018, guid: 47d5d40c8f5bbb64cab7e0daa80cbef9, type: 3}
       propertyPath: m_Name
       value: IngredientUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3684961269944958167, guid: 47d5d40c8f5bbb64cab7e0daa80cbef9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5091844483322682095, guid: 47d5d40c8f5bbb64cab7e0daa80cbef9, type: 3}
       propertyPath: _IngredinetImages.Array.size

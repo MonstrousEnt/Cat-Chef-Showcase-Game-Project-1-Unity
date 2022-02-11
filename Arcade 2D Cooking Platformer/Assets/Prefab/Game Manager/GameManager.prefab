@@ -43,21 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d7e89b059710d43884820eda36ae70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _foundIngredinetsNum: 0
-  _IngredinetImages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _IngredinetImagesActive: 00000000
-  _maxIngredients: 4
-  _coinNum: 0
-  _atCakeOver: 0
+  ingredinetsNum: 0
+  maxIngredients: 4
+  ingredinetImagesActive: 00000000
+  coinNum: 0
   lastCheckpointPos: {x: 0, y: 0}
-  Restart: 0
+  _playerAtCkeOver: 0
+  _restart: 0
   _levelStarted: 1
-  IngredientNameList:
-  - Banana
-  - Milk
-  - Sugar
-  - Flour

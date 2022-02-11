@@ -44,7 +44,7 @@ public class Ingredinets : MonoBehaviour
     {
         //Ingredients up go up by one and set it to the game manager
         int tempFoundIngredinetsNum = 1;
-        GameManager.instance.SetFoundIngredinetsNum(GameManager.instance.GetFoundIngredinetsNum() + tempFoundIngredinetsNum);
+        GameManager.instance.SetIngredinetsNum(GameManager.instance.GetIngredinetsNum() + tempFoundIngredinetsNum);
 
         //Added the Ingredients to the total points
         PointManager.instance.SetTolatPoints(PointManager.instance.GetTolatPoints() + PointManager.instance.GetIngredientPointNum());

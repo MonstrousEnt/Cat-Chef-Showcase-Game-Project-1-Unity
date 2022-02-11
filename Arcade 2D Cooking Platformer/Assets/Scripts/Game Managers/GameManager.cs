@@ -1,51 +1,37 @@
+/* Project Name: Arcade 2D Platformer
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox, Ben Topple
+ * Created Date: January 30, 2022
+ * Latest Update: February 11, 2022
+ * Description: The class is the game manger for the level.
+ * Notes: 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : GameData
 {
+    //Class Variables
     public static GameManager instance; //A static reference of the class
 
-    [SerializeField] private int _foundIngredinetsNum = 0;
-    [SerializeField] private List<bool> _IngredinetImagesActive;
-    [SerializeField] private int _maxIngredients;
+    [Header("Boolean Flags")]
+    [SerializeField] private bool _playerAtCkeOver = false;
+    [SerializeField] private bool _restart = false;
+    [SerializeField] private bool _levelStarted = false;
 
-    [SerializeField] private int _coinNum;
-
-    [SerializeField] private bool _atCakeOver = false;
-
-    [SerializeField] private Vector2 lastCheckpointPos;
-
-    [SerializeField] private bool Restart = false;
-
-    [SerializeField] private bool _levelStarted; //A boolean for when the level started or not
-
-    [SerializeField] private List<string> IngredientNameList;
-
-    public List<string> GetIngredientNameList() { return IngredientNameList; }
-
-    public List<bool> GetIngredinetImagesActive() { return _IngredinetImagesActive; }
-
-    public int GetMaxIngredients() {return _maxIngredients;}
-    public int GetFoundIngredinetsNum() { return _foundIngredinetsNum; }
-    public void SetFoundIngredinetsNum( int foundIngredinetsNum) { this._foundIngredinetsNum = foundIngredinetsNum; }
-
-    public void SetCoinNum(int coinNum) { this._coinNum = coinNum;}
-    public int GetCoinNum() { return _coinNum; }
-
-    public bool GetRestart() { return Restart; }
-    public void SetRestart(bool restart) { this.Restart = restart; }
-
-    public void SetAtCakeOver(bool flag) { this._atCakeOver = flag; }
-
-    public Vector2 GetLastCheckpointPos() { return lastCheckpointPos; }
-    public void SetLastCheckpointPos(Vector2 lastCheckpointPos) { this.lastCheckpointPos = lastCheckpointPos; }
-
+    #region Getters and Setters
+    public void SetRestart(bool restart) { this._restart = restart; }
+    public void SetAtCakeOver(bool flag) { this._playerAtCkeOver = flag; }
     public bool GetLevelStarted() { return _levelStarted; }
     public void SetLevelStarted(bool levelStarted) { this._levelStarted = levelStarted; }
+    #endregion
 
+    #region Unity Methods
     private void Awake()
     {
+        #region Singleton Reference
         //---Make sure there is only one instance of this class for each Scene.
 
         //If there is no instance of the object
@@ -63,26 +49,42 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-
         //This won't get destroy when you switch scene
         DontDestroyOnLoad(gameObject);
+        #endregion
     }
 
+    private void Update()
+    {
+        if (ingredinetsNum == maxIngredients && _playerAtCkeOver)
+        {
+            CakeOver.instance.GameCompleted();
+
+            //Level Completed
+            EndStateScreenUI.instance.activeMenu(true);
+        }
+    }
+    #endregion
+
+    #region Reset Game Methods
+    /// <summary>
+    /// Reset the game when the level starts.
+    /// </summary>
     public void ResetGameData()
     {
         //Reset Coins
-        _coinNum = 0;
+        coinNum = 0;
 
         //Reset Lives
         LiveSystemManager.instance.ResetLives();
 
         //Reset Ingredient
-        _foundIngredinetsNum = 0;
+        ingredinetsNum = 0;
 
         #region reset Ingredient UI
-        for (int i = 0; i < _IngredinetImagesActive.Count; i++)
+        for (int i = 0; i < ingredinetImagesActive.Count; i++)
         {
-            _IngredinetImagesActive[i] = false;
+            ingredinetImagesActive[i] = false;
         }
         #endregion
     }
@@ -93,10 +95,10 @@ public class GameManager : MonoBehaviour
     public void ResetBooleanFlags()
     {
         //Turn of the boolean flag for restart the game
-        Restart = false;
+        _restart = false;
 
         //Reset the boolean for when the level is completed
-        _atCakeOver = false;
+        _playerAtCkeOver = false;
     }
 
     /// <summary>
@@ -104,7 +106,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void PlayLevelMusic(string levelMusicName)
     {
-        if (!Restart)
+        if (!_restart)
         {
             AudioManager.instance.SetAudioLoop(levelMusicName, false);
             AudioManager.instance.stopAudio(levelMusicName);
@@ -113,15 +115,5 @@ public class GameManager : MonoBehaviour
             AudioManager.instance.playAudio(levelMusicName);
         }
     }
-
-    private void Update()
-    {
-        if (_foundIngredinetsNum == _maxIngredients && _atCakeOver)
-        {
-            CakeOver.instance.GameCompleted();
-
-            //Level Completed
-            EndStateScreenUI.instance.activeMenu(true);
-        }
-    }
+    #endregion
 }
