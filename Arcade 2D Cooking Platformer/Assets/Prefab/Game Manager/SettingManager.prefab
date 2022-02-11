@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da12f65f5c9bd144b76f485e6b28be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fps: 60
-  gameIsPause: 0
+  _fps: 60
+  _gameIsPause: 0

@@ -1,9 +1,19 @@
+/* Project Name: Arcade 2D Platformer
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox, Ben Topple
+ * Created Date: January 30, 2022
+ * Latest Update: February 11, 2022
+ * Description: The class is the manager for the l
+ * Notes: 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LiveSystemManager : MonoBehaviour
 {
+    //Class Variables 
     public static LiveSystemManager instance; //A static reference of the class
 
     [SerializeField] private int _livesCount = 4;
@@ -35,6 +45,9 @@ public class LiveSystemManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// When a player losing a life
+    /// </summary>
     public void LoseALife()
     {
         //Life count goes up by one
@@ -45,6 +58,9 @@ public class LiveSystemManager : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// When the player run out of lives.
+    /// </summary>
     public void OutOfLives()
     {
         //Set Lives Count to 0
