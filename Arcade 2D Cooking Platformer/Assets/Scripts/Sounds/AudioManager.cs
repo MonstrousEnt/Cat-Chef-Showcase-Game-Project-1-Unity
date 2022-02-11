@@ -37,10 +37,6 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-
-        //This won't get destroy when you switch scene
-        DontDestroyOnLoad(gameObject);
-
         //--------------------------------------------------------------------------
 
         foreach (Sound s in _sounds)
