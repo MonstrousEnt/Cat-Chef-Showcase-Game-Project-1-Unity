@@ -22,6 +22,8 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private float knockbackAmount = 100f;
 
+    [SerializeField] private EnemyAttack attackScript;
+
     [Header("Sound Effects")]
     [SerializeField] string _takeDamagesoundEffect = "slash";
     
@@ -60,7 +62,10 @@ public class EnemyBase : MonoBehaviour
     /// </summary>
     /// <param name="damage"></param>
     public void TakeDamage(int damage)
-    {       
+    {
+
+        //disable attack script
+        attackScript = null;
 
         //player the sound effect for damage
         AudioManager.instance.playAudio(_takeDamagesoundEffect);
@@ -83,7 +88,9 @@ public class EnemyBase : MonoBehaviour
         {            
             Die();
         }
-        
+
+        //enable attack script;
+        attackScript = GetComponent<EnemyAttack>();
     }
 
     /// <summary>

@@ -28,14 +28,14 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private int _clawDamage;
 
 
-    private void FixedUpdate()
+    private void Update()
     {
         //If the play hit the attack button
         if (Input.GetButtonDown("Attack"))
         {
             //Random the sounds effect for attack
             int randNum = Random.Range(1, 3);
-            Debug.Log(randNum);
+            //Debug.Log(randNum);
 
             switch (randNum)
             {
