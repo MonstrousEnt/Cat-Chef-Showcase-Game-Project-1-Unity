@@ -9,17 +9,16 @@
 	- [x] Move AI
 	- [x] Flip AI
 	- [x] Attack AI 
-	- [ ] death animation 	
-- [ ] Main Player 
+	- [x] death animation 	
+- [x] Main Player 
 	- [x] UI health
 	- [x] Player Base
-	- [ ] Player controls
+	- [x] Player controls
 		- [x] Move
 		- [x] Jump
 		- [x] Double jump
 		- [x] Wall Jump
 		- [x] Attack 	
-		- [ ] Clean up
 - [x] Collectable
 	- [x] conis
 		- [x] Desgin
@@ -89,8 +88,11 @@
 	- [x] Save and load checkpoint needs comments
 	- [x] Cake Over code clean up 
 	- [x] Organize game Objects
-	- [x]  Double check code clean up for all clas at the very end
-	- [x]  Move repo to our GitHub Team
+	- [x] Double check code clean up for all clas at the very end
+	- [x] Move repo to our GitHub Team
+	- [ ] ParallaxBG class need comments
+	- [ ] Player controls class need comments
+	- [x] Player Attack class needs comments
 
 
 	
