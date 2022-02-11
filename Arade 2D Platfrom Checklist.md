@@ -90,7 +90,7 @@
 	- [x] Cake Over code clean up 
 	- [x] Organize game Objects
 	- [x]  Double check code clean up for all clas at the very end
-	- [ ]  Move repo to our GitHub Team
+	- [x]  Move repo to our GitHub Team
 
 
 	
