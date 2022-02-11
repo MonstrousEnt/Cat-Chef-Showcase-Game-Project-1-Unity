@@ -9,17 +9,16 @@
 	- [x] Move AI
 	- [x] Flip AI
 	- [x] Attack AI 
-	- [ ] death animation 	
-- [ ] Main Player 
+	- [x] death animation 	
+- [x] Main Player 
 	- [x] UI health
 	- [x] Player Base
-	- [ ] Player controls
+	- [x] Player controls
 		- [x] Move
 		- [x] Jump
 		- [x] Double jump
 		- [x] Wall Jump
 		- [x] Attack 	
-		- [ ] Clean up
 - [x] Collectable
 	- [x] conis
 		- [x] Desgin
@@ -67,15 +66,14 @@
 		- [x] Power Up
 	- [ ] Start Screen Soundtrack
 	- [x] Level 1 Soundtrack
+	
 - [x] Code Clean Up
 	- [x] Scripts are not organize
 	- [x] Make Coins and Intredeenits class code clean
-
 	- [x] Game Manager
 		- [x] Game Data
 	- [x] Unity events
 		- [x] UI Events
-
 	- [x] PlayerBase and player attack need comments 
 	- [x] EnmeyBase, enmey ai, attack needs comments 
 	- [x] Health Power up class needs comments
@@ -89,8 +87,11 @@
 	- [x] Save and load checkpoint needs comments
 	- [x] Cake Over code clean up 
 	- [x] Organize game Objects
-	- [x]  Double check code clean up for all clas at the very end
-	- [x]  Move repo to our GitHub Team
+	- [x] Double check code clean up for all clas at the very end
+	- [x] Move repo to our GitHub Team
+	- [ ] ParallaxBG class need comments
+	- [ ] Player controls class need comments
+	- [x] Player Attack class needs comments
 
 
 	
