@@ -1,7 +1,5 @@
 
-# Unity 2D Mini Games Ideas
-
-### Arade 2D Platfrom
+# Arade 2D Platfrom
 - [x] Find clue to sovle the puzzle or found keys
 	- [x] Desgin 
 	- [x] Coding
@@ -60,23 +58,40 @@
 	- [x] UI
 	- [x] Code
 - [ ] Sounds
-	- [ ] Player
-	- [ ] Enemies
+	- [x] Player
+	- [x] Enemies
 	- [ ] UI
-	- [ ] Collectables
+	- [x] Collectables
 		- [x] Cake Ingredients
 		- [x] Conis
-		- [ ] Pwer Up
+		- [x] Power Up
 	- [ ] Start Screen Soundtrack
 	- [x] Level 1 Soundtrack
-- [ ] Universal Code
-	- [ ]  Pop Ups
-	- [ ]  Power Ups
-	- [ ]  Collectables
-	- [ ]  Points System
-	- [ ]  Game Manager
-- [ ] Optimization
-	- [ ] Game Manager Methods	
+- [x] Code Clean Up
+	- [x] Scripts are not organize
+	- [x] Make Coins and Intredeenits class code clean
+
+	- [x] Game Manager
+		- [x] Game Data
+	- [x] Unity events
+		- [x] UI Events
+
+	- [x] PlayerBase and player attack need comments 
+	- [x] EnmeyBase, enmey ai, attack needs comments 
+	- [x] Health Power up class needs comments
+	- [x] UI Coins, Lives, and Intredeenits needs comments
+	- [x] Create a base class for menu UI and combine WinScreenUI and GameOverUI.
+
+	- [x] Game Object Active Manager needs comments
+		- [x] Mssing three for Update trigger,set trigger, and reset all triggers
+	- [x] Level 1 manager need methods that use in all level of the game
+	- [x] Remove Point Manager and combine it into point data
+	- [x] Save and load checkpoint needs comments
+	- [x] Cake Over code clean up 
+	- [x] Organize game Objects
+	- [x]  Double check code clean up for all clas at the very end
+	- [ ]  Move repo to our GitHub Team
+
 
 	
 	
