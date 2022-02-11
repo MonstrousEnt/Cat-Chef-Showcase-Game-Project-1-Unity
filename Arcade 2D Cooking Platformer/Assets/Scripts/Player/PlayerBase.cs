@@ -81,7 +81,9 @@ public class PlayerBase : MonoBehaviour
     {
         //If player health is max out
         if (_health == _maxHealthPowerUp)
-        {
+        {   
+            //display full health to player
+
             //then exit out of this method
             return;
         }
