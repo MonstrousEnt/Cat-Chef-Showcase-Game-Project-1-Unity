@@ -14,6 +14,11 @@ using UnityEngine;
 public class SaveCheckpoint : MonoBehaviour
 {
     //Class Variables
+
+    [Header("Checkpoint Data")]
+    [SerializeField] private float _defaultCheckpointHeight;
+
+
     [Header("Trigger Reference")]
     [SerializeField] private int _indexCheckpointTrigger; 
 
@@ -27,7 +32,7 @@ public class SaveCheckpoint : MonoBehaviour
         if (collision.tag == "Player")
         {
             //Set the last checkpoint
-            Vector2 lastCheckpointPos = new Vector2(transform.position.x, transform.position.y);
+            Vector2 lastCheckpointPos = new Vector2(transform.position.x, _defaultCheckpointHeight);
             GameManager.instance.SetLastCheckpointPos(lastCheckpointPos);
 
             //Game object has been trigger

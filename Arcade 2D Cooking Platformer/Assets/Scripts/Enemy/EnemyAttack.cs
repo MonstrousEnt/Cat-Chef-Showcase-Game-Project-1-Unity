@@ -70,7 +70,7 @@ public class EnemyAttack : MonoBehaviour
         {		
 			if (_isAttacking)
 			{
-				StopAllCoroutines();
+				StopCoroutine(attack());
 				//StopCoroutine(stopMoving());
 				StartCoroutine(attack());
 

@@ -19,6 +19,7 @@ public class EnmeyAI : MonoBehaviour
     [Header("AI Data")]
     [SerializeField] private float _targetRange = 3f;
     [SerializeField] private string _moveAnimation = "movespeed";
+    [SerializeField] float moveSpeed = 3f;
 
     [Header("Components")]
     [SerializeField] private Animator _animator;
@@ -40,11 +41,11 @@ public class EnmeyAI : MonoBehaviour
         //Check if the target is in range, if not then stop the enemy from moving
         if (Vector3.Distance(transform.position, _destinationSetter.target.transform.position) > _targetRange)
         {
-            _aipath.canMove = false;
+            _aipath.maxSpeed = 0;
         }
         else
         {
-            _aipath.canMove = true;
+            _aipath.maxSpeed = moveSpeed;
         }
 
         //Animation move

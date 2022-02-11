@@ -64,7 +64,7 @@ public class EnemyBase : MonoBehaviour
         //The enemy take the damage from the monsters.
         health -= damage;
 
-        StartCoroutine(StopMoving());
+        StopCoroutine(StopMoving());
         StartCoroutine(StopMoving());
 
         //If the enemy dies
@@ -102,15 +102,14 @@ public class EnemyBase : MonoBehaviour
     {
         //Disable the enemy collier
         GetComponent<Collider2D>().enabled = false;
-
-        //TODO prevent enemy from doing more attacks
+        
+        //prevent the enemy from attacking
+        //Game object has been trigger
+        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetEnemyTrigger(), _indexEnemyTriggerList, GameObjectActiveManger.instance.GetEnemyTriggerSize(), true);
 
         //flicker the enemy
         StopCoroutine(flickeringDie());
         StartCoroutine(flickeringDie());
-
-        //Game object has been trigger
-        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetEnemyTrigger(), _indexEnemyTriggerList, GameObjectActiveManger.instance.GetEnemyTriggerSize(), true);
 
         //Run death animation and destroy the enemy
         StopCoroutine(playDeathAnimation());

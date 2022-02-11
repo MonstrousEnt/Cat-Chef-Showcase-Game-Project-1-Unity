@@ -11709,6 +11709,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3792599155928185152, guid: 111067e0974218b42aa0345126acb577, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 66.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 3792599155928185153, guid: 111067e0974218b42aa0345126acb577, type: 3}
+      propertyPath: _indexCheckpointTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3792599155928185154, guid: 111067e0974218b42aa0345126acb577, type: 3}
+      propertyPath: m_Size.y
+      value: 40.914806
+      objectReference: {fileID: 0}
+    - target: {fileID: 3792599155928185154, guid: 111067e0974218b42aa0345126acb577, type: 3}
+      propertyPath: m_Offset.y
+      value: 19.957403
+      objectReference: {fileID: 0}
+    - target: {fileID: 3792599156817202580, guid: 111067e0974218b42aa0345126acb577, type: 3}
+      propertyPath: _defaultCheckpointHeight
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 111067e0974218b42aa0345126acb577, type: 3}
 --- !u!1001 &775636180
@@ -12873,6 +12893,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1812711932275545852, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
+      propertyPath: _checkpointOnePos.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1812711932275545853, guid: d605e9ec8d566444ca5dadb3ead85d28, type: 3}
       propertyPath: m_Name
       value: Level1Manager
