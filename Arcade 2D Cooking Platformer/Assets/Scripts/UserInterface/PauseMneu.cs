@@ -18,7 +18,7 @@ public class PauseMneu : UIMenuBase
     /// Enable or disable the menu.
     /// </summary>
     /// <param name="flag"></param>
-    public override void activeMenu(bool flag)
+    public override void ActiveMenu(bool flag)
     {
         ///Pause the game
         SettingManager.instance.ActivePause(true, 0f);

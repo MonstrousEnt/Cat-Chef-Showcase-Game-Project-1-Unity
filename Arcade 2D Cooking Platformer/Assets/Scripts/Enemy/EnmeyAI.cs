@@ -21,34 +21,34 @@ public class EnmeyAI : MonoBehaviour
     [SerializeField] private string _moveAnimation = "movespeed";
 
     [Header("Components")]
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator _animator;
 
     [Header("AIPathfinding references")]
-    [SerializeField] private AIPath aipath;
-    [SerializeField] private AIDestinationSetter destinationSetter;
+    [SerializeField] private AIPath _aipath;
+    [SerializeField] private AIDestinationSetter _destinationSetter;
 
     private void Awake()
     {
         //Get game components
-        animator = GetComponent<Animator>();
-        aipath = GetComponent<AIPath>();
-        destinationSetter = GetComponent<AIDestinationSetter>();
+        _animator = GetComponent<Animator>();
+        _aipath = GetComponent<AIPath>();
+        _destinationSetter = GetComponent<AIDestinationSetter>();
     }
 
     private void FixedUpdate()
     {
         //Check if the target is in range, if not then stop the enemy from moving
-        if (Vector3.Distance(transform.position, destinationSetter.target.transform.position) > _targetRange)
+        if (Vector3.Distance(transform.position, _destinationSetter.target.transform.position) > _targetRange)
         {
-            aipath.canMove = false;
+            _aipath.canMove = false;
         }
         else
         {
-            aipath.canMove = true;
+            _aipath.canMove = true;
         }
 
         //Animation move
-        animator.SetFloat(_moveAnimation, Mathf.Abs(aipath.desiredVelocity.x));
+        _animator.SetFloat(_moveAnimation, Mathf.Abs(_aipath.desiredVelocity.x));
 
         //Flip the enemy
         Flip();
@@ -60,11 +60,11 @@ public class EnmeyAI : MonoBehaviour
     /// </summary>
     private void Flip()
     {
-        if (aipath.desiredVelocity.x >= 0.2f)
+        if (_aipath.desiredVelocity.x >= 0.2f)
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
-        else if(aipath.desiredVelocity.x >= -0.2f)
+        else if(_aipath.desiredVelocity.x >= -0.2f)
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
         }

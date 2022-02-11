@@ -54,7 +54,7 @@ public class LiveSystemManager : MonoBehaviour
         SettingManager.instance.ActivePause(true, 0f);
 
         //Enable the game over screen
-        EndStateScreenUI.instance.activeMenu(true);
+        UIEvents.instance.ActiveEndSateMenu(true);
 
         //Player can no longer move.
         PlayerBase.instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;

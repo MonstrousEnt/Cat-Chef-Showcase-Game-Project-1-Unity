@@ -340,7 +340,6 @@ MonoBehaviour:
   _deathAnimation: isDead
   aipath: {fileID: 6580001628570589281}
   _indexEnemyTriggerList: 0
-  _maxCountEnemyTriggerList: 6
 --- !u!114 &1258437975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,6 +380,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetRange: 7
   _moveAnimation: movespeed
-  animator: {fileID: 2413547772758558773}
-  aipath: {fileID: 6580001628570589281}
-  destinationSetter: {fileID: 6680638396623622087}
+  _animator: {fileID: 2413547772758558773}
+  _aipath: {fileID: 6580001628570589281}
+  _destinationSetter: {fileID: 6680638396623622087}

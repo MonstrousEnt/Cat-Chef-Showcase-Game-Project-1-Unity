@@ -71,12 +71,12 @@ public class PlayerController2D : MonoBehaviour
         {
             if (!pauseMneu.gameObject.activeSelf)
             {
-                pauseMneu.activeMenu(true);
+                pauseMneu.ActiveMenu(true);
                 SettingManager.instance.ActivePause(true, 0f);
             }
             else
             {
-                pauseMneu.activeMenu(false);
+                pauseMneu.ActiveMenu(false);
                 SettingManager.instance.ActivePause(false, 1f);
             }
         }

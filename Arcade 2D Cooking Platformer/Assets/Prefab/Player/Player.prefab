@@ -320,15 +320,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 30
-  fullHeartNum: 10
-  maxHealthPowerUp: 30
+  maxHealth: 3
+  fullHeartNum: 1
+  maxHealthPowerUp: 3
+  healthItemSoundEffect: health_item
+  happyPurrSoundEffect: happy_purr
   playerLayer: 6
   enemyLayer: 10
-  healthBar: {fileID: 0}
   _animator: {fileID: 8462256792850483002}
   takeDamage: takeDamage
-  isRespawn: 0
 --- !u!114 &343340646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,13 +341,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0fa29550e686c4481b656f90811e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 8462256792850483002}
-  attackPoint: {fileID: 1443183051}
-  attackRadius: 1
-  enemyLayers:
+  _animator: {fileID: 8462256792850483002}
+  _attackPoint: {fileID: 1443183051}
+  _attackRadius: 1
+  _enemyLayers:
     serializedVersion: 2
-    m_Bits: 256
-  clawDamage: 1
+    m_Bits: 0
+  _clawDamage: 0
 --- !u!114 &6164898391710461271
 MonoBehaviour:
   m_ObjectHideFlags: 0

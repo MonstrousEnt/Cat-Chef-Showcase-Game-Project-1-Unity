@@ -18,31 +18,31 @@ public class PlayerBase : MonoBehaviour
     public static PlayerBase instance;
 
     [Header("Player Data")]
-    [SerializeField] public int health = 0;
-    [SerializeField] private int maxHealth = 3;
-    [SerializeField] private int fullHeartNum = 1;
+    [SerializeField] public int _health = 0;
+    [SerializeField] private int _maxHealth = 3;
+    [SerializeField] private int _fullHeartNum = 1;
 
     [Header("Health Power Up")]
-    [SerializeField] private int maxHealthPowerUp = 3;
-    [SerializeField] private string healthItemSoundEffect = "health_item";
-    [SerializeField] private string happyPurrSoundEffect = "happy_purr";
+    [SerializeField] private int _maxHealthPowerUp = 3;
+    [SerializeField] private string _healthItemSoundEffect = "health_item";
+    [SerializeField] private string _happyPurrSoundEffect = "happy_purr";
 
     [Header("Layer")]
-    [SerializeField] private int playerLayer;
-    [SerializeField] private int enemyLayer;
+    [SerializeField] private int _playerLayer = 6;
+    [SerializeField] private int _enemyLayer = 10;
 
     [Header("Animator References")]
     [SerializeField] private Animator _animator;
-    [SerializeField] private string takeDamage = "takeDamage";
+    [SerializeField] private string _takeDamage = "takeDamage";
 
     [Header("Sound Effects")]
-    private string takeDamageSoundEffect = "meow_take_dmg";
+    private string _takeDamageSoundEffect = "meow_take_dmg";
    
     [Header("Flag Boolean")]
     private bool isRespawn = false;
 
     //Getter and Setters
-    public int GetFullHeartNum() { return fullHeartNum; }
+    public int GetFullHeartNum() { return _fullHeartNum; }
     public bool GetIsRespawn() { return isRespawn; }
     public void SetIsRespawn(bool isRespawn) { this.isRespawn = isRespawn; }
 
@@ -62,13 +62,13 @@ public class PlayerBase : MonoBehaviour
     private void Start()
     {
         //Reset collision for player and enemy layers
-        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
+        Physics2D.IgnoreLayerCollision(_playerLayer, _enemyLayer, false);
 
         //set the health to max health of the player
-        health = maxHealth;
+        _health = _maxHealth;
 
         //Display it in the UI
-        UIEvents.instance.UpdateHealthBar(health);
+        UIEvents.instance.UpdateHealthBar(_health);
     }
 
     /// <summary>
@@ -80,7 +80,7 @@ public class PlayerBase : MonoBehaviour
     public void HealthPowerUp(GameObject healthPowerUpGameObject, int indexHealthPowerUpTrigger, int healthPowerUpTriggerSize)
     {
         //If player health is max out
-        if (health == maxHealthPowerUp)
+        if (_health == _maxHealthPowerUp)
         {
             //then exit out of this method
             return;
@@ -89,14 +89,14 @@ public class PlayerBase : MonoBehaviour
         else
         {
             //Power up health
-            health = health + GetFullHeartNum();
+            _health = _health + GetFullHeartNum();
 
             //Ply the sound
-            AudioManager.instance.playAudio(healthItemSoundEffect);
-            AudioManager.instance.playAudio(happyPurrSoundEffect);
+            AudioManager.instance.playAudio(_healthItemSoundEffect);
+            AudioManager.instance.playAudio(_happyPurrSoundEffect);
 
             //Display it in the UI
-            UIEvents.instance.UpdateHealthBar(health);
+            UIEvents.instance.UpdateHealthBar(_health);
 
             //Added the Health power up to the total points
             PointManager.instance.SetTolatPoints(PointManager.instance.GetTolatPoints() + PointManager.instance.GetHealthPowerUpPointNum());
@@ -116,16 +116,16 @@ public class PlayerBase : MonoBehaviour
     public void TakeDmage(int damage)
     {
 		//The player take the damage from the monsters.
-		health -= damage;
+		_health -= damage;
 
         //Display it in the UI
-        UIEvents.instance.UpdateHealthBar(health);
+        UIEvents.instance.UpdateHealthBar(_health);
 
         //Play sound
-        AudioManager.instance.playAudio(takeDamageSoundEffect);
+        AudioManager.instance.playAudio(_takeDamageSoundEffect);
 
         //Take damage frame
-        _animator.SetTrigger(takeDamage);
+        _animator.SetTrigger(_takeDamage);
 
         //Indicator the damage
         StopCoroutine(invulnerability());
@@ -135,7 +135,7 @@ public class PlayerBase : MonoBehaviour
         StartCoroutine(flickering());
 
         //If the player dies
-        if (health <= 0)
+        if (_health <= 0)
 		{
             StopCoroutine(die());
 			StartCoroutine(die());
@@ -149,13 +149,13 @@ public class PlayerBase : MonoBehaviour
     private IEnumerator invulnerability()
     {
         //Turn off collision for player and enemy
-        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
+        Physics2D.IgnoreLayerCollision(_playerLayer, _enemyLayer, true);
 
         //Wait a second or 2
         yield return new WaitForSeconds(2f);
 
         //Turn off collision for player and enemy
-        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
+        Physics2D.IgnoreLayerCollision(_playerLayer, _enemyLayer, false);
 
     }
 
@@ -210,10 +210,10 @@ public class PlayerBase : MonoBehaviour
         else
         {
             //Reset the health
-            health = maxHealth;
+            _health = _maxHealth;
 
             //Reset the health bar
-            UIEvents.instance.UpdateHealthBar(health);
+            UIEvents.instance.UpdateHealthBar(_health);
 
             //Player lose one life
             LiveSystemManager.instance.LoseALife();

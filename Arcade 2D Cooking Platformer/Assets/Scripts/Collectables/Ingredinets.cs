@@ -15,21 +15,17 @@ public class Ingredinets : MonoBehaviour
 {
     //Class Variables 
     [Header("Data Info")]
-    [SerializeField] private string IngredinetName;
-
-    [Header("UI Images")]
-    [SerializeField] private int ingredinetImagesActiveIndex;
-    [SerializeField] private GameObject imageGameObject;
+    [SerializeField] private int _ingredinetImagesActiveIndex;
 
     [Header("SoundEffect")]
-    [SerializeField] private string getItemSoundEffect = "getitem";
+    [SerializeField] private string _getItemSoundEffect = "getitem";
 
     [Header("Trigger Reference")]
-    [SerializeField] private int indexIngredientsTiggerList; //id of the checkpoint
+    [SerializeField] private int _indexIngredientsTiggerList; //id of the checkpoint
 
     private void Start()
     {
-        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetIngredientsTigger(), indexIngredientsTiggerList, GameObjectActiveManger.instance.GetIngredientsTiggerSize(), gameObject); 
+        GameObjectActiveManger.instance.UpdateTrigger(GameObjectActiveManger.instance.GetIngredientsTigger(), _indexIngredientsTiggerList, GameObjectActiveManger.instance.GetIngredientsTiggerSize(), gameObject); 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -50,13 +46,13 @@ public class Ingredinets : MonoBehaviour
         PointManager.instance.SetTolatPoints(PointManager.instance.GetTolatPoints() + PointManager.instance.GetIngredientPointNum());
 
         //Play the sound
-        AudioManager.instance.playAudio(getItemSoundEffect);
+        AudioManager.instance.playAudio(_getItemSoundEffect);
 
         //Set UI
-        UIEvents.instance.ActiveIngredientImage(true, ingredinetImagesActiveIndex);
+        UIEvents.instance.ActiveIngredientImage(true, _ingredinetImagesActiveIndex);
 
         //Game object has been trigger
-        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetIngredientsTigger(), indexIngredientsTiggerList, GameObjectActiveManger.instance.GetIngredientsTiggerSize(), true);
+        GameObjectActiveManger.instance.SetTrigger(GameObjectActiveManger.instance.GetIngredientsTigger(), _indexIngredientsTiggerList, GameObjectActiveManger.instance.GetIngredientsTiggerSize(), true);
 
         //Destroy the game object
         Destroy(gameObject);

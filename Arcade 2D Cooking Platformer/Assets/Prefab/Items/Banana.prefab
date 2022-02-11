@@ -116,11 +116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768e6db4b7d2ee140983da698a1d25d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IngredinetName: Banana
-  ingredinetImagesActiveIndex: 0
-  imageGameObject: {fileID: 0}
-  indexIngredientsTiggerList: 0
-  maxCountIngredientTiggerList: 4
+  _ingredinetImagesActiveIndex: 0
+  _getItemSoundEffect: getitem
+  _indexIngredientsTiggerList: 0
 --- !u!61 &9102428933238438070
 BoxCollider2D:
   m_ObjectHideFlags: 0

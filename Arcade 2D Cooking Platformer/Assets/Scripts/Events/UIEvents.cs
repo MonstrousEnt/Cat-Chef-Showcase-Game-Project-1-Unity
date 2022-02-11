@@ -22,12 +22,14 @@ public class UIEvents : MonoBehaviour
 	public UnityEvent<int> onSetLivesText;
 	public UnityEvent<bool, int> onActiveIngredientImage;
 	public UnityEvent<int> onUpdateHealthBar;
+    public UnityEvent<bool> onActiveEndSateMenu;
 
     //Class Methods
 	public void SetCollectableText(int coinNum) { instance.onSetCollectableText.Invoke(coinNum); }
     public void ActiveIngredientImage(bool flag, int ingredinetImagesActiveIndex) { instance.onActiveIngredientImage.Invoke(flag, ingredinetImagesActiveIndex); }
     public void SetLivesText(int liveCount) { instance.onSetLivesText.Invoke(liveCount); }
     public void UpdateHealthBar(int playerHealth) { instance.onUpdateHealthBar.Invoke(playerHealth); }
+    public void ActiveEndSateMenu(bool flag) { instance.onActiveEndSateMenu.Invoke(flag); }
 
     private void Awake()
     {

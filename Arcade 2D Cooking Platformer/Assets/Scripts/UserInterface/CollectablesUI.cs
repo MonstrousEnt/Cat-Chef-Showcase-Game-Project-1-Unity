@@ -15,7 +15,7 @@ using UnityEngine.UI;
 public class CollectablesUI : MonoBehaviour
 {
     //Class Variables
-    [SerializeField] private Text coinText;
+    [SerializeField] private Text _coinText;
 
     private void Start()
     {
@@ -30,7 +30,7 @@ public class CollectablesUI : MonoBehaviour
     /// <param name="coinNum"></param>
     private void setText(int coinNum)
     {
-        coinText.text = coinNum.ToString();
+        _coinText.text = coinNum.ToString();
     }
 
     private void OnDestroy()

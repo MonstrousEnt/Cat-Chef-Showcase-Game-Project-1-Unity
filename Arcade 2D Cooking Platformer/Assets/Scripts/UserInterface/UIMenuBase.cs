@@ -20,7 +20,7 @@ public class UIMenuBase : MonoBehaviour
     /// Enable or disable the menu.
     /// </summary>
     /// <param name="flag"></param>
-    public virtual void  activeMenu(bool flag)
+    public virtual void  ActiveMenu(bool flag)
     {
         //Enable or disable menu
         gameObject.SetActive(flag);

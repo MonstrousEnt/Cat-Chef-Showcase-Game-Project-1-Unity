@@ -33,7 +33,7 @@ public class CakeOver : MonoBehaviour
             animator.SetTrigger("openOven");
             CakeGameObject.SetActive(true);
 
-            EndStateScreenUI.instance.activeMenu(true);
+            UIEvents.instance.ActiveEndSateMenu(true);
         }           
     }
 

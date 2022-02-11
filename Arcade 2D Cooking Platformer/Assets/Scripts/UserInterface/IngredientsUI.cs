@@ -14,7 +14,8 @@ using UnityEngine.UI;
 
 public class IngredientsUI : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> _IngredinetImages;
+    //Class Variables
+    [SerializeField] private List<GameObject> _ingredinetImages;
 
     private void Start()
     {
@@ -28,9 +29,9 @@ public class IngredientsUI : MonoBehaviour
     /// </summary>
     private void updateImages()
     {
-        for (int i = 0; i < _IngredinetImages.Count; i++)
+        for (int i = 0; i < _ingredinetImages.Count; i++)
         {
-            _IngredinetImages[i].SetActive(GameManager.instance.GetIngredinetImagesActive()[i]);
+            _ingredinetImages[i].SetActive(GameManager.instance.GetIngredinetImagesActive()[i]);
         }
     }
 

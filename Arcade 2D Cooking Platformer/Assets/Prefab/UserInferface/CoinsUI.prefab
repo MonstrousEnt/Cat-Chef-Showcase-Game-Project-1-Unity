@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749eae3dae5c54d43b74896a75dae7a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 3799774189840259285}
+  _coinText: {fileID: 3799774189840259285}
 --- !u!1 &3799774189968974200
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +191,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3799774189968974200}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 568.1585, y: 31.62528, z: -50.149902}
   m_LocalScale: {x: 1.4264429, y: 1.4264429, z: 1.4264429}
   m_Children:

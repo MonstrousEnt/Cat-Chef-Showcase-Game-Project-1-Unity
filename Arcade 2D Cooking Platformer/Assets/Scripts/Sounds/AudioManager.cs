@@ -1,11 +1,12 @@
-﻿/* Name: Daniel Cox, Spencer Stoddard 
- * Date: July 6 - September 23, 2020
+﻿/* Project Name: Arcade 2D Platformer
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox, Spencer Stoddard 
+ * Created Date: July 6, 2020
+ * Latest Update: February 11, 2022
  * Description: This manager all the sounds in the game.
- * Notes: 
- * Audio Manager Tutorial Used: https://youtu.be/6OT43pvUyfY
+ * Notes: Audio Manager Tutorial Used: https://youtu.be/6OT43pvUyfY
  */
 
-//Libraries
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,9 +15,10 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private Sound[] _sounds; //A list of the sounds
+    //Class Variables
+    public static AudioManager instance;
 
-	public static AudioManager instance; //A static reference of the class
+    [SerializeField] private Sound[] _sounds; 
 
     private void Awake()
     {

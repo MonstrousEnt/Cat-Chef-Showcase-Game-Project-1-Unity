@@ -15,7 +15,7 @@ using UnityEngine.UI;
 public class LivesUI : MonoBehaviour
 {
     //Class Variables   
-    [SerializeField] private Text LivesText;
+    [SerializeField] private Text _livesText;
 
     private void Start()
     {
@@ -30,7 +30,7 @@ public class LivesUI : MonoBehaviour
     /// <param name="lives"></param>
     private void setLives(int lives)
 	{
-		LivesText.text = "x " + lives.ToString();
+		_livesText.text = "x " + lives.ToString();
 	}
 
     private void OnDestroy()

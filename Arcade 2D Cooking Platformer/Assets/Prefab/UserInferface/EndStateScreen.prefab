@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelLoader: {fileID: 0}
-  pointTotalText: {fileID: 814621595362340028}
+  _pointTotalText: {fileID: 814621595362340028}
 --- !u!1 &814621594206170315
 GameObject:
   m_ObjectHideFlags: 0

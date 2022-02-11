@@ -198,6 +198,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 4.2
       objectReference: {fileID: 0}
+    - target: {fileID: 1248073845312578814, guid: f5034db7dfd14bd46b65156a7935c5dc, type: 3}
+      propertyPath: _livesText
+      value: 
+      objectReference: {fileID: 5730286200712393948}
     - target: {fileID: 1248073845312578815, guid: f5034db7dfd14bd46b65156a7935c5dc, type: 3}
       propertyPath: m_SizeDelta.x
       value: 711.927
@@ -321,3 +325,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1248073845371631153, guid: f5034db7dfd14bd46b65156a7935c5dc, type: 3}
   m_PrefabInstance: {fileID: 6833117857449836474}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5730286200712393948 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1248073844441484134, guid: f5034db7dfd14bd46b65156a7935c5dc, type: 3}
+  m_PrefabInstance: {fileID: 6833117857449836474}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

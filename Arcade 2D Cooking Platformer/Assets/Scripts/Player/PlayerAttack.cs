@@ -15,17 +15,17 @@ public class PlayerAttack : MonoBehaviour
 {
     //Class Variables 
     [Header("Component Reference")]
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator _animator;
 
     [Header("Attack Zone")]
-    [SerializeField] private Transform attackPoint;
-    [SerializeField] private float attackRadius;
+    [SerializeField] private Transform _attackPoint;
+    [SerializeField] private float _attackRadius;
 
     [Header("Layers")]
-    [SerializeField] private LayerMask enemyLayers;
+    [SerializeField] private LayerMask _enemyLayers;
 
     [Header("Combat")]
-    [SerializeField] private int clawDamage;
+    [SerializeField] private int _clawDamage;
 
 
     private void FixedUpdate()
@@ -54,7 +54,7 @@ public class PlayerAttack : MonoBehaviour
         //If the player take their hand off the button, turn off the attack animation 
         if (Input.GetButtonUp("Attack"))
         {
-            animator.SetBool("isAttacking", false);
+            _animator.SetBool("isAttacking", false);
         }
 
     }
@@ -65,11 +65,11 @@ public class PlayerAttack : MonoBehaviour
     private void Attack()
     {
         //Play the attack animation
-        animator.SetBool("isAttacking", true);
-        animator.SetTrigger("Attack");        
+        _animator.SetBool("isAttacking", true);
+        _animator.SetTrigger("Attack");        
 
         //Detect enemies in attack range
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius, enemyLayers);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRadius, _enemyLayers);
 
         //damage each enemy
         foreach(Collider2D enemy in hitEnemies)
@@ -78,7 +78,7 @@ public class PlayerAttack : MonoBehaviour
 
             if (enemyBase != null)
             {
-                enemyBase.TakeDamage(clawDamage);
+                enemyBase.TakeDamage(_clawDamage);
             }
         }
 
@@ -86,6 +86,6 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+        Gizmos.DrawWireSphere(_attackPoint.position, _attackRadius);
     }
 }
