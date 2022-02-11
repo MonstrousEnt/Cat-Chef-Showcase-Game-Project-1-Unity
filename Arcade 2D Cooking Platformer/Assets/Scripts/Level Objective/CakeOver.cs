@@ -1,50 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/* Project Name: Arcade 2D Platformer
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox, Ben Topple
+ * Created Date: January 30, 2022
+ * Latest Update: February 11, 2022
+ * Description: The class for when the player completes the game.
+ * Notes: 
+ */
 
 public class CakeOver : MonoBehaviour
 {
-    public static CakeOver instance; //A static reference of the class
-
+    //Class Variables
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject CakeGameObject;
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            //Set an instance of it
-            instance = this;
-        }
-
         animator = GetComponent<Animator>();
     }
 
-    public void GameCompleted()
+    /// <summary>
+    /// Completed game if the player has collected all Ingredients.
+    /// </summary>
+    /// <param name="ingredinetsNum"></param>
+    /// <param name="maxIngredients"></param>
+    private void gameCompleted(int ingredinetsNum, int maxIngredients)
     {
-        animator.SetTrigger("openOven");
-        CakeGameObject.SetActive(true);
+        if (ingredinetsNum == maxIngredients)
+        {
+            animator.SetTrigger("openOven");
+            CakeGameObject.SetActive(true);
+
+            EndStateScreenUI.instance.activeMenu(true);
+        }           
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            GameManager.instance.SetAtCakeOver(true);
+            gameCompleted(GameManager.instance.GetIngredinetsNum(), GameManager.instance.GetMaxIngredients());
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            GameManager.instance.SetAtCakeOver(false);
-        }
-    }
-
-    private void OnDestroy()
-    {
-        instance = null;
     }
 
 }

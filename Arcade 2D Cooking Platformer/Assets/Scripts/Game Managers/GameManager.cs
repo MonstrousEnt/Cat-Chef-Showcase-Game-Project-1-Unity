@@ -17,53 +17,13 @@ public class GameManager : GameData
     public static GameManager instance; //A static reference of the class
 
     [Header("Boolean Flags")]
-    [SerializeField] private bool _playerAtCkeOver = false;
     [SerializeField] private bool _restart = false;
     [SerializeField] private bool _levelStarted = false;
 
     #region Getters and Setters
     public void SetRestart(bool restart) { this._restart = restart; }
-    public void SetAtCakeOver(bool flag) { this._playerAtCkeOver = flag; }
     public bool GetLevelStarted() { return _levelStarted; }
     public void SetLevelStarted(bool levelStarted) { this._levelStarted = levelStarted; }
-    #endregion
-
-    #region Unity Methods
-    private void Awake()
-    {
-        #region Singleton Reference
-        //---Make sure there is only one instance of this class for each Scene.
-
-        //If there is no instance of the object
-        if (instance == null)
-        {
-            //Set an instance of it
-            instance = this;
-        }
-
-        //Else, if there's already an instance
-        else
-        {
-            //Destroy it
-            Destroy(gameObject);
-            return;
-        }
-
-        //This won't get destroy when you switch scene
-        DontDestroyOnLoad(gameObject);
-        #endregion
-    }
-
-    private void Update()
-    {
-        if (ingredinetsNum == maxIngredients && _playerAtCkeOver)
-        {
-            CakeOver.instance.GameCompleted();
-
-            //Level Completed
-            EndStateScreenUI.instance.activeMenu(true);
-        }
-    }
     #endregion
 
     #region Reset Game Methods
@@ -96,9 +56,6 @@ public class GameManager : GameData
     {
         //Turn of the boolean flag for restart the game
         _restart = false;
-
-        //Reset the boolean for when the level is completed
-        _playerAtCkeOver = false;
     }
 
     /// <summary>
@@ -114,6 +71,33 @@ public class GameManager : GameData
             AudioManager.instance.SetAudioLoop(levelMusicName, true);
             AudioManager.instance.playAudio(levelMusicName);
         }
+    }
+    #endregion
+
+    #region Unity Methods
+    private void Awake()
+    {
+        #region Singleton Reference
+        //---Make sure there is only one instance of this class for each Scene.
+
+        //If there is no instance of the object
+        if (instance == null)
+        {
+            //Set an instance of it
+            instance = this;
+        }
+
+        //Else, if there's already an instance
+        else
+        {
+            //Destroy it
+            Destroy(gameObject);
+            return;
+        }
+
+        //This won't get destroy when you switch scene
+        DontDestroyOnLoad(gameObject);
+        #endregion
     }
     #endregion
 }
