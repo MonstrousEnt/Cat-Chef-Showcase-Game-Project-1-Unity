@@ -216,7 +216,7 @@ MonoBehaviour:
   traversableTags: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
-    value: 1
+    value: 2
 --- !u!114 &6580001628570589281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,12 +334,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   _maxHealth: 3
+  _playerCharacter: {fileID: 0}
+  _rigidbody2D: {fileID: 4215241189758680761}
+  knockbackAmount: 100
   _takeDamagesoundEffect: slash
   _animator: {fileID: 2413547772758558773}
   _takeDamageAnimation: takeDamage
   _deathAnimation: isDead
   aipath: {fileID: 6580001628570589281}
-  _indexEnemyTriggerList: 0
+  _indexEnemyTriggerList: 1
 --- !u!114 &1258437975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63946e29a4fa7745ba929df55614c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _threatRadius: 1.12
+  _threatRadius: 1
   _threatPoint: {fileID: 272758077}
   _attackPoint: {fileID: 741667312}
   _attackRadius: 0.25
@@ -380,6 +383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetRange: 7
   _moveAnimation: movespeed
+  moveSpeed: 3
   _animator: {fileID: 2413547772758558773}
   _aipath: {fileID: 6580001628570589281}
   _destinationSetter: {fileID: 6680638396623622087}

@@ -15,7 +15,7 @@ using Pathfinding;
 
 public class EnemyAttack : MonoBehaviour
 {
-    //Class Variables
+	//Class Variables
 	[Header("Threat Zone")]
 	[SerializeField] private float _threatRadius;
 	[SerializeField] private Transform _threatPoint;
@@ -46,38 +46,38 @@ public class EnemyAttack : MonoBehaviour
 
 
 	private void Start()
-    {
-		_forkDamage = PlayerBase.instance.GetFullHeartNum();
-    }
-
-    private void Update()
 	{
+		_forkDamage = PlayerBase.instance.GetFullHeartNum();
+	}
+
+	private void Update()
+	{ 
 		//Detect player in threat range
 		Collider2D attackPlayer = Physics2D.OverlapCircle(_threatPoint.position, _threatRadius, _playerLayer);
-
+		
 		//When the enemy hit the player
 		if (attackPlayer != null)
 		{
 			_isAttacking = true;
-		}
-		
+		} 	 
+			
+
 	}
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+
 		//Once the player is collier with the enemy in the threat zone
 		if (collision.tag == "Player" && _enemyBase.health > 0)
-        {		
+		{
 			if (_isAttacking)
 			{
 				StopCoroutine(attack());
-				//StopCoroutine(stopMoving());
 				StartCoroutine(attack());
-
 			}
 
 		}
-    }
+	}
 
 	private void OnDrawGizmos()
 	{
@@ -86,18 +86,27 @@ public class EnemyAttack : MonoBehaviour
 	}
 
 	private IEnumerator attack()
-    {
+	{
 		//Stop the enemy
 		_aipath.canMove = false;
 
-		//Play attack sound effect
-		AudioManager.instance.playAudio(_enemyAttackSoundEffect);
+		//delay before attack
+		yield return new WaitForSeconds(.5f);	
 
 		//Play the attack animation
 		_animator.SetTrigger(_attackAnimation);
 
-		//Take damage form the player
-		PlayerBase.instance.TakeDmage(_forkDamage);
+		Collider2D attackPlayer = Physics2D.OverlapCircle(_threatPoint.position, _threatRadius, _playerLayer);
+
+		//When the enemy hit the player
+		if (attackPlayer != null)
+		{
+			//Play attack sound effect
+			AudioManager.instance.playAudio(_enemyAttackSoundEffect);
+
+			//Take damage form the player
+			PlayerBase.instance.TakeDmage(_forkDamage);
+		}	
 
 		//Stop attack
 		_isAttacking = false;

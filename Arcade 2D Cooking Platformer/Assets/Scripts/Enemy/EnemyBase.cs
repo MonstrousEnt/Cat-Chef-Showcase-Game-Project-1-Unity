@@ -18,6 +18,9 @@ public class EnemyBase : MonoBehaviour
     [Header("Enemy Data")]
     [SerializeField] public int health = 0;
     [SerializeField] private int _maxHealth;
+    [SerializeField] private PlayerController2D _playerCharacter;
+    [SerializeField] private Rigidbody2D _rigidbody2D;
+    [SerializeField] private float knockbackAmount = 100f;
 
     [Header("Sound Effects")]
     [SerializeField] string _takeDamagesoundEffect = "slash";
@@ -32,7 +35,7 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] private AIPath aipath;
 
     [Header("Trigger Reference")]
-    [SerializeField] private int _indexEnemyTriggerList; 
+    [SerializeField] private int _indexEnemyTriggerList;    
 
 
     private void Awake()
@@ -57,12 +60,20 @@ public class EnemyBase : MonoBehaviour
     /// </summary>
     /// <param name="damage"></param>
     public void TakeDamage(int damage)
-    {
+    {       
+
         //player the sound effect for damage
         AudioManager.instance.playAudio(_takeDamagesoundEffect);
 
         //The enemy take the damage from the monsters.
         health -= damage;
+        Debug.Log("Damage taken by enemy " + damage);
+
+        //apply force 
+        Vector2 moveDirection = _rigidbody2D.transform.position - _playerCharacter.transform.position;
+        _rigidbody2D.AddForce(moveDirection.normalized * knockbackAmount);
+
+        Debug.Log("knocked back by " + knockbackAmount);
 
         StopCoroutine(StopMoving());
         StartCoroutine(StopMoving());

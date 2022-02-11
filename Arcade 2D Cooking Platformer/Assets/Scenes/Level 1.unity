@@ -10046,6 +10046,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 733759959}
     m_Modifications:
     - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: _playerCharacter
+      value: 
+      objectReference: {fileID: 1800096310}
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: indexEnemyTriggerList
       value: 3
       objectReference: {fileID: 0}
@@ -11519,6 +11523,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 733759959}
     m_Modifications:
     - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: _playerCharacter
+      value: 
+      objectReference: {fileID: 1800096310}
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: indexEnemyTriggerList
       value: 2
       objectReference: {fileID: 0}
@@ -12405,6 +12413,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 733759959}
     m_Modifications:
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: _playerCharacter
+      value: 
+      objectReference: {fileID: 1800096310}
     - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: indexEnemyTriggerList
       value: 4
@@ -43503,6 +43515,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 733759959}
     m_Modifications:
     - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: _playerCharacter
+      value: 
+      objectReference: {fileID: 1800096310}
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: indexEnemyTriggerList
       value: 5
       objectReference: {fileID: 0}
@@ -44519,6 +44535,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 733759959}
     m_Modifications:
     - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: _playerCharacter
+      value: 
+      objectReference: {fileID: 1800096310}
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: indexEnemyTriggerList
       value: 1
       objectReference: {fileID: 0}
@@ -44694,6 +44714,17 @@ Transform:
   m_Father: {fileID: 1977100830}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1800096310 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8462256792850482998, guid: 32df1ac701ec01e4096c188aad0aba7d, type: 3}
+  m_PrefabInstance: {fileID: 8462256791385980604}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e041cb8cb6d304ba8d8b4e6706400e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1805816960 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8629438484392667594, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
@@ -45656,6 +45687,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5558327428588192561, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
+      propertyPath: _sounds.Array.data[0].volume
+      value: 0.288
+      objectReference: {fileID: 0}
     - target: {fileID: 8914847202108003657, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -46114,6 +46149,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 733759959}
     m_Modifications:
+    - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: _playerCharacter
+      value: 
+      objectReference: {fileID: 1800096310}
     - target: {fileID: 3771559445793220590, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: m_Name
       value: Bananaman
