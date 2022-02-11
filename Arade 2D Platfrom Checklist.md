@@ -66,15 +66,14 @@
 		- [x] Power Up
 	- [ ] Start Screen Soundtrack
 	- [x] Level 1 Soundtrack
+	
 - [x] Code Clean Up
 	- [x] Scripts are not organize
 	- [x] Make Coins and Intredeenits class code clean
-
 	- [x] Game Manager
 		- [x] Game Data
 	- [x] Unity events
 		- [x] UI Events
-
 	- [x] PlayerBase and player attack need comments 
 	- [x] EnmeyBase, enmey ai, attack needs comments 
 	- [x] Health Power up class needs comments
