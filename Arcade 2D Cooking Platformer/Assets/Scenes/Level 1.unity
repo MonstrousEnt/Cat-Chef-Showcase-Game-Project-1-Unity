@@ -45677,7 +45677,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5558327428588192561, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
       propertyPath: _sounds.Array.data[0].volume
-      value: 0.3
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 5558327428588192561, guid: 28a408e51afe2474e8c795515511b15c, type: 3}
       propertyPath: _sounds.Array.data[1].volume
