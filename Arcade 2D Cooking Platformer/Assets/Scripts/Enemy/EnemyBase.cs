@@ -65,7 +65,8 @@ public class EnemyBase : MonoBehaviour
     {
 
         //disable attack script
-        attackScript = null;
+        //attackScript = null;
+        attackScript._isAttacking = false;
 
         //player the sound effect for damage
         AudioManager.instance.playAudio(_takeDamagesoundEffect);
@@ -85,9 +86,7 @@ public class EnemyBase : MonoBehaviour
         _rigidbody2D.AddForce(Vector2.zero);
 
         StopCoroutine(StopMoving());
-        StartCoroutine(StopMoving());
-
-               
+        StartCoroutine(StopMoving());               
 
         //If the enemy dies
         if (health <= 0)
@@ -95,8 +94,8 @@ public class EnemyBase : MonoBehaviour
             Die();
         }
 
-        //enable attack script;
-        attackScript = GetComponent<EnemyAttack>();
+        ////enable attack script;
+        //attackScript = GetComponent<EnemyAttack>();
     }
 
     /// <summary>

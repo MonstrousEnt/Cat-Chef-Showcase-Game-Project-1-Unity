@@ -28,7 +28,7 @@ public class EnemyAttack : MonoBehaviour
 	[SerializeField] private LayerMask _playerLayer;
 
 	[Header("Boolean Flags")]
-	[SerializeField] private bool _isAttacking = false;
+	[SerializeField] public bool _isAttacking = false;
 
 	[Header("Combat Damage")]
 	[SerializeField] private int _forkDamage;
