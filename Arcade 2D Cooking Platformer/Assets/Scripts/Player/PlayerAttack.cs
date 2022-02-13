@@ -31,7 +31,7 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         //If the play hit the attack button
-        if (Input.GetButtonDown("Attack"))
+        if (Input.GetButtonDown("Attack") && !_animator.GetBool("isClinging"))
         {
             //Random the sounds effect for attack
             int randNum = Random.Range(1, 3);

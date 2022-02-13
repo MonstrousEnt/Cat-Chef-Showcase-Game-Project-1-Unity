@@ -20,7 +20,7 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] private int _maxHealth;
     [SerializeField] private PlayerController2D _playerCharacter;
     [SerializeField] private Rigidbody2D _rigidbody2D;
-    [SerializeField] private float knockbackAmount = 100f;
+    [SerializeField] private float knockbackAmount = 60f;
 
     [SerializeField] private EnemyAttack attackScript;
 
@@ -75,13 +75,19 @@ public class EnemyBase : MonoBehaviour
         Debug.Log("Damage taken by enemy " + damage);
 
         //apply force 
+
         Vector2 moveDirection = _rigidbody2D.transform.position - _playerCharacter.transform.position;
         _rigidbody2D.AddForce(moveDirection.normalized * knockbackAmount);
 
         Debug.Log("knocked back by " + knockbackAmount);
 
+        //reset force
+        _rigidbody2D.AddForce(Vector2.zero);
+
         StopCoroutine(StopMoving());
         StartCoroutine(StopMoving());
+
+               
 
         //If the enemy dies
         if (health <= 0)

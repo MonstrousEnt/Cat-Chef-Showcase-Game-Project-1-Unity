@@ -46137,10 +46137,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 733759959}
     m_Modifications:
+    - target: {fileID: 741667312, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.616
+      objectReference: {fileID: 0}
     - target: {fileID: 1258437974, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: _playerCharacter
       value: 
       objectReference: {fileID: 1800096310}
+    - target: {fileID: 1258437975, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: _attackRadius
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2095876219, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
+      propertyPath: m_Radius
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 3771559445793220590, guid: 449d5c2ac5887aa40ac27c1247784962, type: 3}
       propertyPath: m_Name
       value: Bananaman
