@@ -8,6 +8,7 @@ Cat chef is a 2D platformer like the Mario games from the NES era. You're a 🐱
 
 ## Play The Demo Via Itch.io
 [Cat Chef itch.io Page for Project 1](https://monstrous-entertainment.itch.io/cat-chef)
+
 ## Resources 
   ### Applications
    - [Unity](https://unity.com/)
