@@ -17,7 +17,6 @@ Cat chef is a 2D platformer like the Mario games from the NES era. You're a 🐱
    - [Google Workspace](https://workspace.google.com/intl/en_ca/)
    - [Discord](https://discord.com/)
    - [Asprite](https://www.aseprite.org/)
-   - [Procreate](https://procreate.com/)
    - [Bosca Ceoil](https://boscaceoil.net/)
  ### Learning Resources 
    - [Brackeys](https://www.youtube.com/user/Brackeys) (Unity Tutorials form Professional Unity Developer)
