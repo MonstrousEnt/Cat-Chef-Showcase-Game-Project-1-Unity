@@ -1,5 +1,5 @@
 
-# Arade 2D Platfrom
+# Cat Chef Project 1: Showcase Game
 - [x] Find clue to sovle the puzzle or found keys
 	- [x] Desgin 
 	- [x] Coding
@@ -41,12 +41,15 @@
    - [x] Desgin
    - [x] UI
    - [x] Code
-- [ ] Level Desgin
-	- [ ] 	[Level Requiremnets](https://github.com/DangerousDaniel/Arcade2DCookingPlatformer/blob/Benjamin/levelDesignReq.md)
+- [x] Level Desgin
+	- [x] Tilemap 
+	- [x] Tilemap2
+	- [x] Background
+	- [x] Props
+  
 - [x] Game Manger
-- [ ] Level Loader
+- [x] Level Loader
 	- [x] Coding
-	- [ ] Animations
 - [x] Audio Manager
 - [x] Lives System
 	- [x] UI
@@ -56,15 +59,13 @@
 - [x] Pause Menu
 	- [x] UI
 	- [x] Code
-- [ ] Sounds
+- [x] Sounds
 	- [x] Player
 	- [x] Enemies
-	- [ ] UI
 	- [x] Collectables
 		- [x] Cake Ingredients
 		- [x] Conis
 		- [x] Power Up
-	- [ ] Start Screen Soundtrack
 	- [x] Level 1 Soundtrack
 	
 - [x] Code Clean Up
@@ -89,8 +90,6 @@
 	- [x] Organize game Objects
 	- [x] Double check code clean up for all clas at the very end
 	- [x] Move repo to our GitHub Team
-	- [ ] ParallaxBG class need comments
-	- [ ] Player controls class need comments
 	- [x] Player Attack class needs comments
 
 

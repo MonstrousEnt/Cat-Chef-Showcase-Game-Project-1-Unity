@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox, Ben Topple
  * Created Date:  December 8, 2021
- * Latest Update: February 11, 2022
+ * Latest Update: May 12, 2022
  * Description: The class for loading the levels.
  * Notes: Level Load Tutorial Used: https://youtu.be/CE9VOZivb3I
  */
@@ -14,10 +14,6 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader: MonoBehaviour
 {
-	//Class Variables
-	//[SerializeField] private Animator _animator; 
-	[SerializeField] private float _transtionTime = 1f; 
-
 	/// <summary>
 	/// Load the next scene.
 	/// </summary>
@@ -34,12 +30,6 @@ public class LevelLoader: MonoBehaviour
 	/// <returns></returns>
 	private void LoadLevel(string sceneName)
 	{
-		////Play the transition
-		//_animator.SetTrigger("StartCrossfade");
-
-		////Wait for a couple seconds
-		//yield return new WaitForSeconds(_transtionTime);
-
 		//The level has started, set the boolean to true
 		GameManager.instance.SetLevelStarted(true);
 
