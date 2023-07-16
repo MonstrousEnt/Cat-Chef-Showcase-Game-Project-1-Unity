@@ -27,7 +27,7 @@ Cat chef is a 2D platformer like the Mario games from the NES era. You're a 🐱
    - Other Professional Unity tutorials like [Game Dev Guide](https://www.youtube.com/@GameDevGuide) on Youtube
 
 ## Term and Conditions
-This was created as a portfolio piece back in 2022 for Cat Chef Showcase Game aka Project 1. The Project has been update for 2023. Feel to use the code in your other projects as long you modify. Feel to play on itch.io. Any way you want. Share your media by YouTube, Instagram, Twitter, and Discord. This project is own by Monstrous Entertainment 2019 -2023. This game is copyright by the standard copyright license. All Right All Rights Reserved.
+This was created as a portfolio piece back in 2022 for Cat Chef Showcase Game aka Project 1. The Project has been update for 2023. Feel to use the code in your other projects as long you modify. Feel to play on itch.io. Any way you want. Share your media by YouTube, Instagram, Twitter, and Discord. This project is owned by Monstrous Entertainment 2019 -2023. This game is copyright by the standard copyright license. All Rights Reserved.
 
 
 
